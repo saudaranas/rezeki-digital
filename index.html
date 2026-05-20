@@ -784,6 +784,98 @@ footer {
 
 
 .sale-show{transform:translateX(0) !important;}@media(max-width:480px){#saleNotif{max-width:calc(100vw - 32px);left:16px;bottom:16px;}}
+
+/* ── BONUS CARDS ── */
+.bonus-cards-row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-top: 8px;
+}
+@media(max-width: 768px) { .bonus-cards-row { grid-template-columns: 1fr; } }
+
+.bonus-card-new {
+  background: var(--black-card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  overflow: hidden;
+  transition: border-color .2s, transform .2s;
+}
+.bonus-card-new:hover { border-color: rgba(168,85,247,0.4); transform: translateY(-4px); }
+
+.bonus-card-top {
+  padding: 20px 16px 0;
+  display: flex;
+  justify-content: center;
+  background: var(--black-soft);
+  min-height: 200px;
+  align-items: flex-end;
+}
+.bonus-card-bottom { padding: 20px; }
+.bonus-title-new {
+  font-size: 14px; font-weight: 700;
+  color: var(--white); margin-bottom: 6px;
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+}
+.bonus-desc-new { font-size: 13px; color: var(--muted); line-height: 1.7; }
+
+/* ── BROWSER MOCKUP ── */
+.bonus-mockup {
+  width: 100%; max-width: 240px;
+  border-radius: 12px 12px 0 0;
+  overflow: hidden;
+  box-shadow: 0 -8px 30px rgba(168,85,247,0.15);
+  animation: floatBonus 3.5s ease-in-out infinite;
+}
+@keyframes floatBonus { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-8px);} }
+
+.bm-bar {
+  background: #1e1e2e; padding: 8px 10px;
+  display: flex; align-items: center; gap: 8px;
+}
+.bm-dots { display: flex; gap: 4px; }
+.bm-dots span { width: 7px; height: 7px; border-radius: 50%; }
+.bm-dots span:nth-child(1) { background: #ff5f57; }
+.bm-dots span:nth-child(2) { background: #febc2e; }
+.bm-dots span:nth-child(3) { background: #28c840; }
+.bm-url { background: #2a2a3e; border-radius: 4px; font-size: 9px; color: #888; padding: 3px 8px; flex: 1; }
+.bm-body { background: #0f0f1a; padding: 10px; }
+.bm-hero-strip { background: linear-gradient(135deg, #6d28d9, #a855f7); height: 50px; border-radius: 6px; margin-bottom: 8px; }
+.bm-line { height: 6px; background: #2a2a3e; border-radius: 3px; margin-bottom: 5px; }
+.bm-line.w80 { width: 80%; } .bm-line.w60 { width: 60%; }
+.bm-btn-row { margin: 8px 0; }
+.bm-btn { height: 20px; width: 70px; background: #22c55e; border-radius: 10px; }
+.bm-card-sm { flex: 1; height: 36px; background: #1e1e2e; border-radius: 6px; border: 1px solid #2a2a3e; }
+
+/* ── THREADS MOCKUP ── */
+.threads-mockup {
+  background: #0f0f0f; border: 1px solid #2a2a2a;
+  padding: 12px; animation-delay: 0.5s;
+}
+.tm-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+.tm-avatar { width: 28px; height: 28px; border-radius: 50%; background: linear-gradient(135deg, #6d28d9, #a855f7); flex-shrink: 0; }
+.tm-avatar.sm { width: 22px; height: 22px; }
+.tm-name { font-size: 11px; font-weight: 700; color: #fff; }
+.tm-handle { font-size: 9px; color: #666; }
+.tm-line { height: 5px; background: #2a2a2a; border-radius: 3px; margin-bottom: 4px; }
+.tm-line.w90{width:90%;} .tm-line.w75{width:75%;} .tm-line.w85{width:85%;} .tm-line.w70{width:70%;} .tm-line.w50{width:50%;}
+.tm-tag { font-size: 9px; color: #a855f7; margin-top: 5px; }
+.tm-actions { display: flex; gap: 12px; font-size: 9px; color: #666; margin-bottom: 8px; }
+.tm-divider { height: 1px; background: #2a2a2a; margin-bottom: 8px; }
+.tm-day2 { display: flex; gap: 8px; align-items: flex-start; }
+.tm-content { margin-bottom: 8px; }
+
+/* ── CHAT MOCKUP ── */
+.chat-mockup { background: #0f0f0f; border: 1px solid #2a2a2a; padding: 0; animation-delay: 1s; }
+.cm-header { background: #1a1a2e; padding: 10px 12px; display: flex; align-items: center; gap: 8px; border-bottom: 1px solid #2a2a2a; }
+.cm-ava { width: 28px; height: 28px; border-radius: 50%; background: #a855f7; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 800; color: #fff; flex-shrink: 0; }
+.cm-name { font-size: 10px; font-weight: 700; color: #fff; }
+.cm-status { font-size: 8px; color: #22c55e; }
+.cm-messages { padding: 10px; display: flex; flex-direction: column; gap: 6px; }
+.cm-msg { font-size: 9px; line-height: 1.4; padding: 5px 8px; border-radius: 8px; max-width: 85%; }
+.cm-msg.left { background: #1e1e2e; color: #ccc; border-radius: 2px 8px 8px 8px; align-self: flex-start; }
+.cm-msg.right { background: #a855f7; color: #fff; border-radius: 8px 2px 8px 8px; align-self: flex-end; }
+
 </style>
 </head>
 <body>
@@ -813,7 +905,7 @@ footer {
 
 <!-- ══════ HERO ══════ -->
 <section class="hero">
-  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center;max-width:1100px;margin:0 auto;">
+  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:1100px;margin:0 auto;">
 
     <!-- LEFT -->
     <div>
@@ -841,7 +933,7 @@ footer {
     </div>
 
     <!-- RIGHT: Gaji Pertama proof -->
-    <div style="position:relative;display:flex;align-items:flex-start;justify-content:center;padding-top:8px;">
+    <div style="position:relative;display:flex;align-items:flex-start;justify-content:center;">
       <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15) 0%,transparent 70%);pointer-events:none;"></div>
       <div style="position:relative;z-index:1;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(34,197,94,0.2),0 0 0 1px rgba(34,197,94,0.15);animation:floatPhone 4s ease-in-out infinite;">
         <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60" style="width:100%;display:block;">
@@ -952,6 +1044,11 @@ footer {
       </div>
     </div>
   </div>
+</section>
+
+<!-- ══════ ULTRA5G ══════ -->
+<section style="background:var(--black-soft);padding:0 0 60px;border-bottom:1px solid var(--border);">
+  <img src="eastel-ultra5g.jpg" alt="Eastel ULTRA5G Priority" style="width:100%;display:block;">
 </section>
 
 <!-- ══════ FUP COMPARISON ══════ -->
@@ -1174,7 +1271,7 @@ footer {
 <section class="offer-wrap">
   <div class="offer-shell rv">
     <span class="label">Apa Anda Dapat Hari Ini</span>
-    <h2>Semua ini —<br>modal postage sahaja.</h2>
+    <h2>Modal RM10.<br>Income <span style="color:var(--green);">Unlimited.</span></h2>
     <div class="offer-list">
       <div class="offer-row"><span class="or-name">Agent ID Eastelpreneur</span><span class="or-val g">PERCUMA</span></div>
       <div class="offer-row"><span class="or-name">Simkad Eastel 5G</span><span class="or-val g">PERCUMA</span></div>
@@ -1184,8 +1281,8 @@ footer {
       <div class="offer-row"><span class="or-name">Potensi Komisyen Bulanan</span><span class="or-val w">Unlimited</span></div>
     </div>
     <div class="offer-total">
-      <div><div class="ot-lbl">Anda hanya bayar</div><div class="ot-note">Sabah / Sarawak — RM12</div></div>
-      <div class="ot-price">RM7</div>
+      <div><div class="ot-lbl">Jumlah yang anda bayar</div><div class="ot-note">Sabah / Sarawak — RM22</div></div>
+      <div class="ot-price">RM17</div>
     </div>
     <a href="#daftar" class="btn-green" style="width:100%;justify-content:center;font-size:16px;padding:17px;border-radius:12px;">Ya, Saya Mahu Mulakan Sekarang →</a>
   </div>
