@@ -782,6 +782,7 @@ footer {
   }
 }
 
+@media(max-width:640px){.proof-3{grid-template-columns:1fr !important;}}
 </style>
 </head>
 <body>
@@ -867,16 +868,11 @@ footer {
     <div style="position:relative;display:flex;flex-direction:column;gap:12px;align-items:center;">
       <div style="position:absolute;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(168,85,247,0.18) 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);"></div>
 
-      <!-- Senior Ambassador proof -->
-      <div style="position:relative;z-index:1;width:100%;max-width:340px;border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(168,85,247,0.25);animation:floatPhone 4s ease-in-out infinite;">
-        <img src="eastel-proof-senior.jpg" alt="Senior Ambassador RM2,088 sebulan" style="width:100%;display:block;">
-        <div style="position:absolute;top:10px;left:10px;background:rgba(168,85,247,0.9);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">⭐ Pendapatan Sebenar</div>
-      </div>
-
-      <!-- Wallet proof -->
-      <div style="position:relative;z-index:1;width:85%;max-width:290px;border-radius:14px;overflow:hidden;box-shadow:0 8px 32px rgba(34,197,94,0.2);animation:floatPhone 3.5s 0.7s ease-in-out infinite;align-self:flex-end;">
-        <img src="eastel-proof-wallet.jpg" alt="Wallet RM3,952" style="width:100%;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.85));padding:12px 10px 8px;font-size:10px;color:var(--green);font-weight:800;text-align:center;">💰 Gaji Pertama — RM3,952.60</div>
+      <!-- Wallet — Gaji Pertama Eastel -->
+      <div style="position:relative;z-index:1;width:100%;max-width:340px;border-radius:16px;overflow:hidden;box-shadow:0 12px 48px rgba(34,197,94,0.25);animation:floatPhone 4s ease-in-out infinite;">
+        <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60" style="width:100%;display:block;">
+        <div style="position:absolute;top:10px;left:10px;background:rgba(34,197,94,0.9);color:#000;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">💰 Gaji Pertama Eastel</div>
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.85));padding:12px 10px 10px;font-size:13px;color:var(--green);font-weight:800;text-align:center;">RM3,952.60 — Transfer dalam 1 saat</div>
       </div>
     </div>
 
@@ -1104,401 +1100,33 @@ footer {
       </div>
     </div>
 
-    <!-- Proof grid -->
+    <!-- Proof grid — 2 cards -->
     <div class="rv d3" style="display:grid;grid-template-columns:1fr 1fr;gap:16px;max-width:860px;margin:0 auto;">
 
-      <!-- LEFT: Wallet proof -->
-      <div style="background:var(--black-card);border:1px solid var(--border);border-radius:18px;overflow:hidden;">
-        <div style="background:linear-gradient(135deg,rgba(251,191,36,0.12),rgba(251,191,36,0.04));padding:11px 16px;border-bottom:1px solid var(--border);">
-          <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--gold);">🏆 Gaji Pertama Eastel</div>
-        </div>
-        <img src="eastel-proof-wallet.jpg" alt="Wallet RM3,952.60" style="width:100%;display:block;">
-        <div style="padding:14px 16px;">
-          <div style="font-size:13px;font-weight:700;color:var(--white);">"Gaji Pertama Eastel Dah Masuk"</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:3px;">RM3,952.60 · Transfer ke bank dalam 1 saat</div>
-        </div>
-      </div>
-
-      <!-- RIGHT: History komisyen — dibesarkan -->
+      <!-- Card 1: History 1 -->
       <div style="background:var(--black-card);border:1px solid var(--border);border-radius:18px;overflow:hidden;">
         <div style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.04));padding:11px 16px;border-bottom:1px solid var(--border);">
           <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);">💰 Komisyen Masuk Setiap Hari</div>
         </div>
-        <img src="eastel-proof-history1.jpg" alt="History komisyen masuk bertalu-talu" style="width:100%;display:block;">
-        <div style="padding:14px 16px;">
+        <img src="eastel-proof-history1.jpg" alt="History komisyen 1" style="width:100%;display:block;">
+        <div style="padding:12px 14px;">
           <div style="font-size:13px;font-weight:700;color:var(--white);">Passive — masuk walaupun masa tidur</div>
-          <div style="font-size:12px;color:var(--muted);margin-top:3px;">Topup incentive pelbagai level setiap hari</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Topup incentive pelbagai level setiap hari</div>
+        </div>
+      </div>
+
+      <!-- Card 2: History 2 -->
+      <div style="background:var(--black-card);border:1px solid var(--border);border-radius:18px;overflow:hidden;">
+        <div style="background:linear-gradient(135deg,rgba(34,197,94,0.12),rgba(34,197,94,0.04));padding:11px 16px;border-bottom:1px solid var(--border);">
+          <div style="font-size:10px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--green);">💰 Realtime · Setiap Hari</div>
+        </div>
+        <img src="eastel-proof-history2.jpg" alt="History komisyen 2" style="width:100%;display:block;">
+        <div style="padding:12px 14px;">
+          <div style="font-size:13px;font-weight:700;color:var(--white);">Dari pelbagai level rangkaian</div>
+          <div style="font-size:11px;color:var(--muted);margin-top:3px;">Tidur pun duit masuk — ini realiti sebenar</div>
         </div>
       </div>
 
     </div>
 
-        <div style="margin-top:28px;text-align:center;" class="rv d4">
-      <a href="#daftar" class="btn-green" style="font-size:14px;padding:14px 32px;">Saya Nak Mulakan Perjalanan Ini →</a>
-    </div>
 
-  </div>
-</section>
-
-<!-- ══════ POSTAGE ══════ -->
-<section class="postage">
-  <div class="wrap">
-    <span class="label rv">Penghantaran</span>
-    <h2 class="rv d1">Simkad sampai terus<br>ke pintu rumah anda.</h2>
-      <div class="rv d2" style="display:flex;justify-content:center;margin-top:8px;">
-        <div style="position:relative;max-width:480px;width:100%;">
-          <div style="position:absolute;inset:0;background:radial-gradient(ellipse at center,rgba(168,85,247,0.12) 0%,transparent 70%);border-radius:24px;pointer-events:none;"></div>
-          <img src="eastel-parcel.jpg" alt="Penghantaran simkad Eastel" style="width:100%;border-radius:20px;box-shadow:0 20px 60px rgba(168,85,247,0.2);position:relative;z-index:1;">
-        </div>
-      </div>
-      <p class="rv d3" style="text-align:center;margin-top:20px;font-size:14px;color:var(--muted);line-height:1.7;">
-        Simkad dipos terus ke alamat anda sebaik urusan selesai.<br>
-        Penghantaran ke seluruh Malaysia — Semenanjung, Sabah & Sarawak.
-      </p>
-    <div class="post-grid rv d2">
-      <div class="post-card"><div class="post-emoji">🏙️</div><div class="post-region">Semenanjung Malaysia</div><div class="post-price p">RM7</div><div class="post-note">Pos biasa · 2–5 hari bekerja</div></div>
-      <div class="post-card"><div class="post-emoji">🌴</div><div class="post-region">Sabah & Sarawak</div><div class="post-price p">RM12</div><div class="post-note">Pos biasa · 3–7 hari bekerja</div></div>
-      <div class="post-card free"><div class="post-emoji">🎁</div><div class="post-region">Agent ID + Simkad</div><div class="post-price g">PERCUMA</div><div class="post-note">Kami tanggung sepenuhnya</div></div>
-    </div>
-    <div class="dfod-strip rv d3">
-      <div class="dfod-icon">🛵</div>
-      <div class="dfod-text"><strong>Pilihan DFOD tersedia!</strong> Bayar terus kepada rider bila simkad sampai — selamat, senang, tanpa risiko. Hubungi kami untuk tempah melalui DFOD.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ BONUS ══════ -->
-<section class="bonus">
-  <div class="wrap">
-    <span class="label rv">Bonus Eksklusif</span>
-    <h2 class="rv d1">Daftar hari ini,<br>dapat 3 bonus percuma.</h2>
-    <p class="bonus-sub rv d2">Saya nak pastikan anda berjaya dari hari pertama.</p>
-    <div class="bonus-list">
-      <div class="bonus-item rv"><div class="bonus-ico">🌐</div><div><div class="bonus-title">Website Percuma Khas Untuk Ejen <span class="free-chip">Percuma</span></div><div class="bonus-desc">Website peribadi untuk anda rekrut agent baru. Tak perlu tahu coding — siap guna, tinggal share link sahaja.</div></div></div>
-      <div class="bonus-item rv d1"><div class="bonus-ico">📅</div><div><div class="bonus-title">Content Calendar Threads 30 Hari <span class="free-chip">Percuma</span></div><div class="bonus-desc">30 hari konten siap tulis untuk promosi Eastel di Threads. Copy, paste, post — sesimple tu.</div></div></div>
-      <div class="bonus-item rv d2"><div class="bonus-ico">🤝</div><div><div class="bonus-title">Sokongan Upline Aktif <span class="free-chip">Percuma</span></div><div class="bonus-desc">Anda tidak berseorangan. Saya sedia bantu dari strategi pemasaran sampai soalan teknikal.</div></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ OFFER SUMMARY ══════ -->
-<section class="offer-wrap">
-  <div class="offer-shell rv">
-    <span class="label">Apa Anda Dapat Hari Ini</span>
-    <h2>Semua ini —<br>modal postage sahaja.</h2>
-    <div class="offer-list">
-      <div class="offer-row"><span class="or-name">Agent ID Eastelpreneur</span><span class="or-val g">PERCUMA</span></div>
-      <div class="offer-row"><span class="or-name">Simkad Eastel 5G</span><span class="or-val g">PERCUMA</span></div>
-      <div class="offer-row"><span class="or-name">Website Khas Untuk Ejen</span><span class="or-val g">PERCUMA</span></div>
-      <div class="offer-row"><span class="or-name">Content Calendar Threads 30 Hari</span><span class="or-val g">PERCUMA</span></div>
-      <div class="offer-row"><span class="or-name">Sokongan Upline Aktif</span><span class="or-val g">PERCUMA</span></div>
-      <div class="offer-row"><span class="or-name">Potensi Komisyen Bulanan</span><span class="or-val w">Unlimited</span></div>
-    </div>
-    <div class="offer-total">
-      <div><div class="ot-lbl">Anda hanya bayar</div><div class="ot-note">Sabah / Sarawak — RM12</div></div>
-      <div class="ot-price">RM7</div>
-    </div>
-    <a href="#daftar" class="btn-green" style="width:100%;justify-content:center;font-size:16px;padding:17px;border-radius:12px;">Dapatkan Simkad Saya Sekarang →</a>
-  </div>
-</section>
-
-<!-- ══════ FAQ ══════ -->
-<section class="faq">
-  <div class="wrap">
-    <span class="label rv">Soalan Lazim</span>
-    <h2 class="rv d1">Ada soalan? Kami dah<br>jawab di sini.</h2>
-    <p class="faq-sub rv d2">Kalau soalan anda tak ada di sini, boleh terus WhatsApp kami.</p>
-    <div class="faq-stack rv d3">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ini MLM ke? Saya risau dengan skim haram.<span class="faq-arr">+</span></button><div class="faq-a">Tidak. Eastel adalah syarikat telco berlesen MCMC yang menggunakan rangkaian U Mobile. Program Eastelpreneur adalah sistem referral biasa — anda dapat komisyen bila downline anda topup, bukan bila anda rekrut orang semata-mata. Program ini juga telah mendapat pensijilan Syariah dari Masyref Advisor.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Macam mana komisyen masuk? Bila boleh keluarkan?<span class="faq-arr">+</span></button><div class="faq-a">Komisyen dikira berdasarkan topup downline anda setiap bulan dan dibayar pada 18hb bulan berikutnya terus ke wallet Eastel anda. Dari situ anda boleh withdraw ke akaun bank atau gunakan untuk topup sendiri.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Saya tiada pengalaman bisnes. Boleh buat ke?<span class="faq-arr">+</span></button><div class="faq-a">Boleh. Ini sebab saya sediakan website percuma yang siap guna dan content calendar 30 hari untuk anda. Anda tak perlu tahu marketing, coding, atau ada pengalaman bisnes. Mulakan dengan kongsikan kepada keluarga dan kawan-kawan anda dahulu.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Berapa lama simkad sampai selepas saya daftar?<span class="faq-arr">+</span></button><div class="faq-a">Selepas bayaran postage disahkan, simkad akan dipos dalam masa 1–2 hari bekerja. Anggaran tiba: Semenanjung 2–5 hari bekerja, Sabah/Sarawak 3–7 hari bekerja. Anda boleh pilih DFOD (bayar kepada rider) jika mahu lebih selamat.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Boleh buat part-time ke? Saya ada kerja tetap.<span class="faq-arr">+</span></button><div class="faq-a">Boleh. Ramai agent Eastel buat ini sebagai pendapatan sampingan. Anda tak perlu tinggalkan kerja tetap. Kongsikan kepada kenalan anda, bina rangkaian perlahan-lahan, dan komisyen akan masuk setiap bulan.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Coverage Eastel macam mana? Kawasan saya ada ke?<span class="faq-arr">+</span></button><div class="faq-a">Eastel menggunakan rangkaian U Mobile yang meliputi lebih 80% kawasan berpenduduk di Malaysia termasuk 5G. Anda boleh semak coverage kawasan anda di peta coverage rasmi U Mobile.</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ FORM ══════ -->
-<section class="form-sec" id="daftar">
-  <div class="wrap-sm" style="position:relative;z-index:1;">
-    <span class="label rv">Langkah Pertama</span>
-    <h2 class="rv d1">Isi borang.<br>Kami pos simkad terus.</h2>
-    <p class="form-intro rv d2">Tak ada commitment jangka panjang. Tak ada hidden charges. Isi borang ini, kami akan hubungi anda melalui WhatsApp dalam masa 24 jam.</p>
-
-    <div class="form-card rv d3">
-      <div id="formWrap">
-        <div class="slot-warn">⚡ Slot minggu ini masih ada — jangan tangguh lagi.</div>
-        <div class="fg"><label>Nama Penuh</label><input type="text" id="f-nama" placeholder="Nama seperti dalam IC"></div>
-        <div class="fg-row">
-          <div class="fg"><label>No. WhatsApp</label><input type="tel" id="f-wa" placeholder="cth: 0123456789"></div>
-          <div class="fg"><label>Emel</label><input type="email" id="f-email" placeholder="nama@email.com"></div>
-        </div>
-        <div class="fg"><label>Alamat Penghantaran Lengkap</label><textarea id="f-alamat" placeholder="No. rumah, jalan, taman, poskod, bandar, negeri..."></textarea></div>
-        <div class="fg">
-          <label>Kawasan Penghantaran</label>
-          <select id="f-kawasan" onchange="tunjukQR(this.value)">
-            <option value="">-- Pilih kawasan --</option>
-            <option value="Semenanjung Malaysia">Semenanjung Malaysia — RM17</option>
-            <option value="Sabah">Sabah — RM22</option>
-            <option value="Sarawak">Sarawak — RM22</option>
-          </select>
-        </div>
-        <!-- QR Dynamic -->
-        <div id="qrSection" style="display:none;background:rgba(168,85,247,0.06);border:1px solid rgba(168,85,247,0.25);border-radius:14px;padding:18px;margin-bottom:14px;">
-          <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:4px;">Bayaran Simkad + Postage</div>
-          <div style="font-size:13px;color:var(--white-dim);margin-bottom:14px;">Bayar kepada <strong style="color:#fff;" id="agentNama">Mohamad Nasrol</strong></div>
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div style="background:#fff;border-radius:10px;padding:8px;flex-shrink:0;">
-              <img id="agentQrImg" src="eastel-qr.jpg" alt="QR Bayaran" style="width:110px;height:110px;display:block;object-fit:contain;">
-            </div>
-            <div style="flex:1;">
-              <div style="font-size:11px;color:var(--muted);margin-bottom:4px;">Jumlah dibayar</div>
-              <div id="qrAmount" style="font-size:36px;font-weight:900;color:var(--purple);letter-spacing:-1px;line-height:1;margin-bottom:8px;">—</div>
-              <div style="font-size:11px;color:var(--muted);line-height:1.6;">Scan QR · DuitNow · TnG · Maybank</div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Confirm checkbox -->
-        <div id="confirmPayBox" style="display:none;background:rgba(34,197,94,0.06);border:1px solid rgba(34,197,94,0.2);border-radius:12px;padding:14px 16px;margin-bottom:14px;">
-          <label style="display:flex;align-items:flex-start;gap:10px;cursor:pointer;">
-            <input type="checkbox" id="confirmPay" onchange="toggleSubmit()" style="width:18px;height:18px;margin-top:2px;accent-color:var(--green);cursor:pointer;flex-shrink:0;">
-            <span style="font-size:13px;color:var(--white-dim);line-height:1.6;">Saya <strong style="color:#fff;">telah membuat bayaran</strong> dan ingin menghantar permohonan.</span>
-          </label>
-        </div>
-
-        <button class="submit-btn" id="submitBtn" onclick="hantar()" disabled style="opacity:0.4;cursor:not-allowed;">
-          <span>Sila pilih kawasan & sahkan bayaran dulu</span>
-        </button>
-        <div class="form-trust-row">
-          <div class="ftr-item">🔒 Data anda selamat</div>
-          <div class="ftr-item">☪️ Patuh Syariah</div>
-          <div class="ftr-item">✅ Berlesen MCMC</div>
-          <div class="ftr-item">📦 Pos dalam 1–2 hari</div>
-        </div>
-        <p class="form-legal">Dengan menghantar borang ini, anda bersetuju untuk dihubungi melalui WhatsApp dan emel. Maklumat anda selamat dan tidak akan dikongsi dengan mana-mana pihak ketiga.</p>
-      </div>
-      <div class="success-box" id="successWrap">
-        <div class="suc-circle">🎉</div>
-        <h3>Terima kasih! Permohonan diterima.</h3>
-        <p style="margin-bottom:20px;">Klik butang di bawah untuk hantar bukti bayaran. Simkad akan dipos sebaik sahaja disahkan. Insya-Allah, semoga menjadi permulaan rezeki yang berkat. 🤲</p>
-        <a id="waBtnSuccess" href="#" target="_blank" style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;background:#25d366;color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:800;border-radius:12px;text-decoration:none;margin-bottom:10px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.085 1.506 5.802L.057 23.5l5.848-1.431A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.014-1.373l-.36-.213-3.72.911.944-3.614-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-          Hantar Bukti Bayaran via WhatsApp
-        </a>
-        <p style="font-size:11px;color:var(--muted);text-align:center;">Kami akan hubungi anda melalui WhatsApp dalam masa 24 jam untuk sahkan alamat dan butiran bayaran postage. Simkad akan dipos sebaik sahaja bayaran disahkan. Insya-Allah, semoga ini menjadi permulaan rezeki yang berkat untuk anda.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer>
-  <div class="footer-brand">Rezeki<em>Digital</em></div>
-  <div class="footer-tag">Platform Eastelpreneur · Berlesen MCMC · Patuh Syariah · U Mobile 5G</div>
-  <div class="footer-links">
-    <a href="https://wa.me/60167388358" id="footerWaBtn">WhatsApp Kami</a>
-    <a href="https://eastel.com.my" target="_blank">Laman Rasmi Eastel</a>
-    <a href="https://eastelpreneur.com" target="_blank">Eastelpreneur</a>
-  </div>
-  <div class="footer-copy">© 2026 Rezeki Digital · Dikendalikan oleh Eastelpreneur bebas · Bukan laman web rasmi Eastel Mobile</div>
-</footer>
-
-<div class="sale-notif" id="saleNotif" style="position:fixed;bottom:24px;left:24px;z-index:9999;background:var(--black-card);border:1px solid var(--border);border-left:3px solid var(--green);border-radius:14px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,0.4);transform:translateX(-320px);transition:transform 0.4s cubic-bezier(0.34,1.56,0.64,1);pointer-events:none;">
-  <div id="saleAvatar" style="width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple-deep),var(--purple));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;">😊</div>
-  <div style="flex:1;min-width:0;">
-    <div id="saleName" style="font-size:13px;font-weight:700;color:var(--white);margin-bottom:2px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;">Ahmad</div>
-    <div id="saleText" style="font-size:11px;color:var(--muted);">dari Selangor baru mendaftar!</div>
-  </div>
-  <div style="font-size:10px;color:var(--green);font-weight:600;flex-shrink:0;">Baru sahaja</div>
-</div>
-<style>
-.sale-notif.show { transform:translateX(0) !important; }
-@media(max-width:480px){.sale-notif{max-width:calc(100vw - 32px);left:16px;bottom:16px;}}
-</style>
-
-<script>
-
-  // ── AGENT SYSTEM ──
-  const urlParams = new URLSearchParams(window.location.search);
-  const AGENT_ID  = urlParams.get('id') || 'main';
-  let agentData   = { nama:'Mohamad Nasrol', whatsapp:'60167388358', qrUrl:'', id:'main' };
-
-  async function loadAgent() {
-    try {
-      const res  = await fetch(`${GAS_URL}?action=getAgent&id=${AGENT_ID}`);
-      const data = await res.json();
-      if (data.status === 'success' && data.agent) { agentData = data.agent; applyAgentData(); }
-      if (data.slot !== undefined) updateSlotUI(data.slot);
-    } catch(e) { updateSlotUI(null); }
-  }
-
-  function applyAgentData() {
-    const wa   = agentData.whatsapp || '60167388358';
-    const inqMsg = encodeURIComponent('Salam, saya berminat nak tahu lebih lanjut tentang Eastel melalui Rezeki Digital.');
-    const navWa = document.getElementById('navWaBtn');
-    if (navWa) navWa.href = `https://wa.me/${wa}?text=${inqMsg}`;
-    const footerWa = document.getElementById('footerWaBtn');
-    if (footerWa) footerWa.href = `https://wa.me/${wa}`;
-    const agentNama = document.getElementById('agentNama');
-    if (agentNama) agentNama.textContent = agentData.nama || 'Rezeki Digital';
-    if (agentData.qrUrl) { const q = document.getElementById('agentQrImg'); if(q) q.src = agentData.qrUrl; }
-  }
-
-  function getWaLink(jenis, d={}) {
-    const wa = agentData.whatsapp || '60167388358';
-    let msg = '';
-    if (jenis === 'inquiry') msg = 'Salam, saya berminat nak tahu lebih lanjut tentang Eastel melalui Rezeki Digital.';
-    else if (jenis === 'postOrder') msg = `Assalamualaikum ${agentData.nama||'Rezeki Digital'} 👋\n\nSaya telah membuat bayaran dan menghantar permohonan simkad Eastel.\n\n📋 *Butiran Pesanan:*\nNama: ${d.nama||'-'}\nKawasan: ${d.kawasan||'-'}\nAmaun Dibayar: ${d.amaun||'-'}\n\nSila proses penghantaran saya. Terima kasih! 🙏`;
-    return `https://wa.me/${wa}?text=${encodeURIComponent(msg)}`;
-  }
-
-  // ── SLOT COUNTER ──
-  async function fetchSlot() {
-    try {
-      const res = await fetch(`${GAS_URL}?action=getSlot&id=${AGENT_ID}`);
-      const d   = await res.json();
-      updateSlotUI(d.slot ?? 20);
-    } catch(e) { updateSlotUI(null); }
-  }
-
-  function updateSlotUI(baki) {
-    const el  = document.getElementById('slotCount');
-    const msg = document.getElementById('slotMsg');
-    const elF = document.getElementById('slotCountForm');
-    if (baki === null) { if(el) el.textContent='?'; return; }
-    if (baki <= 0) {
-      if(el) el.textContent='0'; if(msg) msg.textContent='⚠ PENUH minggu ini!';
-    } else if (baki <= 5) {
-      if(el) el.textContent=baki; if(msg) msg.textContent='🔴 hampir penuh!';
-    } else {
-      if(el) el.textContent=baki; if(msg) msg.textContent='masih ada. Jangan tunggu!';
-    }
-    if(elF) elF.textContent = baki;
-  }
-
-  // ── DYNAMIC DATE ──
-  (function(){
-    const months=['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogos','Sep','Okt','Nov','Dis'];
-    const n=new Date(); const el=document.getElementById('dynamicDate');
-    if(el) el.textContent=n.getDate()+' '+months[n.getMonth()]+' '+n.getFullYear();
-  })();
-
-  // ── SALES NOTIFICATION ──
-  const _salesData=[
-    {name:'Ahmad Faris',loc:'Kuala Lumpur',emoji:'👨'},{name:'Nurul Ain',loc:'Selangor',emoji:'👩'},
-    {name:'Muhammad Hafiz',loc:'Johor Bahru',emoji:'👨'},{name:'Siti Hajar',loc:'Pulau Pinang',emoji:'👩'},
-    {name:'Khairul Anam',loc:'Melaka',emoji:'👨'},{name:'Farah Nadia',loc:'Pahang',emoji:'👩'},
-    {name:'Zulaikha',loc:'Kedah',emoji:'👩'},{name:'Izzat Hakim',loc:'Perak',emoji:'👨'},
-    {name:'Nur Fatin',loc:'Negeri Sembilan',emoji:'👩'},{name:'Ridhwan',loc:'Terengganu',emoji:'👨'},
-  ];
-  let _ni=Math.floor(Math.random()*_salesData.length);
-  function showNotif(){
-    const n=document.getElementById('saleNotif'); if(!n) return;
-    const d=_salesData[_ni%_salesData.length]; _ni++;
-    document.getElementById('saleAvatar').textContent=d.emoji;
-    document.getElementById('saleName').textContent=d.name;
-    document.getElementById('saleText').textContent='dari '+d.loc+' baru mendaftar!';
-    n.classList.add('show'); setTimeout(()=>n.classList.remove('show'),4000);
-  }
-  function addRealNotif(nama,loc){if(nama) _salesData.unshift({name:nama.split(' ')[0],loc:loc||'Malaysia',emoji:'🎉'});}
-  setTimeout(()=>{ showNotif(); setInterval(()=>showNotif(), Math.floor(Math.random()*15000)+25000); },8000);
-
-  // Init
-  loadAgent();
-
-
-  function tunjukQR(kawasan) {
-    const sec = document.getElementById('qrSection');
-    const amt = document.getElementById('qrAmount');
-    const box = document.getElementById('confirmPayBox');
-    const chk = document.getElementById('confirmPay');
-    const btn = document.getElementById('submitBtn');
-    if (!kawasan) {
-      sec.style.display='none'; box.style.display='none';
-      btn.disabled=true; btn.style.opacity='0.4'; btn.style.cursor='not-allowed';
-      btn.innerHTML='<span>Sila pilih kawasan & sahkan bayaran dulu</span>'; return;
-    }
-    const harga = (kawasan==='Sabah'||kawasan==='Sarawak') ? 'RM22' : 'RM17';
-    amt.textContent = harga;
-    sec.style.display='block';
-    if(chk) chk.checked=false;
-    box.style.display='block';
-    btn.disabled=true; btn.style.opacity='0.4'; btn.style.cursor='not-allowed';
-    btn.innerHTML='<span>Sila sahkan bayaran dahulu ☝️</span>';
-    setTimeout(()=>sec.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
-  }
-
-  function toggleSubmit() {
-    const checked = document.getElementById('confirmPay').checked;
-    const kawasanRaw = document.getElementById('f-kawasan').value;
-  const harga = (kawasanRaw==='Sabah'||kawasanRaw==='Sarawak') ? 'RM22' : 'RM17';
-  const kawasan = kawasanRaw ? kawasanRaw+' ('+harga+')' : '';
-    const btn = document.getElementById('submitBtn');
-    if (checked && kawasan) {
-      btn.disabled=false; btn.style.opacity='1'; btn.style.cursor='pointer';
-      btn.innerHTML='<span>Hantar Permohonan Saya</span><span>→</span>';
-    } else {
-      btn.disabled=true; btn.style.opacity='0.4'; btn.style.cursor='not-allowed';
-      btn.innerHTML='<span>Sila sahkan bayaran dahulu ☝️</span>';
-    }
-  }
-
-// REVEAL
-const io = new IntersectionObserver(e=>e.forEach(x=>{if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target);}}),{threshold:.1,rootMargin:'0px 0px -40px 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
-
-// FAQ
-function toggleFaq(btn){
-  const item=btn.closest('.faq-item');
-  const open=item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!open) item.classList.add('open');
-}
-
-// CALC
-function fmt(n){return 'RM '+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,',');}
-function kira(){
-  const p=parseFloat(document.getElementById('plan').value)||0;
-  const t1=parseInt(document.getElementById('t1').value)||0;
-  const t2=parseInt(document.getElementById('t2').value)||0;
-  const t3=parseInt(document.getElementById('t3').value)||0;
-  const a1=p*t1*.13, a2=p*t2*.03, a3=p*t3*.08;
-  document.getElementById('r1').textContent=fmt(a1);
-  document.getElementById('r2').textContent=fmt(a2);
-  document.getElementById('r3').textContent=fmt(a3);
-  document.getElementById('totalNum').textContent=fmt(a1+a2+a3);
-}
-['t1','t2','t3','plan'].forEach(id=>document.getElementById(id).addEventListener('input',kira));
-kira();
-
-// FORM
-const GAS_URL = 'https://script.google.com/macros/s/AKfycby9AGYgsu7dEXE29Yjv8bkllUVMQym-NKSpcFzY6LdCuyLNZ5OOv0PiOahkZ2RHesTh/exec';
-async function hantar(){
-  const nama=document.getElementById('f-nama').value.trim();
-  const wa=document.getElementById('f-wa').value.trim();
-  const email=document.getElementById('f-email').value.trim();
-  const alamat=document.getElementById('f-alamat').value.trim();
-  const kawasan=document.getElementById('f-kawasan').value;
-  if(!nama||!wa||!email||!alamat||!kawasanRaw){alert('Sila lengkapkan semua maklumat sebelum menghantar.');return;}
-  const cp=document.getElementById('confirmPay'); if(!cp||!cp.checked){alert('Sila sahkan bahawa anda telah membuat bayaran terlebih dahulu.');return;}
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){alert('Sila masukkan emel yang sah.');return;}
-  const btn=document.getElementById('submitBtn');
-  btn.disabled=true; btn.innerHTML='<span>Menghantar...</span>';
-  try{
-    await fetch(GAS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({nama,whatsapp:wa,email,alamat,kawasan,agentId:AGENT_ID,timestamp:new Date().toLocaleString('ms-MY',{timeZone:'Asia/Kuala_Lumpur'})})});
-    const _harga=(kawasanRaw==='Sabah'||kawasanRaw==='Sarawak')?'RM22':'RM17';
-    const waBtnS=document.getElementById('waBtnSuccess');
-    if(waBtnS) waBtnS.href=getWaLink('postOrder',{nama,kawasan:kawasanRaw,amaun:_harga});
-    addRealNotif(nama,kawasanRaw);
-    document.getElementById('formWrap').style.display='none';
-    document.getElementById('successWrap').style.display='block';
-  }catch(err){
-    alert('Ralat teknikal. Sila cuba semula atau hubungi kami melalui WhatsApp.');
-    btn.disabled=false; btn.innerHTML='<span>Hantar Permohonan Saya</span><span>→</span>';
-  }
-}
-</script>
-</body>
-</html>
