@@ -11,10 +11,10 @@
    TOKENS
 ═══════════════════════════════════════ */
 :root {
-  --black:       #080808;
-  --black-soft:  #111111;
-  --black-card:  #161616;
-  --black-border:#222222;
+  --black:       #0d0d0d;
+  --black-soft:  #141414;
+  --black-card:  #1e1e24;
+  --black-border:#2a2a35;
   --white:       #ffffff;
   --white-dim:   rgba(255,255,255,0.65);
   --white-faint: rgba(255,255,255,0.12);
@@ -32,8 +32,8 @@
   --red:         #ef4444;
   --gold:        #fbbf24;
 
-  --muted:       #666666;
-  --border:      #1e1e1e;
+  --muted:       #7a7a8a;
+  --border:      #2e2e3a;
 }
 
 *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
@@ -333,7 +333,7 @@ nav {
   border:1px solid var(--border); border-radius:20px; overflow:hidden;
 }
 .sol-card {
-  background:var(--black-card); padding:30px 26px;
+  background:var(--black-card); padding:30px 26px; border:1px solid #2e2e3a;
   transition:background .2s;
 }
 .sol-card:hover { background:#1a1a1a; }
@@ -1011,6 +1011,26 @@ h1, h2 {
   align-self: flex-end;
 }
 
+
+/* ── CARD ELEVATION ── */
+.sol-card,
+.plan-row,
+.tier-box,
+.testi-card,
+.bonus-card-new,
+.faq-item,
+.siapa-card,
+.calc-shell,
+.form-card {
+  box-shadow: 0 2px 16px rgba(0,0,0,0.4), inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+.sol-card:hover,
+.plan-row:hover,
+.bonus-card-new:hover,
+.testi-card:hover {
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.06);
+}
 </style>
 </head>
 <body>
@@ -1113,14 +1133,7 @@ h1, h2 {
       <div style="width:100%;text-align:center;">
         <div class="siapa-name" id="agentDisplayName">Upline Anda</div>
         <div class="siapa-role" id="agentDisplayRole">Eastelpreneur · Rezeki Digital</div>
-        <div style="display:flex;justify-content:center;gap:16px;margin:12px 0 20px;flex-wrap:wrap;" id="agentContactRow">
-          <a id="agentWaLink" href="https://wa.me/60167388358?text=Salam%2C%20saya%20berminat%20nak%20tahu%20lebih%20lanjut%20tentang%20Eastel"
-            target="_blank"
-            style="display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:600;color:var(--green);background:var(--green-dim);padding:8px 16px;border-radius:100px;border:1px solid rgba(34,197,94,0.2);">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.085 1.506 5.802L.057 23.5l5.848-1.431A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.014-1.373l-.36-.213-3.72.911.944-3.614-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-            WhatsApp Upline
-          </a>
-        </div>
+        <a id="agentWaLink" href="https://wa.me/60167388358" target="_blank" style="display:none;"></a>
         <p class="siapa-body" id="agentDisplayBio">
           Saya bukan ejen biasa yang sekadar forward flyer. Saya seorang
           <strong>digital marketer dengan pengalaman lebih 12 tahun</strong>
