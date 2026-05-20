@@ -107,22 +107,6 @@ body::before {
 }
 .btn-ghost:hover { color:var(--white); }
 
-/* ═══════════════════════════════════════
-   FLOATING WA
-═══════════════════════════════════════ */
-.wa-float {
-  position:fixed; bottom:24px; right:24px; z-index:999;
-  display:flex; align-items:center; gap:9px;
-  background:#25d366; color:#fff;
-  padding:13px 20px; border-radius:100px;
-  font-size:13px; font-weight:700;
-  box-shadow:0 0 28px rgba(37,211,102,0.35);
-  cursor:pointer;
-  transition:transform .2s, box-shadow .2s;
-}
-.wa-float:hover { transform:translateY(-3px); box-shadow:0 0 40px rgba(37,211,102,0.5); }
-.wa-float svg { width:20px; height:20px; flex-shrink:0; }
-@media(max-width:460px){ .wa-float span{display:none;} .wa-float{padding:13px;border-radius:50%;} }
 
 /* ═══════════════════════════════════════
    NAV
@@ -316,7 +300,7 @@ nav {
 /* ═══════════════════════════════════════
    STORY
 ═══════════════════════════════════════ */
-.story { padding:90px 24px; background:var(--black); }
+.story { padding:60px 24px; background:var(--black); }
 .story-inner { max-width:660px; margin:0 auto; }
 
 .story p { font-size:clamp(1rem,2vw,1.12rem); color:var(--white-dim); line-height:1.9; margin-bottom:22px; }
@@ -792,7 +776,7 @@ footer {
   gap: 16px;
   margin-top: 8px;
 }
-@media(max-width: 768px) { .bonus-cards-row { grid-template-columns: 1fr; } }
+@media(max-width: 900px) { .bonus-cards-row { grid-template-columns: 1fr; } }
 
 .bonus-card-new {
   background: var(--black-card);
@@ -880,11 +864,7 @@ footer {
 </head>
 <body>
 
-<!-- FLOATING WA -->
-<a class="wa-float" href="https://wa.me/60167388358?text=Salam%2C%20saya%20berminat%20nak%20tahu%20lebih%20lanjut%20tentang%20Agent%20ID%20Eastel%20percuma" target="_blank">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.085 1.506 5.802L.057 23.5l5.848-1.431A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.014-1.373l-.36-.213-3.72.911.944-3.614-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-  <span>Ada soalan? Wasap kami</span>
-</a>
+
 
 <!-- NAV -->
 <nav>
@@ -905,7 +885,7 @@ footer {
 
 <!-- ══════ HERO ══════ -->
 <section class="hero">
-  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start;max-width:1100px;margin:0 auto;">
+  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start;max-width:1100px;margin:0 auto;">
 
     <!-- LEFT -->
     <div>
@@ -924,23 +904,19 @@ footer {
         <a href="#daftar" class="btn-green">Dapatkan Simkad Saya — RM17 Sahaja →</a>
         <a href="#komisyen" class="btn-ghost">Kira komisyen saya ↓</a>
       </div>
-      <div class="hero-trust">
-        <div class="trust-item"><div class="trust-dot"></div>Berlesen MCMC Malaysia</div>
-        <div class="trust-item"><div class="trust-dot"></div>Patuh Syariah · Masyref Certified</div>
-        <div class="trust-item"><div class="trust-dot"></div>Rangkaian U Mobile 5G</div>
-        <div class="trust-item"><div class="trust-dot"></div>Komisyen dibayar 18hb setiap bulan</div>
+      <div class="hero-trust" style="display:flex;flex-wrap:nowrap;gap:16px;overflow-x:auto;padding-bottom:4px;">
+        <div class="trust-item" style="white-space:nowrap;"><div class="trust-dot"></div>Berlesen MCMC Malaysia</div>
+        <div class="trust-item" style="white-space:nowrap;"><div class="trust-dot"></div>Patuh Syariah · Masyref Certified</div>
+        <div class="trust-item" style="white-space:nowrap;"><div class="trust-dot"></div>Rangkaian U Mobile 5G</div>
+        <div class="trust-item" style="white-space:nowrap;"><div class="trust-dot"></div>Komisyen dibayar 18hb setiap bulan</div>
       </div>
     </div>
 
     <!-- RIGHT: Gaji Pertama proof -->
     <div style="position:relative;display:flex;align-items:flex-start;justify-content:center;">
       <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15) 0%,transparent 70%);pointer-events:none;"></div>
-      <div style="position:relative;z-index:1;width:100%;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(34,197,94,0.2),0 0 0 1px rgba(34,197,94,0.15);animation:floatPhone 4s ease-in-out infinite;">
+      <div style="position:relative;z-index:1;width:90%;max-width:340px;border-radius:16px;overflow:hidden;box-shadow:0 16px 48px rgba(34,197,94,0.2),0 0 0 1px rgba(34,197,94,0.12);animation:floatPhone 4s ease-in-out infinite;">
         <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60" style="width:100%;display:block;">
-        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.9));padding:20px 16px 14px;text-align:center;">
-          <div style="font-size:22px;font-weight:900;color:var(--green);letter-spacing:-0.5px;">RM3,952.60</div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.7);margin-top:2px;">Transfer ke bank dalam 1 saat · Hari cuti pun boleh</div>
-        </div>
       </div>
     </div>
 
@@ -982,9 +958,6 @@ footer {
       <div class="sol-card"><div class="sol-num">04</div><div class="sol-title">Modal Paling Rendah</div><div class="sol-body">Bayar postage sahaja untuk mulakan bisnes telco sendiri. Bandingkan dengan franchise atau perniagaan lain — ini paling berbaloi.</div></div>
       <div class="sol-card"><div class="sol-num">05</div><div class="sol-title">Patuh Syariah · Berlesen MCMC</div><div class="sol-body">Bisnes halal, lesen sah, pensijilan Syariah dari Masyref Advisor. Dua perkara yang orang Malaysia ambil berat — dah settle.</div></div>
       <div class="sol-card"><div class="sol-num">06</div><div class="sol-title">5G · 200GB · RM35 Sebulan</div><div class="sol-body">Nilai yang luar biasa. Bila produk sendiri bagus, jual pun mudah. Anda tak perlu convince orang lama-lama.</div></div>
-    </div>
-    <div class="rv" style="margin-top:36px;border-radius:20px;overflow:hidden;box-shadow:0 12px 48px rgba(168,85,247,0.15);">
-      <img src="eastel-ultra5g.jpg" alt="Eastel ULTRA5G Priority" style="width:100%;display:block;">
     </div>
   </div>
 </section>
@@ -1047,8 +1020,10 @@ footer {
 </section>
 
 <!-- ══════ ULTRA5G ══════ -->
-<section style="background:var(--black-soft);padding:0 0 60px;border-bottom:1px solid var(--border);">
-  <img src="eastel-ultra5g.jpg" alt="Eastel ULTRA5G Priority" style="width:100%;display:block;">
+<section style="background:var(--black-soft);padding:40px 24px 60px;border-bottom:1px solid var(--border);">
+  <div style="max-width:860px;margin:0 auto;border-radius:20px;overflow:hidden;box-shadow:0 12px 40px rgba(168,85,247,0.15);">
+    <img src="eastel-ultra5g.jpg" alt="Eastel ULTRA5G Priority" style="width:100%;display:block;">
+  </div>
 </section>
 
 <!-- ══════ FUP COMPARISON ══════ -->
@@ -1081,7 +1056,6 @@ footer {
 
     <div class="rv d3" style="max-width:680px;margin-top:16px;border-radius:16px;overflow:hidden;box-shadow:0 8px 32px rgba(168,85,247,0.15);position:relative;">
       <img src="eastel-speedtest.jpg" alt="Speedtest 497 Mbps" style="width:100%;display:block;border-radius:16px;">
-      <div style="position:absolute;top:10px;left:10px;background:rgba(168,85,247,0.9);color:#fff;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase;padding:4px 12px;border-radius:100px;">✓ Hasil Sebenar Eastel 5G</div>
     </div>
 
     <div class="rv d4" style="margin-top:20px;max-width:680px;background:var(--purple-dim);border:1px solid rgba(168,85,247,0.2);border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:center;">
