@@ -1050,6 +1050,65 @@ h1, h2 {
 .bonus-card-new:hover { border-color: rgba(168,85,247,0.4) !important; transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
 .testi-card:hover { border-color: var(--border-bright) !important; transform: translateY(-4px); }
 .faq-item.open { border-color: rgba(168,85,247,0.35) !important; }
+
+/* ── SALES NOTIFICATION ── */
+.sale-notif {
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  z-index: 9999;
+  background: var(--black-card2);
+  border: 1px solid var(--border-bright);
+  border-left: 3px solid var(--green);
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 280px;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4), 0 0 0 1px rgba(34,197,94,0.1);
+  transform: translateX(-320px);
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  pointer-events: none;
+}
+.sale-notif.show {
+  transform: translateX(0);
+}
+.sale-notif-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.sale-notif-body { flex: 1; min-width: 0; }
+.sale-notif-name {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 2px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sale-notif-text {
+  font-size: 11px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.sale-notif-time {
+  font-size: 10px;
+  color: var(--green);
+  font-weight: 600;
+  flex-shrink: 0;
+}
+@media(max-width: 480px) {
+  .sale-notif { max-width: calc(100vw - 48px); bottom: 16px; left: 16px; }
+}
 </style>
 </head>
 <body>
@@ -1434,179 +1493,7 @@ h1, h2 {
     </div>
     <p class="rv d3" style="text-align:center;margin-top:20px;font-size:14px;color:var(--muted);line-height:1.7;">
       Simkad dipos terus ke alamat anda sebaik urusan selesai.<br>
-      Penghantaran kBONUS CARDS ROW ── */
-.bonus-cards-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin-top: 8px;
-}
-@media(max-width: 768px) {
-  .bonus-cards-row { grid-template-columns: 1fr; }
-}
-
-.bonus-card-new {
-  background: var(--black-card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  overflow: hidden;
-  transition: border-color .2s, transform .2s;
-}
-.bonus-card-new:hover {
-  border-color: rgba(168,85,247,0.4);
-  transform: translateY(-4px);
-}
-
-.bonus-card-top {
-  padding: 20px 16px 0;
-  display: flex;
-  justify-content: center;
-  background: var(--black-soft);
-  min-height: 220px;
-  align-items: flex-end;
-}
-
-.bonus-card-bottom {
-  padding: 20px;
-}
-
-.bonus-title-new {
-  font-size: 14px; font-weight: 700;
-  color: var(--white); margin-bottom: 8px;
-  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
-}
-.bonus-desc-new {
-  font-size: 13px; color: var(--muted); line-height: 1.7;
-}
-
-/* ── BROWSER MOCKUP ── */
-.bonus-mockup {
-  width: 100%;
-  max-width: 240px;
-  border-radius: 12px 12px 0 0;
-  overflow: hidden;
-  box-shadow: 0 -8px 30px rgba(168,85,247,0.15);
-  animation: floatBonus 3.5s ease-in-out infinite;
-}
-
-@keyframes floatBonus {
-  0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-8px); }
-}
-
-.bm-bar {
-  background: #1e1e2e;
-  padding: 8px 10px;
-  display: flex; align-items: center; gap: 8px;
-}
-.bm-dots { display: flex; gap: 4px; }
-.bm-dots span {
-  width: 7px; height: 7px; border-radius: 50%;
-}
-.bm-dots span:nth-child(1) { background: #ff5f57; }
-.bm-dots span:nth-child(2) { background: #febc2e; }
-.bm-dots span:nth-child(3) { background: #28c840; }
-.bm-url {
-  background: #2a2a3e; border-radius: 4px;
-  font-size: 9px; color: #888; padding: 3px 8px; flex: 1;
-}
-.bm-body {
-  background: #0f0f1a;
-  padding: 10px;
-}
-.bm-hero-strip {
-  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
-  height: 50px; border-radius: 6px; margin-bottom: 8px;
-}
-.bm-line {
-  height: 6px; background: #2a2a3e; border-radius: 3px; margin-bottom: 5px;
-}
-.bm-line.w80 { width: 80%; }
-.bm-line.w60 { width: 60%; }
-.bm-btn-row { margin: 8px 0; }
-.bm-btn {
-  height: 20px; width: 70px;
-  background: var(--green); border-radius: 10px;
-}
-.bm-card-sm {
-  flex: 1; height: 36px;
-  background: #1e1e2e; border-radius: 6px;
-  border: 1px solid #2a2a3e;
-}
-
-/* ── THREADS MOCKUP ── */
-.threads-mockup {
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  padding: 12px;
-  animation-delay: 0.5s;
-}
-.tm-header { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
-.tm-avatar {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--purple-deep), var(--purple));
-  flex-shrink: 0;
-}
-.tm-avatar.sm { width: 22px; height: 22px; }
-.tm-name { font-size: 11px; font-weight: 700; color: #fff; }
-.tm-handle { font-size: 9px; color: #666; }
-.tm-content { margin-bottom: 8px; }
-.tm-line {
-  height: 5px; background: #2a2a2a; border-radius: 3px; margin-bottom: 4px;
-}
-.tm-line.w90 { width: 90%; }
-.tm-line.w75 { width: 75%; }
-.tm-line.w85 { width: 85%; }
-.tm-line.w70 { width: 70%; }
-.tm-line.w50 { width: 50%; }
-.tm-tag { font-size: 9px; color: var(--purple); margin-top: 5px; }
-.tm-actions { display: flex; gap: 12px; font-size: 9px; color: #666; margin-bottom: 8px; }
-.tm-divider { height: 1px; background: #2a2a2a; margin-bottom: 8px; }
-.tm-day2 { display: flex; gap: 8px; align-items: flex-start; }
-
-/* ── CHAT MOCKUP ── */
-.chat-mockup {
-  background: #0f0f0f;
-  border: 1px solid #2a2a2a;
-  padding: 0;
-  animation-delay: 1s;
-}
-.cm-header {
-  background: #1a1a2e;
-  padding: 10px 12px;
-  display: flex; align-items: center; gap: 8px;
-  border-bottom: 1px solid #2a2a2a;
-}
-.cm-ava {
-  width: 28px; height: 28px; border-radius: 50%;
-  background: var(--purple);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 9px; font-weight: 800; color: #fff;
-  flex-shrink: 0;
-}
-.cm-name { font-size: 10px; font-weight: 700; color: #fff; }
-.cm-status { font-size: 8px; color: var(--green); }
-.cm-messages {
-  padding: 10px;
-  display: flex; flex-direction: column; gap: 6px;
-}
-.cm-msg {
-  font-size: 9px; line-height: 1.4;
-  padding: 5px 8px; border-radius: 8px;
-  max-width: 85%;
-}
-.cm-msg.left {
-  background: #1e1e2e; color: #ccc;
-  border-radius: 2px 8px 8px 8px;
-  align-self: flex-start;
-}
-.cm-msg.right {
-  background: var(--purple);
-  color: #fff;
-  border-radius: 8px 2px 8px 8px;
-  align-self: flex-end;
-}
-</style>
+      Penghantaran ke seluruh Malaysia — Semenanjung, Sabah & Sarawak.
 
   </div>
 </section>
@@ -1760,6 +1647,16 @@ h1, h2 {
   </div>
   <div class="footer-copy">© 2026 Rezeki Digital · Dikendalikan oleh Eastelpreneur bebas · Bukan laman web rasmi Eastel Mobile</div>
 </footer>
+
+<!-- ══════ SALES NOTIFICATION ══════ -->
+<div class="sale-notif" id="saleNotif">
+  <div class="sale-notif-avatar" id="saleAvatar">😊</div>
+  <div class="sale-notif-body">
+    <div class="sale-notif-name" id="saleName">Ahmad</div>
+    <div class="sale-notif-text" id="saleText">dari Selangor baru mendaftar!</div>
+  </div>
+  <div class="sale-notif-time">Baru sahaja</div>
+</div>
 
 <script>
 // REVEAL
@@ -1969,6 +1866,7 @@ async function hantar(){
     await fetch(GAS_URL,{method:'POST',mode:'no-cors',headers:{'Content-Type':'application/json'},body:JSON.stringify({nama,whatsapp:wa,email,alamat,kawasan,agentId:AGENT_ID,timestamp:new Date().toLocaleString('ms-MY',{timeZone:'Asia/Kuala_Lumpur'})})});
     // Store order data for WA button
     window._lastOrder = { nama, wa, kawasan: kawasanRaw, amaun: harga };
+    addRealNotif(nama, kawasanRaw); // Add to real notification pool
 
     document.getElementById('formWrap').style.display='none';
     document.getElementById('successWrap').style.display='block';
@@ -1986,7 +1884,65 @@ async function hantar(){
   }
 }
 
-// Dynamic date
+
+// ── SALES NOTIFICATION SYSTEM ──
+const _salesData = [
+  // Nama sebenar akan masuk dari GAS submissions
+  // Sementara ini guna data sample Malaysia
+  {name: 'Ahmad Faris', loc: 'Kuala Lumpur', emoji: '👨'},
+  {name: 'Nurul Ain', loc: 'Selangor', emoji: '👩'},
+  {name: 'Muhammad Hafiz', loc: 'Johor Bahru', emoji: '👨'},
+  {name: 'Siti Hajar', loc: 'Pulau Pinang', emoji: '👩'},
+  {name: 'Khairul Anam', loc: 'Melaka', emoji: '👨'},
+  {name: 'Farah Nadia', loc: 'Pahang', emoji: '👩'},
+  {name: 'Zulaikha', loc: 'Kedah', emoji: '👩'},
+  {name: 'Izzat Hakim', loc: 'Perak', emoji: '👨'},
+  {name: 'Nur Fatin', loc: 'Negeri Sembilan', emoji: '👩'},
+  {name: 'Ridhwan', loc: 'Terengganu', emoji: '👨'},
+  {name: 'Aisyah', loc: 'Kelantan', emoji: '👩'},
+  {name: 'Hafizi', loc: 'Sabah', emoji: '👨'},
+  {name: 'Norfazilah', loc: 'Sarawak', emoji: '👩'},
+];
+
+let _notifIndex = Math.floor(Math.random() * _salesData.length);
+let _notifTimer = null;
+
+function showSaleNotif() {
+  const notif = document.getElementById('saleNotif');
+  const data  = _salesData[_notifIndex % _salesData.length];
+  _notifIndex++;
+
+  document.getElementById('saleAvatar').textContent = data.emoji;
+  document.getElementById('saleName').textContent   = data.name;
+  document.getElementById('saleText').textContent   = `dari ${data.loc} baru mendaftar!`;
+
+  // Show
+  notif.classList.add('show');
+
+  // Hide after 4s
+  setTimeout(() => notif.classList.remove('show'), 4000);
+}
+
+// Add real submission to notification pool
+function addRealNotif(nama, kawasan) {
+  if (nama && kawasan) {
+    _salesData.unshift({
+      name: nama.split(' ')[0], // first name only
+      loc:  kawasan,
+      emoji: '🎉'
+    });
+  }
+}
+
+// Start notification cycle — first after 8s, then every 25-40s
+setTimeout(() => {
+  showSaleNotif();
+  _notifTimer = setInterval(() => {
+    showSaleNotif();
+  }, Math.floor(Math.random() * 15000) + 25000); // 25-40 saat
+}, 8000);
+
+  // Dynamic date
 (function() {
   const months = ['Jan','Feb','Mac','Apr','Mei','Jun','Jul','Ogos','Sep','Okt','Nov','Dis'];
   const now = new Date();
