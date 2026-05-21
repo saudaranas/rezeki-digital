@@ -172,7 +172,7 @@ nav {
 .hero {
   min-height:100vh;
   display:flex; align-items:center;
-  padding:80px 24px 100px;
+  padding:100px 24px 100px;
   position:relative; overflow:hidden;
   background:var(--black);
 }
@@ -899,7 +899,7 @@ footer {
 
 <!-- ══════ HERO ══════ -->
 <section class="hero">
-  <div class="hero-inner" style="display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:start;max-width:1100px;margin:0 auto;">
+  <div class="hero-inner" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:stretch;max-width:1100px;margin:0 auto;">
 
     <!-- LEFT -->
     <div>
@@ -926,11 +926,14 @@ footer {
       </div>
     </div>
 
-    <!-- RIGHT: Gaji Pertama proof -->
-    <div style="position:relative;display:flex;align-items:flex-start;justify-content:center;">
-      <div style="position:absolute;width:400px;height:400px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.15) 0%,transparent 70%);pointer-events:none;"></div>
-      <div style="position:relative;z-index:1;width:100%;max-width:480px;border-radius:20px;overflow:hidden;box-shadow:0 20px 60px rgba(34,197,94,0.2),0 0 0 1px rgba(34,197,94,0.12);animation:floatPhone 4s ease-in-out infinite;">
-        <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60" style="width:100%;display:block;">
+    <!-- RIGHT: Gaji Pertama proof — full height -->
+    <div style="position:relative;display:flex;align-items:stretch;justify-content:center;align-self:stretch;">
+      <!-- Glow -->
+      <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.12) 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;"></div>
+      <!-- Image — full height of hero content -->
+      <div style="position:relative;z-index:1;width:100%;border-radius:24px;overflow:hidden;box-shadow:0 24px 80px rgba(34,197,94,0.18),0 0 0 1px rgba(34,197,94,0.12);">
+        <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60"
+          style="width:100%;height:100%;object-fit:cover;object-position:top;display:block;">
       </div>
     </div>
 
