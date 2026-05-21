@@ -926,14 +926,14 @@ footer {
       </div>
     </div>
 
-    <!-- RIGHT: Gaji Pertama proof — fill full column height -->
-    <div style="position:relative;align-self:stretch;min-height:500px;">
+    <!-- RIGHT: Gaji Pertama proof — whole image fitted -->
+    <div style="position:relative;align-self:stretch;min-height:480px;">
       <!-- Glow -->
-      <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.12) 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;"></div>
-      <!-- Image fills entire right column -->
-      <div style="position:absolute;inset:0;z-index:1;border-radius:20px;overflow:hidden;box-shadow:0 24px 80px rgba(34,197,94,0.18),0 0 0 1px rgba(34,197,94,0.1);animation:floatPhone 5s ease-in-out infinite;">
+      <div style="position:absolute;width:500px;height:500px;border-radius:50%;background:radial-gradient(circle,rgba(34,197,94,0.14) 0%,transparent 70%);pointer-events:none;top:50%;left:50%;transform:translate(-50%,-50%);z-index:0;"></div>
+      <!-- Container: absolute fill, contain whole image -->
+      <div style="position:absolute;inset:0;z-index:1;border-radius:20px;overflow:hidden;background:var(--black-card);box-shadow:0 24px 80px rgba(34,197,94,0.2),0 0 0 1px rgba(34,197,94,0.12);animation:floatPhone 5s ease-in-out infinite;display:flex;align-items:center;justify-content:center;">
         <img src="eastel-proof-wallet.jpg" alt="Gaji Pertama Eastel RM3,952.60"
-          style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;">
+          style="width:100%;height:100%;object-fit:contain;display:block;">
       </div>
     </div>
 
