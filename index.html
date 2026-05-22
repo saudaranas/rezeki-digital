@@ -117,15 +117,16 @@ nav{
 .hero{
   min-height:calc(100vh - 58px);
   position:relative;
-  background:var(--bg);display:flex;align-items:center;
+  background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
+  display:flex;align-items:center;
   box-sizing:border-box;
 }
 .hero-grid{
   display:grid;grid-template-columns:1fr 1fr;
-  gap:0;align-items:center;
+  gap:64px;align-items:center;
   width:100%;min-width:0;
   min-height:calc(100vh - 58px);
-  padding:70px 0;
+  padding:70px 24px;
   position:relative;z-index:1;
   box-sizing:border-box;
 }
@@ -228,7 +229,7 @@ nav{
 /* Trust */
 .trust-strip{
   display:flex;flex-wrap:nowrap;gap:18px;overflow-x:auto;
-  padding-top:22px;border-top:1px solid var(--border);
+  padding-top:22px;
 }
 .trust-item{
   display:flex;align-items:center;gap:7px;
@@ -241,8 +242,6 @@ nav{
 .hero-right{
   min-width:0;
   width:100%;
-  padding-right:30px;
-  box-sizing:border-box;
 }
 .hero-right img{
   width:100%;display:block;
@@ -253,7 +252,7 @@ nav{
 .proof-mockup{padding:20px;display:flex;flex-direction:column;gap:0;}
 .pm-topbar{
   display:flex;align-items:center;gap:8px;
-  padding-bottom:12px;border-bottom:1px solid var(--border);margin-bottom:14px;
+  padding-bottom:12px;margin-bottom:14px;
 }
 .pm-dots{display:flex;gap:4px;}
 .pm-dots span{width:7px;height:7px;border-radius:50%;}
@@ -292,7 +291,7 @@ nav{
 .sec-head p{font-size:15px;color:var(--dim);max-width:480px;line-height:1.8;}
 
 /* ═══════ STORY ═══════ */
-.story{padding:90px 24px;background:var(--bg);}
+.story{padding:90px 24px;background:#ffffff;}
 .story-inner{max-width:660px;margin:0 auto;}
 .story p{font-size:clamp(1rem,2vw,1.12rem);color:var(--dim);line-height:1.9;margin-bottom:22px;}
 .story p strong{color:var(--white);font-weight:600;}
@@ -315,7 +314,7 @@ nav{
 }
 
 /* ═══════ SOLUTION: 3 steps ═══════ */
-.solution{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border);}
+.solution{padding:90px 24px;background:var(--bg);}
 .sol-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
   gap:1px;background:var(--border);
@@ -329,7 +328,7 @@ nav{
 .sol-body{font-size:13.5px;color:var(--muted);line-height:1.75;}
 
 /* ═══════ KEUNGGULAN ═══════ */
-.keunggulan{padding:90px 24px;background:var(--bg);}
+.keunggulan{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
 .keunggulan-grid{
   display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
   gap:1px;background:var(--border);
@@ -342,7 +341,7 @@ nav{
 .keunggulan-body{font-size:13px;color:var(--muted);line-height:1.75;}
 
 /* ═══════ FUP COMPARISON ═══════ */
-.fup-sec{padding:80px 24px;background:var(--bg2);border-top:1px solid var(--border);}
+.fup-sec{padding:80px 24px;background:#ffffff;}
 .fup-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
 @media(max-width:560px){.fup-grid{grid-template-columns:1fr;}}
 .fup-card{border-radius:18px;padding:26px 22px;}
@@ -381,7 +380,7 @@ nav{
 .plan-row:hover .plan-arr{color:var(--purple);}
 
 /* ═══════ CALCULATOR ═══════ */
-.calc{padding:90px 24px;background:var(--bg2);border-top:1px solid var(--border);}
+.calc{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
 
 /* HORMOZI FIX: Scenario buttons so defaults are realistic, not dream */
 .scenario-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
@@ -430,7 +429,7 @@ nav{
 .calc-disc{margin-top:12px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
 
 /* ═══════ SOCIAL PROOF ═══════ */
-.testi{padding:90px 24px;background:var(--bg);}
+.testi{padding:90px 24px;background:#ffffff;}
 .testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
 .testi-card{
   background:var(--card);border:1px solid var(--border);
@@ -467,7 +466,7 @@ nav{
 .stat-lbl{font-size:11px;color:var(--muted);}
 
 /* ═══════ GUARANTEE (Hormozi: dedicated section, not footnote) ═══════ */
-.guarantee-sec{padding:60px 24px;background:var(--bg2);}
+.guarantee-sec{padding:60px 24px;background:var(--bg);}
 .guarantee-box{
   max-width:640px;margin:0 auto;
   background:var(--grn-bg);border:1px solid var(--grn-bdr);
@@ -481,7 +480,7 @@ nav{
 .guarantee-body strong{color:var(--white);}
 
 /* ═══════ BONUS ═══════ */
-.bonus{padding:90px 24px;background:var(--bg);}
+.bonus{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
 .bonus-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
 @media(max-width:900px){.bonus-cards{grid-template-columns:1fr;}}
 .bonus-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .2s,transform .2s;}
@@ -531,7 +530,7 @@ nav{
 .cm-msg.r{background:var(--purple);color:#fff;border-radius:8px 2px 8px 8px;align-self:flex-end;}
 
 /* ═══════ OFFER SUMMARY ═══════ */
-.offer-sec{padding:70px 24px;background:var(--bg2);border-top:1px solid var(--border);}
+.offer-sec{padding:70px 24px;background:#ffffff;}
 .offer-shell{
   max-width:620px;margin:0 auto;
   background:var(--card);border:1px solid var(--border);
@@ -546,7 +545,7 @@ nav{
 .offer-list{display:flex;flex-direction:column;margin-bottom:22px;}
 .offer-row{
   display:flex;justify-content:space-between;align-items:center;
-  padding:12px 0;border-bottom:1px solid var(--border);
+  padding:12px 0;
 }
 .offer-row:last-child{border:none;}
 .or-name{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dim);}
@@ -590,8 +589,8 @@ nav{
 
 /* ═══════ FORM ═══════ */
 .form-sec{
-  padding:90px 24px;background:var(--bg2);
-  border-top:1px solid var(--border);position:relative;overflow:hidden;
+  padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
+  position:relative;overflow:hidden;
 }
 .form-sec::before{
   content:'';position:absolute;bottom:-80px;right:-60px;
@@ -677,7 +676,7 @@ nav{
 }
 .submit-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 0 28px var(--grn-glow);}
 .submit-btn:disabled{opacity:.42;cursor:not-allowed;transform:none;box-shadow:none;}
-.form-trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;padding-top:16px;border-top:1px solid var(--border);}
+.form-trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;padding-top:16px;}
 .ftr-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
 .form-legal{margin-top:10px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
 
@@ -693,7 +692,7 @@ nav{
 .success-box p{font-size:14px;color:var(--dim);line-height:1.8;}
 
 /* ═══════ FOOTER ═══════ */
-footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px;text-align:center;}
+footer{background:var(--bg);padding:36px 24px;text-align:center;}
 .footer-logo{font-size:18px;font-weight:900;margin-bottom:6px;}
 .footer-logo em{font-style:normal;color:var(--purple);}
 .footer-tag{font-size:12px;color:var(--muted);margin-bottom:16px;}
@@ -723,10 +722,29 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
 @media(min-width:1024px){
   .story,.faq,.testi,.bonus,.keunggulan,.fup-sec,.plans,.calc,.offer-sec,.guarantee-sec,.form-sec{padding-left:48px;padding-right:48px;}
   .solution{padding-left:48px;padding-right:48px;}
+  .hero-grid{padding-left:48px;padding-right:48px;}
   .wrap{max-width:960px;}
   .wrap-sm{max-width:720px;}
 }
 @media(min-width:1280px){.wrap{max-width:1100px;}}
+
+/* ═══ WHITE SECTION TEXT OVERRIDES ═══ */
+.story{color:#111;}
+.story .sec-head h2,.story h2,.story h3{color:#111;}
+.story .sec-head p,.story p,.story li{color:#333;}
+.story .section-title{color:#111;}
+.fup-sec{color:#111;}
+.fup-sec .sec-head h2,.fup-sec h2,.fup-sec h3{color:#111;}
+.fup-sec .sec-head p,.fup-sec p,.fup-sec li{color:#333;}
+.fup-sec .section-title{color:#111;}
+.testi{color:#111;}
+.testi .sec-head h2,.testi h2,.testi h3{color:#111;}
+.testi .sec-head p,.testi p,.testi li{color:#333;}
+.testi .section-title{color:#111;}
+.offer-sec{color:#111;}
+.offer-sec .sec-head h2,.offer-sec h2,.offer-sec h3{color:#111;}
+.offer-sec .sec-head p,.offer-sec p,.offer-sec li{color:#333;}
+.offer-sec .section-title{color:#111;}
 </style>
 </head>
 <body>
@@ -753,7 +771,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
   <div class="hero-grid">
 
     <!-- LEFT -->
-    <div class="hero-left" style="padding-left:30px;padding-right:50px;box-sizing:border-box;">
+    <div class="hero-left">
       <div class="hero-badge">
         <div class="hero-badge-inner">
           <div class="badge-dot"></div>
