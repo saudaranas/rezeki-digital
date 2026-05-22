@@ -167,8 +167,8 @@ nav{
 .hero-badge-inner span{font-size:12px;font-weight:600;color:var(--purple);}
 
 .hero h1{
-  font-size:clamp(2.3rem,4.6vw,3.9rem);
-  font-weight:900;line-height:1.04;letter-spacing:-1.5px;
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:900;line-height:1.1;letter-spacing:-1px;
   margin-bottom:18px;
 }
 .h-green{color:var(--green);}
@@ -212,10 +212,11 @@ nav{
 
 /* HORMOZI: Risk reversal — prominent, specific, before scroll */
 .guarantee-inline{
-  display:inline-flex;align-items:flex-start;gap:9px;
+  display:flex;align-items:flex-start;gap:9px;
+  width:100%;box-sizing:border-box;
   background:rgba(34,197,94,.05);
   border:1px solid rgba(34,197,94,.2);
-  border-radius:11px;padding:11px 16px;
+  border-radius:11px;padding:14px 18px;
   font-size:13px;color:var(--dim);margin-bottom:24px;
   line-height:1.65;
 }
@@ -744,12 +745,6 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
 
     <!-- LEFT -->
     <div class="hero-left">
-      <!-- HORMOZI: Outcome bar — orang nampak HASIL dulu, bukan tagline -->
-      <div class="hero-outcome outcome-bar">
-        <div class="pulse"></div>
-        <span>Screenshot sebenar · <strong>RM3,952.60 bulan pertama</strong></span>
-      </div>
-
       <div class="hero-badge">
         <div class="hero-badge-inner">
           <div class="badge-dot"></div>
@@ -759,16 +754,7 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
 
       <!-- HORMOZI: Headline specific, nombor nyata, bukan poetic tagline -->
       <div class="hero-h1">
-        <h1>RM17 Modal.<br><span class="h-green">RM3,952</span> <span class="h-purple">Masuk.</span><br><span class="h-dim">Bulan Pertama.</span></h1>
-      </div>
-
-      <!-- HORMOZI: Proof strip — anchor nombor terus bawah headline -->
-      <div class="hero-proof proof-strip">
-        <div class="proof-num">RM3,952</div>
-        <div class="proof-lbl">
-          <strong>Komisyen bulan pertama agent sebenar</strong>
-          Screenshot sebenar dari sistem Eastel. Modal RM17 sahaja — simkad + pos.
-        </div>
+        <h1>RM17 Modal. <span class="h-green">RM3,952</span> <span class="h-purple">Masuk.</span><br><span class="h-dim">Bulan Pertama.</span></h1>
       </div>
 
       <p class="sub hero-sub">Selagi downline anda topup setiap bulan, <strong>komisyen masuk automatik</strong> — tanpa anda perlu buat apa-apa lagi. Bukan MLM. Telco berlesen dengan sistem referral yang sah.</p>
