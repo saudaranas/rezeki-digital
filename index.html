@@ -602,6 +602,7 @@ nav{
 .form-card{
   background:var(--card);border:1px solid var(--border);
   border-radius:20px;padding:36px;max-width:560px;
+  margin:0 auto;width:100%;box-sizing:border-box;
 }
 @media(max-width:480px){.form-card{padding:20px 14px;}}
 .fg{margin-bottom:14px;}
@@ -1621,5 +1622,6 @@ function showNotif(){
 }
 setTimeout(()=>{ showNotif(); setInterval(showNotif, Math.floor(Math.random()*20000)+30000); }, 9000);
 </script>
+
 </body>
 </html>
