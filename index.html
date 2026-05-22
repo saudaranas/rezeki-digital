@@ -71,6 +71,16 @@ body::before{
   color:var(--dim);background:none;border:none;cursor:pointer;transition:color .2s;
 }
 .btn-ghost:hover{color:var(--white);}
+.btn-ghost-solid{
+  font-size:15px;font-weight:700;
+  color:var(--white);
+  background:none;
+  border:1.5px solid var(--border);
+  border-radius:100px;
+  padding:13px 26px;
+  transition:border-color .2s,color .2s;
+}
+.btn-ghost-solid:hover{border-color:var(--purple);color:var(--purple);}
 
 /* ═══════ NAV ═══════ */
 nav{
@@ -129,7 +139,7 @@ nav{
 .hero-grid{
   display:grid;grid-template-columns:1fr 1fr;
   gap:64px;align-items:center;
-  max-width:1100px;margin:0 auto;width:100%;
+  width:100%;
   min-height:calc(100vh - 58px);padding:70px 0;
   position:relative;z-index:1;
 }
@@ -773,10 +783,8 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
       </div>
 
       <div class="cta-row hero-cta-row">
-        <a href="#daftar" class="btn-green">
-          Dapatkan Simkad Saya — RM17 →
-        </a>
-        <button class="btn-ghost" onclick="document.getElementById('komisyen').scrollIntoView({behavior:'smooth'})">Kira komisyen saya ↓</button>
+        <a href="#daftar" class="btn-green">Dapatkan Simkad →</a>
+        <button class="btn-ghost btn-ghost-solid" onclick="document.getElementById('komisyen').scrollIntoView({behavior:'smooth'})">Kira Komisyen Saya →</button>
       </div>
 
       <!-- HORMOZI: Risk reversal — SEBELUM mereka scroll, bukan lepas daftar -->
