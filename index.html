@@ -45,7 +45,7 @@ body::before{
 
 /* ── Layout ── */
 .wrap   {max-width:900px;margin:0 auto;padding:0 24px;position:relative;z-index:1;}
-.wrap-sm{max-width:640px;width:100%;margin-left:auto;margin-right:auto;padding:0 24px;position:relative;z-index:1;box-sizing:border-box;display:block;}
+.wrap-sm{max-width:640px;width:100%;margin:0 auto;padding:0 24px;box-sizing:border-box;position:relative;z-index:1;}
 
 /* ── Tag labels ── */
 .tag  {font-size:10.5px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:14px;}
@@ -589,9 +589,9 @@ nav{
 
 /* ═══════ FORM ═══════ */
 .form-sec{
-  padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
+  padding:90px 0;
+  background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
   position:relative;overflow:hidden;
-  display:flex;flex-direction:column;align-items:center;
 }
 .form-sec::before{
   content:'';position:absolute;bottom:-80px;right:-60px;
@@ -725,7 +725,7 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
   .solution{padding-left:48px;padding-right:48px;}
   .hero-grid{padding-left:48px;padding-right:48px;}
   .wrap{max-width:960px;}
-  .wrap-sm{max-width:720px;}
+  .wrap-sm{max-width:720px;margin-left:auto;margin-right:auto;}
 }
 @media(min-width:1280px){.wrap{max-width:1100px;}}
 
@@ -786,7 +786,7 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
   .solution{padding-left:48px;padding-right:48px;}
   .hero-grid{padding-left:48px;padding-right:48px;}
   .wrap{max-width:960px;}
-  .wrap-sm{max-width:720px;}
+  .wrap-sm{max-width:720px;margin-left:auto;margin-right:auto;}
 }
 @media(min-width:1280px){.wrap{max-width:1100px;}}
 
@@ -1269,7 +1269,7 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
 
 <!-- ══════ FORM ══════ -->
 <section class="form-sec" id="daftar">
-  <div class="wrap-sm" style="position:relative;z-index:1;text-align:center;">
+  <div class="wrap-sm" style="text-align:center;">
     <span class="tag tag-g rv">Langkah Pertama</span>
     <h2 class="rv d1" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-.8px;margin-bottom:10px;">Isi borang.<br>Kami pos simkad terus.</h2>
     <p class="rv d2" style="font-size:15px;color:var(--dim);margin-bottom:36px;max-width:480px;line-height:1.8;margin-left:auto;margin-right:auto;">Tiada commitment jangka panjang. Tiada hidden charges. Isi borang, pilih kawasan, scan QR, simkad tiba di depan pintu anda.</p>
