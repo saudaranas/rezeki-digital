@@ -728,6 +728,67 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
 }
 @media(min-width:1280px){.wrap{max-width:1100px;}}
 
+/* ═══ WHITE SECTION OVERRIDES — COMPLETE ═══ */
+
+/* ── Base text ── */
+.story,.fup-sec,.testi,.offer-sec{color:#1a1a2e;}
+.story h2,.story h3,.fup-sec h2,.fup-sec h3,
+.testi h2,.testi h3,.offer-sec h2,.offer-sec h3{color:#1a1a2e;}
+.story p,.fup-sec p,.testi p,.offer-sec p{color:#3d3d5c;}
+.story strong,.fup-sec strong,.testi strong,.offer-sec strong{color:#1a1a2e;}
+.story .sec-head p,.fup-sec .sec-head p,.testi .sec-head p,.offer-sec .sec-head p{color:#3d3d5c;}
+.story .tag,.fup-sec .tag,.testi .tag,.offer-sec .tag{background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;}
+.story .tag-g,.fup-sec .tag-g,.testi .tag-g,.offer-sec .tag-g{color:#16a34a;}
+.story .pull{color:#6d28d9;border-left-color:#6d28d9;}
+.story p{color:#3d3d5c;}
+.story p strong{color:#1a1a2e;}
+
+/* ── FUP section ── */
+.fup-sec .fup-card{background:#f5f3ff;border:1px solid #ddd6fe;color:#1a1a2e;}
+.fup-sec .fup-card.bad{background:#fff1f2;border:1px solid #fecdd3;}
+.fup-sec .fup-card.good{background:#f0fdf4;border:1px solid #bbf7d0;}
+.fup-sec .fup-header{color:#1a1a2e !important;}
+.fup-sec .fup-card.bad .fup-header{color:#dc2626 !important;}
+.fup-sec .fup-card.good .fup-header{color:#16a34a !important;}
+.fup-sec .fup-item{color:#3d3d5c;}
+.fup-sec .fup-item strong{color:#1a1a2e;}
+.fup-sec .fup-v{color:#16a34a !important;}
+.fup-sec .fup-x{color:#dc2626 !important;}
+
+/* ── Testimoni section ── */
+.testi .testi-card{background:#f5f3ff;border:1px solid #ddd6fe;}
+.testi .testi-card::before{color:#c4b5fd;}
+.testi .testi-text{color:#3d3d5c !important;}
+.testi .testi-name{color:#1a1a2e !important;}
+.testi .testi-role{color:#6d28d9 !important;}
+.testi .testi-loc{color:#6d28d9 !important;}
+.testi .testi-stars{color:#f59e0b !important;}
+.testi .stats-row{background:#ddd6fe;border:1px solid #c4b5fd;}
+.testi .stat-box{background:#ede9fe;}
+.testi .stat-num{color:#1a1a2e !important;}
+.testi .stat-lbl{color:#6d28d9 !important;}
+
+/* ── Offer section ── */
+.offer-sec .offer-shell{background:#f5f3ff;border:1px solid #ddd6fe;}
+.offer-sec .or-name{color:#1a1a2e !important;}
+.offer-sec .or-check{background:#ede9fe;color:#6d28d9 !important;border-color:#c4b5fd;}
+.offer-sec .or-val.w{color:#1a1a2e !important;}
+.offer-sec .or-val.g{color:#16a34a !important;}
+.offer-sec .offer-total{background:#ede9fe;border-color:#c4b5fd;color:#1a1a2e;}
+.offer-sec .offer-total *{color:#1a1a2e;}
+.offer-sec .ot-price{color:#6d28d9 !important;}
+.offer-sec .offer-row{border-color:#e9d5ff;}
+
+/* ═══════ DESKTOP POLISH ═══════ */
+@media(min-width:1024px){
+  .story,.faq,.testi,.bonus,.keunggulan,.fup-sec,.plans,.calc,.offer-sec,.guarantee-sec,.form-sec{padding-left:48px;padding-right:48px;}
+  .solution{padding-left:48px;padding-right:48px;}
+  .hero-grid{padding-left:48px;padding-right:48px;}
+  .wrap{max-width:960px;}
+  .wrap-sm{max-width:720px;}
+}
+@media(min-width:1280px){.wrap{max-width:1100px;}}
+
 /* ═══ WHITE SECTION OVERRIDES ═══ */
 .story,.fup-sec,.testi,.offer-sec{color:#1a1a2e;}
 .story h2,.story h3,.fup-sec h2,.fup-sec h3,.testi h2,.testi h3,.offer-sec h2,.offer-sec h3{color:#1a1a2e;}
@@ -765,8 +826,25 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
 .offer-sec .or-check{background:#ede9fe;color:#6d28d9 !important;border-color:#c4b5fd;}
 .offer-sec .or-val.w{color:#1a1a2e !important;}
 .offer-sec .or-val.g{color:#16a34a !important;}
-.offer-sec .offer-total{color:#1a1a2e;}
-.offer-sec .offer-total strong{color:#1a1a2e;}
+.offer-sec .offer-total{background:#ede9fe;border-color:#c4b5fd;color:#1a1a2e;}
+.offer-sec .offer-total strong,.offer-sec .offer-total *{color:#1a1a2e;}
+.offer-sec .ot-price{color:#6d28d9 !important;}
+.offer-sec .offer-row{border-color:#e9d5ff;}
+
+/* Testi - loc, stat-box, stats-row */
+.testi .testi-loc{color:#6d28d9 !important;}
+.testi .stat-box{background:#ede9fe;border:1px solid #ddd6fe;}
+.testi .stat-lbl{color:#6d28d9 !important;}
+.testi .stat-num{color:#1a1a2e !important;}
+.testi .stats-row{background:#ddd6fe;border:1px solid #c4b5fd;}
+
+/* FUP - fup-v fup-x fup-header stay ok since green/red are fine on white */
+.fup-sec .fup-item{color:#3d3d5c;}
+.fup-sec .fup-v{color:#16a34a !important;}
+.fup-sec .fup-x{color:#dc2626 !important;}
+
+/* Story - tag-g */
+.story .tag-g{color:#16a34a !important;}
 </style>
 </head>
 <body>
@@ -846,7 +924,10 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
 <section class="story">
   <div class="story-inner">
     <span class="tag rv">Kita Jujur Sekejap</span>
-    <p class="rv d1">Berapa lama lagi anda nak tunggu? Gaji naik sikit, harga barang naik banyak. Kerja dari pagi sampai petang — tapi nombor dalam akaun <strong>masih sama seperti bulan lepas.</strong></p>
+    <div class="sec-head rv" style="margin-bottom:28px;">
+      <h2>Berapa Lama Lagi Anda Nak Tunggu?</h2>
+    </div>
+    <p class="rv d1">Gaji naik sikit, harga barang naik banyak. Kerja dari pagi sampai petang — tapi nombor dalam akaun <strong>masih sama seperti bulan lepas.</strong></p>
     <p class="rv d2">Anda mungkin dah cuba banyak perkara. Jual online, ambil kerja sambilan, ikut kursus. Tapi masih tak bergerak — sebab semua tu perlukan modal besar, masa yang banyak, atau kemahiran yang anda belum ada.</p>
     <div class="pull rv">"Yang anda perlukan bukanlah peluang yang besar — anda perlukan <em>permulaan yang betul.</em>"</div>
     <p class="rv d1">Eastel baru sahaja melancarkan program Eastelpreneur. Pasaran masih lapang. <strong>Mereka yang masuk awal akan bina rangkaian paling besar</strong> — dan komisyen paling besar. Anda masih belum terlambat.</p>
@@ -936,7 +1017,7 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
     </div>
     <div class="rv d4" style="margin-top:20px;background:var(--pup-bg);border:1px solid var(--pup-bdr);border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:center;">
       <span style="font-size:22px;flex-shrink:0;">💡</span>
-      <p style="font-size:14px;color:var(--dim);line-height:1.75;margin:0;"><strong style="color:#fff;">Kesimpulannya:</strong> Eastel jual data yang betul-betul besar dan jujur tentang had yang ada. Itulah yang pengguna akan rasa sendiri — dan sebab mereka kekal sebagai pelanggan.</p>
+      <p style="font-size:14px;color:#3d3d5c;line-height:1.75;margin:0;"><strong style="color:#1a1a2e;">Kesimpulannya:</strong> Eastel jual data yang betul-betul besar dan jujur tentang had yang ada. Itulah yang pengguna akan rasa sendiri — dan sebab mereka kekal sebagai pelanggan.</p>
     </div>
   </div>
 </section>
@@ -1156,11 +1237,11 @@ footer{background:var(--bg);padding:36px 24px;text-align:center;}
         <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Sokongan upline aktif</div><div class="or-val g">PERCUMA</div></div>
       </div>
       <div class="offer-total">
-        <div><div style="font-size:13px;color:var(--dim);">Jumlah pelaburan anda</div><div style="font-size:11px;color:var(--muted);margin-top:2px;">Sabah / Sarawak — RM22 · Semenanjung — RM17</div></div>
+        <div><div style="font-size:13px;color:#1a1a2e;">Jumlah pelaburan anda</div><div style="font-size:11px;color:#6d28d9;margin-top:2px;">Sabah / Sarawak — RM22 · Semenanjung — RM17</div></div>
         <div class="ot-price">RM17</div>
       </div>
       <a href="#daftar" class="btn-green" style="width:100%;justify-content:center;font-size:16px;padding:17px;border-radius:12px;">Ya, Saya Mahu Mulakan Sekarang →</a>
-      <p style="text-align:center;font-size:12px;color:var(--muted);margin-top:10px;">🛡️ Jaminan refund 14 hari · Tiada kontrak · Batalkan bila-bila masa</p>
+      <p style="text-align:center;font-size:12px;color:#6d28d9;margin-top:10px;">🛡️ Jaminan refund 14 hari · Tiada kontrak · Batalkan bila-bila masa</p>
     </div>
   </div>
 </section>
