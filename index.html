@@ -239,12 +239,16 @@ nav{
 /* Hero right: CSS dashboard mockup (no images needed) */
 @keyframes floatCard{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
 .hero-right{
-  border-radius:20px;overflow:hidden;
-  box-shadow:0 24px 60px rgba(34,197,94,.15),0 0 0 1px rgba(34,197,94,.10);
-  animation:floatCard 5s ease-in-out infinite;
-  background:var(--card2);
   min-width:0;
   width:100%;
+  padding-left:50px;padding-right:30px;
+  box-sizing:border-box;
+}
+.hero-right img{
+  width:100%;display:block;
+  border-radius:20px;
+  box-shadow:0 24px 60px rgba(34,197,94,.15),0 0 0 1px rgba(34,197,94,.10);
+  animation:floatCard 5s ease-in-out infinite;
 }
 .proof-mockup{padding:20px;display:flex;flex-direction:column;gap:0;}
 .pm-topbar{
@@ -787,11 +791,11 @@ footer{background:var(--bg);border-top:1px solid var(--border);padding:36px 24px
     </div>
 
     <!-- RIGHT: Screenshot sebenar wallet Eastel RM3,952.60 -->
-    <div class="hero-right rv" style="margin-left:50px;">
+    <div class="hero-right rv">
       <img
         src="eastel-proof-wallet.jpg"
         alt="Screenshot wallet Eastel RM3,952.60 — gaji pertama agent"
-        style="width:100%;display:block;border-radius:20px;"
+
       >
     </div>
 
