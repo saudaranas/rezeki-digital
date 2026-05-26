@@ -1465,7 +1465,16 @@
         const json = await res.json();
 
         if (json.ok) {
-          showThankYou(nama, wa, kawasan);
+          // simpan ke sessionStorage lalu redirect
+          sessionStorage.setItem('rd_submission', JSON.stringify({
+            nama,
+            whatsapp : wa,
+            kawasan,
+            agent_id  : agentData.agent_id,
+            agent_nama: agentData.nama,
+            agent_wa  : agentData.whatsapp,
+          }));
+          window.location.href = '/hubungi-ejen/';
         } else {
           showError(json.message || 'Ralat. Cuba sekali lagi.');
           submitBtn.disabled = false;
