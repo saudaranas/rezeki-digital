@@ -1,1626 +1,1513 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ms">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Rezeki Digital — RM17 Modal. RM3,952 Masuk. Bulan Pertama.</title>
-<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@1,700&display=swap" rel="stylesheet">
-<style>
-/* ═══════════════════════════════════
-   TOKENS
-═══════════════════════════════════ */
-:root {
-  --bg:        #0a0b13;
-  --bg2:       #10111c;
-  --card:      #13141f;
-  --card2:     #1a1b28;
-  --border:    rgba(255,255,255,.07);
-  --border2:   rgba(255,255,255,.04);
-  --white:     #f0f0ff;
-  --dim:       rgba(240,240,255,.62);
-  --muted:     rgba(240,240,255,.32);
-  --purple:    #a855f7;
-  --purple-d:  #7c3aed;
-  --pup-bg:    rgba(168,85,247,.10);
-  --pup-bdr:   rgba(168,85,247,.25);
-  --green:     #22c55e;
-  --grn-bg:    rgba(34,197,94,.10);
-  --grn-bdr:   rgba(34,197,94,.28);
-  --grn-glow:  rgba(34,197,94,.35);
-  --gold:      #fbbf24;
-  --red:       #ef4444;
-}
-*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
-html{scroll-behavior:smooth;}
-body{font-family:'Outfit',sans-serif;background:var(--bg);color:var(--white);line-height:1.65;}html{overflow-x:hidden;}
-a{text-decoration:none;color:inherit;}
-img{max-width:100%;display:block;}
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rezeki Digital — Side Income Dari Telco. Guna Sendiri, Ajak Orang, Dapat Komisyen.</title>
+  <meta name="description" content="Kau dah bayar telco tiap bulan tapi tak dapat apa-apa balik. Jadi ejen Eastel — guna data 500GB NO FUP, dapat komisyen tiap kali orang reload. Sekali daftar, ulang income." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand:       #0f2027;
+      --brand-mid:   #203a43;
+      --brand-light: #2c5364;
+      --accent:      #00c9a7;
+      --accent-dark: #00a88b;
+      --accent-soft: #e6faf6;
+      --paper:       #f8f9fa;
+      --warm:        #f0f4f3;
+      --ink:         #111827;
+      --muted:       #6b7280;
+      --line:        #e5e7eb;
+      --card:        #ffffff;
+      --red:         #ef4444;
+      --green:       #10b981;
+      --yellow:      #f59e0b;
+      --max:         1080px;
+      --r:           10px;
+    }
 
-/* ── Grain overlay ── */
-body::before{
-  content:'';position:fixed;inset:0;z-index:0;pointer-events:none;
-  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  opacity:.45;
-}
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
-/* ── Layout ── */
-.wrap{max-width:900px;margin:0 auto;padding:0 24px;position:relative;z-index:1;box-sizing:border-box;}
-.wrap-sm{max-width:640px;width:100%;margin:0 auto;padding:0;box-sizing:border-box;position:relative;z-index:1;}
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      color: var(--ink);
+      background: var(--paper);
+      overflow-x: hidden;
+    }
 
-/* ── Tag labels ── */
-.tag  {font-size:10.5px;font-weight:800;letter-spacing:3.5px;text-transform:uppercase;color:var(--purple);display:block;margin-bottom:14px;}
-.tag-g{color:var(--green);}
+    h1,h2,h3,h4 { line-height: 1.2; letter-spacing: -0.02em; font-weight: 800; }
+    img,video { max-width: 100%; display: block; border-radius: var(--r); }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
 
-/* ── Reveal ── */
-.rv{opacity:0;transform:translateY(22px);transition:opacity .55s ease,transform .55s ease;}
-.rv.in{opacity:1;transform:none;}
-.d1{transition-delay:.07s}.d2{transition-delay:.14s}.d3{transition-delay:.22s}.d4{transition-delay:.30s}
+    .wrap { max-width: var(--max); margin: 0 auto; padding: 0 24px; }
 
-/* ── Buttons ── */
-.btn-green{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--green);color:#000;
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:900;
-  padding:16px 34px;border-radius:100px;border:none;cursor:pointer;
-  transition:transform .2s,box-shadow .2s;box-shadow:0 0 0 0 var(--grn-glow);
-}
-.btn-green:hover{transform:translateY(-2px);box-shadow:0 0 30px var(--grn-glow);}
-.btn-ghost{
-  display:inline-flex;align-items:center;gap:7px;
-  font-family:'Outfit',sans-serif;font-size:14px;font-weight:500;
-  color:var(--dim);background:none;border:none;cursor:pointer;transition:color .2s;
-}
-.btn-ghost:hover{color:var(--white);}
-.btn-ghost-solid{
-  font-size:15px;font-weight:700;
-  color:var(--white);
-  background:none;
-  border:1.5px solid var(--border);
-  border-radius:100px;
-  padding:13px 26px;
-  transition:border-color .2s,color .2s;
-}
-.btn-ghost-solid:hover{border-color:var(--purple);color:var(--purple);}
+    .kicker {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--accent-dark);
+      margin-bottom: 14px;
+    }
 
-/* ═══════ NAV ═══════ */
-nav{
-  position:fixed;top:0;left:0;right:0;z-index:200;
-  display:flex;align-items:center;justify-content:space-between;
-  padding:15px 28px;height:58px;
-  background:rgba(10,11,19,.96);
-  backdrop-filter:blur(22px) saturate(1.6);
-  border-bottom:1px solid rgba(168,85,247,.14);
-  box-shadow:0 4px 24px rgba(0,0,0,.35);
-}
-@media(max-width:480px){.total-num{font-size:26px;}.sol-num{font-size:28px;}nav{padding:14px 18px;height:54px;}}
-.nav-logo{font-size:18px;font-weight:900;letter-spacing:-.5px;}
-.nav-logo em{font-style:normal;color:var(--purple);}
-.nav-right{display:flex;align-items:center;gap:14px;}
-.nav-wa{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--dim);transition:color .2s;}
-.nav-wa:hover{color:var(--white);}
-.nav-wa svg{width:14px;height:14px;}
-.nav-cta{background:var(--green);color:#000;font-family:'Outfit',sans-serif;font-size:13px;font-weight:900;padding:9px 20px;border-radius:100px;transition:box-shadow .2s;}
-.nav-cta:hover{box-shadow:0 0 20px var(--grn-glow);}
-@media(max-width:500px){.nav-wa{display:none;}}
+    .kicker.light { color: rgba(255,255,255,0.5); }
 
-/* ═══════ URGENCY BAR ═══════ */
-.urg-bar{
-  background:linear-gradient(90deg,var(--purple-d),var(--purple));
-  padding:12px 20px;text-align:center;
-  font-size:13px;font-weight:600;color:#fff;
-  margin-top:58px;letter-spacing:.2px;
-}
-.urg-bar strong{font-weight:900;}
-@media(max-width:480px){.urg-bar{font-size:12px;padding:13px 14px;margin-top:54px;}}
+    /* ── BUTTONS ── */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+      padding: 14px 28px; border-radius: 8px;
+      font-family: inherit; font-weight: 700; font-size: 15px;
+      cursor: pointer; border: none; transition: all 0.2s;
+    }
+    .btn.primary { background: var(--accent); color: var(--brand); }
+    .btn.primary:hover { background: var(--accent-dark); transform: translateY(-1px); }
+    .btn.ghost { background: transparent; color: var(--ink); border: 2px solid var(--line); }
+    .btn.ghost:hover { border-color: var(--ink); }
+    .btn.wa { background: #25d366; color: white; }
+    .btn.wa:hover { background: #1fba59; transform: translateY(-1px); }
+    .btn.lg { padding: 18px 36px; font-size: 17px; width: 100%; }
 
-/* ═══════ HERO ═══════ */
-.hero{
-  min-height:calc(100vh - 58px);
-  position:relative;
-  background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
-  display:flex;align-items:center;
-  box-sizing:border-box;
-}
-.hero-grid{
-  display:grid;grid-template-columns:1fr 1fr;
-  gap:64px;align-items:center;
-  width:100%;min-width:0;
-  min-height:calc(100vh - 58px);
-  padding:70px 24px;
-  position:relative;z-index:1;
-  box-sizing:border-box;
-}
-@media(max-width:800px){
-  .hero-grid{grid-template-columns:1fr;gap:36px;min-height:auto;padding:52px 20px 44px;}
-  .hero-right{order:-1;}
-}
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(15,32,39,0.96); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      height: 60px; display: flex; align-items: center;
+      padding: 0 24px; gap: 28px;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 16px; color: white; flex-shrink: 0;
+    }
+    .brand-mark {
+      width: 30px; height: 30px; background: var(--accent);
+      border-radius: 7px; display: flex; align-items: center;
+      justify-content: center; font-size: 14px; font-weight: 900; color: var(--brand);
+    }
+    .nav-links { display: flex; gap: 22px; margin-left: auto; }
+    .nav-links a { font-size: 13px; font-weight: 600; color: rgba(255,255,255,0.55); transition: color 0.2s; }
+    .nav-links a:hover { color: white; }
+    .hdr-cta {
+      padding: 8px 18px; background: var(--accent);
+      color: var(--brand); border-radius: 7px; font-size: 13px;
+      font-weight: 700; flex-shrink: 0; transition: background 0.2s;
+    }
+    .hdr-cta:hover { background: var(--accent-dark); }
+    @media(max-width:640px){ .nav-links { display:none; } }
 
-/* HORMOZI: Proof-first outcome bar */
-@keyframes up{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
-.hero-outcome{animation:up .45s .04s both;}
-.hero-badge  {animation:up .45s .10s both;}
-.hero-h1     {animation:up .45s .17s both;}
-.hero-proof  {animation:up .45s .23s both;}
-.hero-sub    {animation:up .45s .29s both;}
-.hero-prices {animation:up .45s .35s both;}
-.hero-cta-row{animation:up .45s .41s both;}
-.hero-guar   {animation:up .45s .47s both;}
-.hero-trust  {animation:up .45s .53s both;}
+    /* ══════════════════════════════
+       HERO
+    ══════════════════════════════ */
+    .hero {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 50%, var(--brand-light) 100%);
+      color: white;
+      padding: 90px 24px 80px;
+      position: relative;
+      overflow: hidden;
+    }
 
-.outcome-bar{
-  display:inline-flex;align-items:center;gap:10px;
-  background:var(--grn-bg);border:1px solid var(--grn-bdr);
-  border-radius:100px;padding:7px 18px 7px 10px;
-  margin-bottom:20px;
-}
-.pulse{width:7px;height:7px;border-radius:50%;background:var(--green);animation:pulse-a 2s ease infinite;}
-@keyframes pulse-a{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.35;transform:scale(1.5);}}
-.outcome-bar span{font-size:13px;font-weight:700;color:var(--green);}
-.outcome-bar strong{color:#fff;}
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 50%, rgba(0,201,167,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
 
-.hero-badge-inner{
-  display:inline-flex;align-items:center;gap:8px;
-  background:var(--pup-bg);border:1px solid var(--pup-bdr);
-  border-radius:100px;padding:5px 16px 5px 9px;margin-bottom:16px;
-}
-.badge-dot{width:6px;height:6px;border-radius:50%;background:var(--purple);animation:pulse-a 2s ease infinite;}
-.hero-badge-inner span{font-size:12px;font-weight:600;color:var(--purple);}
+    .hero-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+      position: relative;
+    }
 
-.hero h1{
-  font-size:clamp(1.8rem,3.5vw,2.8rem);
-  font-weight:900;line-height:1.1;letter-spacing:-1px;
-  margin-bottom:18px;
-}
-.h-green{color:var(--green);}
-.h-purple{color:var(--purple);}
-.h-white{color:#fff;font-weight:900;}
-.h-dim{color:var(--dim);font-weight:300;}
-.br-desktop{display:block;}
-@media(max-width:768px){.br-desktop{display:none;}}
+    .eyebrow {
+      display: inline-block;
+      background: rgba(0,201,167,0.15);
+      border: 1px solid rgba(0,201,167,0.3);
+      color: var(--accent);
+      font-size: 12px; font-weight: 700;
+      padding: 6px 14px; border-radius: 20px;
+      margin-bottom: 22px; letter-spacing: 0.05em;
+    }
 
-/* HORMOZI: Proof strip anchors RM3,952 immediately below headline */
-.proof-strip{
-  display:flex;align-items:center;gap:16px;
-  background:var(--border2);
-  border:1px solid var(--grn-bdr);border-left:4px solid var(--green);
-  border-radius:14px;padding:14px 18px;margin-bottom:20px;
-}
-.proof-num{
-  font-size:clamp(1.9rem,4vw,2.6rem);font-weight:900;
-  color:var(--green);letter-spacing:-1px;line-height:1;flex-shrink:0;
-}
-.proof-lbl strong{color:var(--white);font-size:14px;display:block;margin-bottom:2px;}
-.proof-lbl{font-size:12.5px;color:var(--dim);line-height:1.6;}
+    .hero h1 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      margin-bottom: 20px; color: white;
+    }
 
-.hero p.sub{
-  font-size:clamp(.95rem,1.85vw,1.08rem);
-  color:var(--dim);max-width:540px;line-height:1.85;margin-bottom:22px;
-}
-.hero p.sub strong{color:var(--white);font-weight:600;}
+    .hero h1 em { color: var(--accent); font-style: normal; }
 
-/* Price pills */
-.price-row{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px;}
-.price-pill{
-  background:var(--border2);border:1px solid var(--border);
-  border-radius:13px;padding:14px 18px;min-width:120px;text-align:center;
-}
-.price-pill .lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
-.price-pill .val{font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1;}
-.price-pill .val.p{color:var(--purple);}
-.price-pill .val.g{font-size:15px;font-weight:800;color:var(--green);}
-.price-pill .note{font-size:10px;color:var(--muted);margin-top:3px;}
+    .hero .lead {
+      font-size: 17px; color: rgba(255,255,255,0.7);
+      margin-bottom: 32px; line-height: 1.75;
+    }
 
-/* CTA */
-.cta-row{display:flex;flex-wrap:wrap;align-items:center;gap:18px;margin-bottom:18px;}
+    .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 32px; }
 
-/* HORMOZI: Risk reversal — prominent, specific, before scroll */
-.guarantee-inline{
-  display:flex;align-items:flex-start;gap:9px;
-  width:100%;box-sizing:border-box;
-  background:rgba(34,197,94,.05);
-  border:1px solid rgba(34,197,94,.2);
-  border-radius:11px;padding:14px 18px;
-  font-size:13px;color:var(--dim);margin-bottom:24px;
-  line-height:1.65;
-}
-.guarantee-inline strong{color:var(--green);}
-.hero-ps{font-size:13px;color:var(--muted);line-height:1.7;margin-bottom:24px;}
+    .hero-points { display: flex; flex-direction: column; gap: 10px; }
+    .hero-points span {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,0.65);
+    }
+    .hero-points span::before {
+      content: '✓';
+      width: 20px; height: 20px;
+      background: rgba(0,201,167,0.2);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      color: var(--accent); font-size: 11px; font-weight: 900;
+      flex-shrink: 0;
+    }
 
-/* Trust */
-.trust-strip{
-  display:flex;flex-wrap:nowrap;gap:18px;overflow-x:auto;
-  padding-top:22px;
-}
-.trust-item{
-  display:flex;align-items:center;gap:7px;
-  font-size:12.5px;font-weight:500;color:var(--muted);white-space:nowrap;
-}
-.trust-dot{width:5px;height:5px;border-radius:50%;background:var(--purple);flex-shrink:0;}
+    .hero-panel {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 16px; padding: 28px;
+    }
 
-/* Hero right: CSS dashboard mockup (no images needed) */
-@keyframes floatCard{0%,100%{transform:translateY(0);}50%{transform:translateY(-10px);}}
-.hero-right{
-  min-width:0;
-  width:100%;
-}
-.hero-right img{
-  width:100%;display:block;
-  border-radius:20px;
-  box-shadow:0 24px 60px rgba(34,197,94,.15),0 0 0 1px rgba(34,197,94,.10);
-  animation:floatCard 5s ease-in-out infinite;
-}
-.proof-mockup{padding:20px;display:flex;flex-direction:column;gap:0;}
-.pm-topbar{
-  display:flex;align-items:center;gap:8px;
-  padding-bottom:12px;margin-bottom:14px;
-}
-.pm-dots{display:flex;gap:4px;}
-.pm-dots span{width:7px;height:7px;border-radius:50%;}
-.pm-dots span:nth-child(1){background:#ff5f57;}
-.pm-dots span:nth-child(2){background:#febc2e;}
-.pm-dots span:nth-child(3){background:#28c840;}
-.pm-title{font-size:11px;font-weight:700;color:var(--dim);flex:1;text-align:center;letter-spacing:1px;}
-.pm-live{font-size:10px;font-weight:700;color:var(--green);letter-spacing:1px;}
-.pm-label{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:4px;}
-.pm-amount{font-size:clamp(2.3rem,5vw,3.3rem);font-weight:900;color:var(--green);letter-spacing:-2px;line-height:1;margin-bottom:6px;}
-.pm-cent{font-size:1.35rem;opacity:.7;}
-.pm-badge{
-  display:inline-flex;align-items:center;
-  background:var(--grn-bg);border:1px solid var(--grn-bdr);
-  border-radius:100px;padding:3px 12px;
-  font-size:11px;font-weight:700;color:var(--green);
-  margin-bottom:14px;width:fit-content;
-}
-.pm-divider{height:1px;background:var(--border);margin:10px 0;}
-.pm-row{display:flex;justify-content:space-between;align-items:center;padding:4px 0;font-size:12px;color:var(--dim);}
-.pm-val{font-weight:700;font-size:13px;}
-.t1c{color:var(--purple)!important;}
-.t2c{color:var(--gold)!important;}
-.t3c{color:var(--green)!important;}
-.pm-bars{display:flex;flex-direction:column;gap:6px;margin-top:6px;}
-.pm-bar-wrap{display:flex;align-items:center;gap:8px;font-size:11px;color:var(--muted);}
-.pm-bar{height:6px;border-radius:3px;min-width:4px;}
-.pm-bar.t1c{background:var(--purple)!important;}
-.pm-bar.t2c{background:var(--gold)!important;}
-.pm-bar.t3c{background:var(--green)!important;}
-.pm-footer{font-size:10px;color:var(--muted);text-align:center;margin-top:6px;line-height:1.5;}
+    .plan-badge {
+      background: var(--accent); color: var(--brand);
+      font-size: 11px; font-weight: 800;
+      padding: 4px 12px; border-radius: 20px;
+      display: inline-block; margin-bottom: 20px;
+      letter-spacing: 0.06em; text-transform: uppercase;
+    }
 
-/* ═══════ SECTION COMMONS ═══════ */
-.sec-head{margin-bottom:46px;text-align:center;}
-.sec-head h2{font-size:clamp(1.8rem,4vw,2.85rem);font-weight:900;letter-spacing:-.8px;margin-bottom:10px;}
-.sec-head p{font-size:15px;color:var(--dim);max-width:480px;line-height:1.8;margin-left:auto;margin-right:auto;text-align:center;}
+    .plan-highlight {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      font-weight: 800; color: white; margin-bottom: 4px;
+    }
 
-/* ═══════ STORY ═══════ */
-.story{padding:60px 24px;background:#ffffff;}
-.story-inner{max-width:660px;margin:0 auto;}
-.story p{font-size:clamp(1rem,2vw,1.12rem);color:var(--dim);line-height:1.9;margin-bottom:22px;}
-.story p strong{color:var(--white);font-weight:600;}
-.pull{
-  font-family:'Playfair Display',Georgia,serif;
-  font-size:clamp(1.3rem,3vw,1.9rem);
-  font-style:italic;font-weight:700;
-  color:var(--purple);
-  border-left:3px solid var(--purple);
-  padding:18px 0 18px 26px;
-  margin:44px 0;line-height:1.5;
-}
-.video-placeholder{
-  max-width:640px;margin:28px 0;
-  border-radius:16px;overflow:hidden;
-  background:#0f0f1a;border:1.5px dashed rgba(168,85,247,.3);
-  aspect-ratio:16/9;
-  display:flex;flex-direction:column;
-  align-items:center;justify-content:center;gap:12px;
-}
+    .plan-price {
+      font-size: 1rem; color: rgba(255,255,255,0.5); margin-bottom: 20px;
+    }
 
-/* ═══════ SOLUTION: 3 steps ═══════ */
-.solution{padding:90px 24px;background:var(--bg);}
-.sol-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:20px;overflow:hidden;
-}
-.sol-card{background:var(--card);padding:30px 26px;transition:background .2s;}
-.sol-card:hover{background:#1e1f30;}
-.sol-num{font-size:38px;text-align:center;font-weight:900;color:var(--border);line-height:1;margin-bottom:12px;transition:color .2s;}
-.sol-card:hover .sol-num{color:var(--purple);}
-.sol-title{font-size:15px;font-weight:700;margin-bottom:7px;}
-.sol-body{font-size:13.5px;color:var(--muted);line-height:1.75;}
+    .plan-items { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; }
+    .plan-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,0.8);
+    }
+    .plan-item .tag {
+      background: rgba(0,201,167,0.15);
+      border: 1px solid rgba(0,201,167,0.25);
+      color: var(--accent);
+      font-size: 11px; font-weight: 700;
+      padding: 2px 8px; border-radius: 4px;
+      flex-shrink: 0;
+    }
 
-/* ═══════ KEUNGGULAN ═══════ */
-.keunggulan{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
-.keunggulan-grid{
-  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-  gap:1px;background:var(--border);
-  border:1px solid var(--border);border-radius:20px;overflow:hidden;
-}
-.keunggulan-card{background:var(--card);padding:28px 24px;transition:background .2s;}
-.keunggulan-card:hover{background:#1e1f30;}
-.keunggulan-icon{font-size:28px;margin-bottom:12px;line-height:1;}
-.keunggulan-title{font-size:14px;font-weight:700;margin-bottom:6px;}
-.keunggulan-body{font-size:13px;color:var(--muted);line-height:1.75;}
+    .mini-flow {
+      border-top: 1px solid rgba(255,255,255,0.1);
+      padding-top: 20px;
+      display: flex; flex-direction: column; gap: 8px;
+    }
+    .mini-flow span {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 13px; color: rgba(255,255,255,0.55);
+    }
+    .mini-flow span::before { content: '→'; color: var(--accent); font-weight: 700; }
 
-/* ═══════ FUP COMPARISON ═══════ */
-.fup-sec{padding:80px 24px;background:#ffffff;}
-.fup-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
-@media(max-width:560px){.bonus-cards{grid-template-columns:1fr;}.fup-grid{grid-template-columns:1fr;}}
-.fup-card{border-radius:18px;padding:26px 22px;}
-.fup-card.bad{background:rgba(239,68,68,.05);border:1px solid rgba(239,68,68,.2);}
-.fup-card.good{background:var(--grn-bg);border:1px solid var(--grn-bdr);}
-.fup-header{font-size:10.5px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:16px;}
-.fup-card.bad .fup-header{color:var(--red);}
-.fup-card.good .fup-header{color:var(--green);}
-.fup-list{display:flex;flex-direction:column;gap:11px;}
-.fup-item{display:flex;align-items:flex-start;gap:9px;font-size:13.5px;color:var(--dim);}
-.fup-item strong{color:var(--white);}
-.fup-x{color:var(--red);flex-shrink:0;margin-top:1px;}
-.fup-v{color:var(--green);flex-shrink:0;margin-top:1px;}
+    @media(max-width:768px){
+      .hero-inner { grid-template-columns: 1fr; }
+      .hero-panel { display: none; }
+    }
 
-/* ═══════ PLANS ═══════ */
-.plans{padding:90px 24px;background:var(--bg);}
-.plan-stack{display:flex;flex-direction:column;gap:8px;}
-.plan-row{
-  display:flex;align-items:center;gap:16px;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:14px;padding:16px 20px;
-  transition:border-color .2s,transform .15s;
-}
-.plan-row:hover{border-color:var(--pup-bdr);transform:translateX(4px);}
-.plan-row.top{border-color:var(--pup-bdr);background:#1a1b30;}
-.plan-price{font-size:22px;font-weight:900;letter-spacing:-.5px;min-width:60px;color:var(--purple);}
-.plan-info{flex:1;}
-.plan-name-row{display:flex;align-items:center;gap:8px;margin-bottom:2px;}
-.plan-name{font-size:15px;font-weight:700;}
-.chip{font-size:10px;font-weight:800;letter-spacing:1px;padding:2px 9px;border-radius:100px;}
-.chip-p{background:var(--pup-bg);color:var(--purple);}
-.chip-g{background:var(--grn-bg);color:var(--green);}
-.plan-row.top .chip-p{background:var(--purple);color:#fff;}
-.plan-perks{font-size:12.5px;color:var(--muted);}
-.plan-arr{font-size:16px;color:var(--border);transition:color .2s;}
-.plan-row:hover .plan-arr{color:var(--purple);}
+    /* ══════════════════════════════
+       NOTICE
+    ══════════════════════════════ */
+    .notice {
+      background: var(--accent); color: var(--brand);
+      padding: 18px 24px; text-align: center;
+    }
+    .notice p { font-size: 15px; opacity: 0.75; margin-bottom: 2px; }
+    .notice strong { font-size: 17px; font-weight: 800; }
 
-/* ═══════ CALCULATOR ═══════ */
-.calc{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
+    /* ══════════════════════════════
+       SECTION BASE
+    ══════════════════════════════ */
+    .sec { padding: 80px 24px; }
+    .sec-head { max-width: 660px; margin-bottom: 48px; }
+    .sec-head h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
+    .sec-head p { color: var(--muted); font-size: 15px; }
+    .sec-head.center { text-align: center; margin-left: auto; margin-right: auto; }
 
-/* HORMOZI FIX: Scenario buttons so defaults are realistic, not dream */
-.scenario-bar{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;}
-.sc-btn{
-  font-family:'Outfit',sans-serif;font-size:12px;font-weight:700;
-  padding:7px 16px;border-radius:100px;
-  border:1px solid var(--border);background:var(--card);
-  color:var(--muted);cursor:pointer;transition:all .2s;
-}
-.sc-btn:hover,.sc-btn.active{border-color:var(--purple);color:var(--purple);background:var(--pup-bg);}
+    /* ══════════════════════════════
+       PAIN — masalah lama
+    ══════════════════════════════ */
+    .pain { background: var(--warm); }
+    .pain-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: start;
+    }
+    .pain h2 { font-size: clamp(1.7rem, 3vw, 2.3rem); margin-bottom: 0; }
 
-.calc-shell{background:var(--bg);border:1px solid var(--border);border-radius:20px;padding:36px;}
-@media(max-width:480px){.calc-shell{padding:20px 14px;}}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:24px;}
-@media(max-width:500px){.calc-grid{grid-template-columns:1fr;}}
-.cf-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--muted);margin-bottom:7px;}
-.cf-in,.cf-sel{
-  width:100%;background:rgba(255,255,255,.04);
-  border:1px solid var(--border);border-radius:10px;
-  padding:11px 14px;font-family:'Outfit',sans-serif;
-  font-size:16px;color:var(--white);outline:none;appearance:none;
-  transition:border-color .2s;
-}
-.cf-in:focus,.cf-sel:focus{border-color:var(--purple);}
-.cf-in::placeholder{color:var(--muted);}
-.cf-sel option{background:#111;}
-.tier-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:18px;}
-@media(max-width:420px){.tier-cols{grid-template-columns:1fr;}}
-.tier-box{background:rgba(255,255,255,.02);border:1px solid var(--border);border-radius:12px;padding:16px 12px;text-align:center;}
-.tier-box.t1{border-top:2px solid var(--purple);}
-.tier-box.t2{border-top:2px solid var(--gold);}
-.tier-box.t3{border-top:2px solid var(--green);}
-.tb-lbl{font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;margin-bottom:2px;}
-.t1 .tb-lbl{color:var(--purple);}.t2 .tb-lbl{color:var(--gold);}.t3 .tb-lbl{color:var(--green);}
-.tb-pct{font-size:11px;color:var(--muted);margin-bottom:8px;}
-.tb-amt{font-size:21px;font-weight:800;letter-spacing:-.5px;transition:all .3s;}
-.t1 .tb-amt{color:var(--purple);}.t2 .tb-amt{color:var(--gold);}.t3 .tb-amt{color:var(--green);}
-.total-row{
-  background:var(--pup-bg);border:1px solid var(--pup-bdr);
-  border-radius:14px;padding:18px 22px;
-  display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px;
-}
-.total-num{font-size:38px;font-weight:900;letter-spacing:-1.5px;color:var(--purple);transition:all .3s;}
-.total-lbl{font-size:13px;color:var(--dim);}
-.total-note{font-size:11px;color:var(--muted);margin-top:2px;}
-.calc-disc{margin-top:12px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
+    .pain-cards { display: flex; flex-direction: column; gap: 16px; }
+    .pain-card {
+      background: white; border-radius: var(--r);
+      border: 1px solid var(--line); padding: 20px 24px;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .pain-icon {
+      width: 36px; height: 36px; border-radius: 8px;
+      background: #fef2f2; display: flex; align-items: center;
+      justify-content: center; font-size: 18px; flex-shrink: 0;
+    }
+    .pain-card h3 { font-size: 15px; margin-bottom: 4px; }
+    .pain-card p { font-size: 14px; color: var(--muted); line-height: 1.6; }
 
-/* ═══════ SOCIAL PROOF ═══════ */
-.testi{padding:90px 24px;background:#ffffff;}
-.testi-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;}
-.testi-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:18px;padding:26px 20px;
-  position:relative;overflow:hidden;
-  transition:border-color .2s,transform .2s;
-}
-.testi-card:hover{border-color:var(--pup-bdr);transform:translateY(-3px);}
-.testi-card::before{
-  content:'\201C';position:absolute;top:8px;right:16px;
-  font-family:'Playfair Display',serif;
-  font-size:72px;color:var(--purple);opacity:.07;line-height:1;
-}
-.testi-stars{color:var(--gold);font-size:13px;margin-bottom:10px;letter-spacing:2px;}
-.testi-text{font-size:14px;color:var(--dim);line-height:1.8;margin-bottom:18px;font-style:italic;}
-.testi-author{display:flex;align-items:center;gap:10px;}
-.testi-ava{
-  width:36px;height:36px;border-radius:50%;flex-shrink:0;
-  background:linear-gradient(135deg,var(--purple-d),var(--purple));
-  display:flex;align-items:center;justify-content:center;font-size:16px;
-}
-.testi-name{font-size:14px;font-weight:700;}
-.testi-loc{font-size:12px;color:var(--muted);}
+    @media(max-width:768px){ .pain-inner { grid-template-columns: 1fr; gap: 28px; } }
 
-/* Stats row */
-.stats-row{
-  display:grid;grid-template-columns:repeat(4,1fr);gap:1px;
-  background:var(--border);border:1px solid var(--border);
-  border-radius:18px;overflow:hidden;margin-bottom:44px;
-}
-@media(max-width:560px){.stats-row{grid-template-columns:repeat(2,1fr);}}
-.stat-box{background:var(--card);padding:22px 16px;text-align:center;}
-.stat-num{font-size:26px;font-weight:900;letter-spacing:-1px;line-height:1;margin-bottom:4px;}
-.stat-lbl{font-size:11px;color:var(--muted);}
+    /* ══════════════════════════════
+       AGITATE — korek lagi
+    ══════════════════════════════ */
+    .agitate {
+      background: var(--brand);
+      color: white;
+      padding: 80px 24px;
+    }
+    .agitate-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 64px; align-items: center;
+    }
+    .agitate h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); color: white; margin-bottom: 20px; }
+    .agitate h2 em { color: var(--accent); font-style: normal; }
+    .agitate-copy p { color: rgba(255,255,255,0.65); font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
 
-/* ═══════ GUARANTEE (Hormozi: dedicated section, not footnote) ═══════ */
-.guarantee-sec{padding:60px 24px;background:var(--bg);}
-.guarantee-box{
-  max-width:640px;margin:0 auto;
-  background:var(--grn-bg);border:1px solid var(--grn-bdr);
-  border-radius:20px;padding:36px;
-  display:flex;gap:20px;align-items:flex-start;
-}
-@media(max-width:480px){.guarantee-box{flex-direction:column;gap:14px;padding:22px;}}
-.guarantee-icon{font-size:46px;flex-shrink:0;line-height:1;}
-.guarantee-title{font-size:20px;font-weight:900;color:var(--green);margin-bottom:10px;}
-.guarantee-body{font-size:14px;color:var(--dim);line-height:1.8;}
-.guarantee-body strong{color:var(--white);}
+    .math-box {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 14px; padding: 28px;
+    }
+    .math-box .label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: rgba(255,255,255,0.4); margin-bottom: 16px; display: block; }
+    .math-row {
+      display: flex; justify-content: space-between; align-items: center;
+      padding: 12px 0; border-bottom: 1px solid rgba(255,255,255,0.08);
+      font-size: 15px; color: rgba(255,255,255,0.7);
+    }
+    .math-row:last-child { border-bottom: none; }
+    .math-row strong { color: white; font-size: 16px; }
+    .math-row.total { padding-top: 16px; }
+    .math-row.total span { color: var(--accent); font-weight: 700; font-size: 13px; }
+    .math-row.total strong { color: var(--accent); font-size: 1.4rem; }
 
-/* ═══════ BONUS ═══════ */
-.bonus{padding:90px 24px;background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);}
-.bonus-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
-@media(max-width:900px){.bonus-cards{grid-template-columns:1fr;}}
-.bonus-card{background:var(--card);border:1px solid var(--border);border-radius:20px;overflow:hidden;transition:border-color .2s,transform .2s;}
-.bonus-card:hover{border-color:var(--pup-bdr);transform:translateY(-4px);}
-.bonus-top{padding:20px 16px 0;display:flex;justify-content:center;background:var(--bg2);min-height:180px;align-items:flex-end;}
-.bonus-bottom{padding:20px;}
-.bonus-title{font-size:14px;font-weight:700;color:var(--white);margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap;}
-.bonus-desc{font-size:13px;color:var(--muted);line-height:1.7;}
-.free-chip{font-size:9px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase;background:var(--grn-bg);color:var(--green);padding:2px 9px;border-radius:100px;border:1px solid rgba(34,197,94,.25);}
+    @media(max-width:768px){ .agitate-inner { grid-template-columns: 1fr; gap: 32px; } }
 
-/* Browser mockup */
-.bm-wrap{width:100%;max-width:230px;border-radius:10px 10px 0 0;overflow:hidden;box-shadow:0 -8px 28px rgba(168,85,247,.14);animation:floatBonus 3.5s ease-in-out infinite;}
-@keyframes floatBonus{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
-.bm-bar{background:#1e1e2e;padding:8px 10px;display:flex;align-items:center;gap:8px;}
-.bm-dots{display:flex;gap:4px;}
-.bm-dots span{width:7px;height:7px;border-radius:50%;}
-.bm-dots span:nth-child(1){background:#ff5f57;}
-.bm-dots span:nth-child(2){background:#febc2e;}
-.bm-dots span:nth-child(3){background:#28c840;}
-.bm-url{background:#2a2a3e;border-radius:4px;font-size:9px;color:#888;padding:3px 8px;flex:1;}
-.bm-body{background:#0f0f1a;padding:10px;}
-.bm-hero-s{background:linear-gradient(135deg,#6d28d9,#a855f7);height:48px;border-radius:6px;margin-bottom:8px;}
-.bm-line{height:6px;background:#2a2a3e;border-radius:3px;margin-bottom:5px;}
-.bm-line.w80{width:80%;}.bm-line.w60{width:60%;}
-.bm-btn{height:20px;width:70px;background:var(--green);border-radius:10px;margin:8px 0;}
+    /* ══════════════════════════════
+       SOLUTION — intro produk
+    ══════════════════════════════ */
+    .solution { padding: 80px 24px; }
+    .solution-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 56px; align-items: center;
+    }
+    .solution h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 20px; }
+    .solution h2 em { color: var(--accent-dark); font-style: normal; }
+    .solution-copy p { color: var(--muted); font-size: 16px; margin-bottom: 16px; line-height: 1.8; }
 
-/* Threads mockup */
-.tm-wrap{background:#0f0f0f;border:1px solid #2a2a2a;padding:12px;width:100%;max-width:230px;border-radius:10px 10px 0 0;animation:floatBonus 3.5s ease-in-out infinite;animation-delay:.5s;}
-.tm-header{display:flex;align-items:center;gap:8px;margin-bottom:10px;}
-.tm-ava{width:26px;height:26px;border-radius:50%;background:linear-gradient(135deg,var(--purple-d),var(--purple));flex-shrink:0;}
-.tm-name{font-size:11px;font-weight:700;color:#fff;}
-.tm-handle{font-size:9px;color:#666;}
-.tm-line{height:5px;background:#2a2a2a;border-radius:3px;margin-bottom:4px;}
-.tm-line.w90{width:90%;}.tm-line.w75{width:75%;}.tm-line.w60{width:60%;}
-.tm-tag{font-size:9px;color:var(--purple);margin-top:5px;}
-.tm-actions{display:flex;gap:12px;font-size:9px;color:#666;margin-top:6px;}
+    .solution-proof {
+      background: var(--warm); border-radius: 16px; padding: 28px;
+      border: 1px solid var(--line);
+    }
+    .proof-label { font-size: 12px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--muted); margin-bottom: 20px; display: block; }
+    .proof-stat { margin-bottom: 20px; }
+    .proof-stat .num { font-size: 2.2rem; font-weight: 800; color: var(--accent-dark); line-height: 1; }
+    .proof-stat .desc { font-size: 14px; color: var(--muted); margin-top: 4px; }
+    .proof-divider { height: 1px; background: var(--line); margin: 20px 0; }
+    .proof-list { display: flex; flex-direction: column; gap: 10px; }
+    .proof-list li {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: var(--ink);
+    }
+    .proof-list li::before { content: '✓'; color: var(--green); font-weight: 900; }
 
-/* Chat mockup */
-.cm-wrap{background:#0f0f0f;border:1px solid #2a2a2a;width:100%;max-width:230px;border-radius:10px 10px 0 0;overflow:hidden;animation:floatBonus 3.5s ease-in-out infinite;animation-delay:1s;}
-.cm-header{background:#1a1a2e;padding:10px 12px;display:flex;align-items:center;gap:8px;border-bottom:1px solid #2a2a2a;}
-.cm-ava{width:26px;height:26px;border-radius:50%;background:var(--purple);display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:800;color:#fff;flex-shrink:0;}
-.cm-name{font-size:10px;font-weight:700;color:#fff;}
-.cm-status{font-size:8px;color:var(--green);}
-.cm-msgs{padding:10px;display:flex;flex-direction:column;gap:6px;}
-.cm-msg{font-size:9px;line-height:1.4;padding:5px 8px;border-radius:8px;max-width:85%;}
-.cm-msg.l{background:#1e1e2e;color:#ccc;border-radius:2px 8px 8px 8px;align-self:flex-start;}
-.cm-msg.r{background:var(--purple);color:#fff;border-radius:8px 2px 8px 8px;align-self:flex-end;}
+    @media(max-width:768px){ .solution-inner { grid-template-columns: 1fr; gap: 32px; } }
 
-/* ═══════ OFFER SUMMARY ═══════ */
-.offer-sec{padding:70px 24px;background:#ffffff;}
-.offer-shell{
-  max-width:620px;margin:0 auto;
-  background:var(--card);border:1px solid var(--border);
-  border-radius:24px;padding:44px 36px;position:relative;overflow:hidden;
-}
-@media(max-width:480px){.offer-shell{padding:26px 18px;}}
-.offer-shell::before{
-  content:'';position:absolute;top:-50px;left:50%;transform:translateX(-50%);
-  width:280px;height:100px;border-radius:50%;
-  background:radial-gradient(ellipse,rgba(168,85,247,.18) 0%,transparent 70%);
-}
-.offer-list{display:flex;flex-direction:column;margin-bottom:22px;}
-.offer-row{
-  display:flex;justify-content:space-between;align-items:center;
-  padding:12px 0;
-}
-.offer-row:last-child{border:none;}
-.or-name{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--dim);}
-.or-check{
-  width:18px;height:18px;border-radius:50%;flex-shrink:0;
-  background:var(--grn-bg);color:var(--green);
-  display:inline-flex;align-items:center;justify-content:center;
-  font-size:9px;font-weight:900;border:1px solid var(--grn-bdr);
-}
-.or-val{font-size:14px;font-weight:800;}
-.or-val.g{color:var(--green);}.or-val.w{color:var(--white);}
-.offer-total{
-  background:var(--pup-bg);border:1px solid var(--pup-bdr);
-  border-radius:14px;padding:18px 20px;
-  display:flex;justify-content:space-between;align-items:center;
-  flex-wrap:wrap;gap:8px;margin-bottom:20px;
-}
-.ot-price{font-size:36px;font-weight:900;letter-spacing:-1.5px;color:var(--purple);}
+    /* ══════════════════════════════
+       PLANS — pakej data
+    ══════════════════════════════ */
+    .plans { background: var(--warm); padding: 80px 24px; }
+    .plans-inner { max-width: var(--max); margin: 0 auto; }
+    .plan-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+    .plan-card {
+      background: var(--card); border-radius: var(--r);
+      border: 2px solid var(--line); padding: 28px;
+      position: relative; transition: border-color 0.2s;
+    }
+    .plan-card:hover { border-color: var(--accent); }
+    .plan-card.popular {
+      border-color: var(--accent);
+      background: linear-gradient(160deg, #e6faf6 0%, white 100%);
+    }
+    .pop-badge {
+      position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--accent); color: var(--brand);
+      font-size: 11px; font-weight: 800; padding: 4px 14px;
+      border-radius: 20px; letter-spacing: 0.06em; white-space: nowrap;
+    }
+    .plan-name { font-size: 13px; font-weight: 700; color: var(--muted); margin-bottom: 8px; }
+    .plan-price-big { font-size: 2.2rem; font-weight: 800; color: var(--ink); line-height: 1; }
+    .plan-price-big span { font-size: 1rem; font-weight: 600; color: var(--muted); }
+    .plan-data { font-size: 1.1rem; font-weight: 800; color: var(--accent-dark); margin: 10px 0 4px; }
+    .no-fup {
+      display: inline-block; background: var(--accent-soft);
+      border: 1px solid var(--accent); color: var(--accent-dark);
+      font-size: 11px; font-weight: 700; padding: 3px 10px;
+      border-radius: 20px; margin-bottom: 16px;
+    }
+    .plan-features { display: flex; flex-direction: column; gap: 7px; }
+    .plan-features li { font-size: 13px; color: var(--muted); display: flex; gap: 7px; }
+    .plan-features li::before { content: '✓'; color: var(--green); font-weight: 900; flex-shrink: 0; }
 
-/* ═══════ FAQ ═══════ */
-.faq{padding:90px 24px;background:var(--bg);}
-.faq-stack{display:flex;flex-direction:column;gap:6px;max-width:700px;margin:0 auto;}
-.faq-item{border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:border-color .2s;}
-.faq-item.open{border-color:var(--pup-bdr);}
-.faq-q{min-height:48px;
-  width:100%;text-align:left;display:flex;justify-content:space-between;align-items:center;gap:12px;
-  padding:16px 20px;background:var(--card);
-  font-family:'Outfit',sans-serif;font-size:15px;font-weight:600;color:var(--white);
-  cursor:pointer;border:none;outline:none;transition:background .2s;
-}
-.faq-q:hover{background:#1a1a2e;}
-.faq-item.open .faq-q{min-height:48px;color:var(--purple);}
-.faq-arr{font-size:18px;color:var(--muted);transition:transform .3s,color .2s;flex-shrink:0;}
-.faq-item.open .faq-arr{transform:rotate(45deg);color:var(--purple);}
-.faq-a{
-  max-height:0;overflow:hidden;background:var(--card);
-  font-size:14px;color:var(--dim);line-height:1.8;
-  padding:0 20px;transition:max-height .4s ease,padding .3s;
-}
-.faq-item.open .faq-a{max-height:260px;padding:0 20px 16px;}
+    /* ══════════════════════════════
+       INCOME — macam mana buat duit
+    ══════════════════════════════ */
+    .income { padding: 80px 24px; }
+    .income-inner { max-width: var(--max); margin: 0 auto; }
+    .income-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px; margin-top: 48px;
+    }
+    .income-card {
+      background: var(--card); border-radius: var(--r);
+      border: 1px solid var(--line); padding: 28px;
+    }
+    .income-card .step-num {
+      font-size: 3rem; font-weight: 800;
+      color: var(--accent); opacity: 0.2;
+      line-height: 1; margin-bottom: 12px;
+    }
+    .income-card h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .income-card p { font-size: 14px; color: var(--muted); line-height: 1.7; }
 
-/* ═══════ FORM ═══════ */
-.form-sec{
-  padding:90px 24px;
-  background:linear-gradient(135deg,#0f0c29 0%,#1a1060 40%,#2d1b69 70%,#4a1d96 100%);
-  position:relative;overflow:hidden;
-  box-sizing:border-box;
-}
-.form-sec::before{
-  content:'';position:absolute;bottom:-80px;right:-60px;
-  width:360px;height:360px;border-radius:50%;
-  background:radial-gradient(circle,rgba(34,197,94,.05) 0%,transparent 70%);
-}
-.form-card{
-  background:var(--card);border:1px solid var(--border);
-  border-radius:20px;padding:36px;max-width:560px;
-  margin:0 auto;width:100%;box-sizing:border-box;
-}
-@media(max-width:480px){.form-card{padding:20px 16px;border-radius:14px;}}
-.fg{margin-bottom:14px;}
-.fg label{
-  display:block;font-size:10px;font-weight:700;
-  letter-spacing:2px;text-transform:uppercase;
-  color:var(--muted);margin-bottom:7px;
-}
-.fg input,.fg select,.fg textarea{
-  width:100%;background:rgba(255,255,255,.03);
-  border:1px solid var(--border);border-radius:10px;
-  padding:12px 15px;font-family:'Outfit',sans-serif;
-  font-size:15px;color:var(--white);outline:none;appearance:none;
-  transition:border-color .2s;
-}
-.fg input::placeholder,.fg textarea::placeholder{color:var(--muted);}
-.fg input:focus,.fg select:focus,.fg textarea:focus{border-color:var(--purple);}
-.fg select option{background:#111;}
-.fg textarea{resize:vertical;min-height:90px;}
-.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
-@media(max-width:450px){.fg-row{grid-template-columns:1fr;}}
-.slot-warn{
-  display:flex;align-items:center;gap:10px;
-  background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);
-  border-radius:10px;padding:10px 14px;
-  font-size:13px;color:rgba(255,120,100,.9);margin-bottom:14px;
-}
+    /* komisyen calculator */
+    .komisyen-box {
+      background: var(--brand); border-radius: 16px;
+      padding: 36px; margin-top: 48px; color: white;
+    }
+    .komisyen-box h3 { color: white; margin-bottom: 6px; }
+    .komisyen-box .sub { color: rgba(255,255,255,0.55); font-size: 14px; margin-bottom: 28px; }
+    .komisyen-tiers {
+      display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; margin-bottom: 28px;
+    }
+    .tier {
+      background: rgba(255,255,255,0.07);
+      border-radius: 10px; padding: 18px; text-align: center;
+    }
+    .tier .pct { font-size: 1.8rem; font-weight: 800; color: var(--accent); }
+    .tier .lv { font-size: 12px; color: rgba(255,255,255,0.4); margin-top: 4px; }
+    .tier .desc { font-size: 13px; color: rgba(255,255,255,0.6); margin-top: 6px; }
+    .komisyen-example {
+      background: rgba(0,201,167,0.1); border: 1px solid rgba(0,201,167,0.2);
+      border-radius: 10px; padding: 20px;
+      display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; text-align: center;
+    }
+    .komisyen-example .ex-item .num { font-size: 1.4rem; font-weight: 800; color: var(--accent); }
+    .komisyen-example .ex-item .lbl { font-size: 12px; color: rgba(255,255,255,0.5); margin-top: 4px; }
 
-/* QR section */
-.qr-sec{
-  display:none;background:var(--pup-bg);
-  border:1px solid var(--pup-bdr);border-radius:14px;
-  padding:20px;margin-bottom:14px;
-}
-.qr-sec.show{display:block;}
-/* CSS QR placeholder */
-.qr-css-box{
-  width:140px;height:140px;margin:12px auto;
-  border-radius:10px;border:2px solid var(--border);
-  background:rgba(255,255,255,.03);
-  position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;
-}
-.qr-css-box img{width:100%;height:100%;object-fit:contain;border-radius:8px;}
-.qr-corner{position:absolute;width:32px;height:32px;border:3px solid var(--purple);}
-.qr-corner.tl{top:7px;left:7px;border-right:none;border-bottom:none;border-radius:4px 0 0 0;}
-.qr-corner.tr{top:7px;right:7px;border-left:none;border-bottom:none;border-radius:0 4px 0 0;}
-.qr-corner.bl{bottom:7px;left:7px;border-right:none;border-top:none;border-radius:0 0 0 4px;}
-.qr-dots{
-  position:absolute;inset:0;
-  background-image:radial-gradient(circle,rgba(168,85,247,.25) 1px,transparent 1px),
-                    radial-gradient(circle,rgba(168,85,247,.12) 1px,transparent 1px);
-  background-size:9px 9px,6px 6px;background-position:0 0,4.5px 4.5px;
-}
-.qr-center{font-size:26px;position:relative;z-index:1;}
+    @media(max-width:640px){
+      .komisyen-tiers { grid-template-columns: 1fr; }
+      .komisyen-example { grid-template-columns: 1fr; }
+    }
 
-/* Confirm checkbox */
-.confirm-box{
-  background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.18);
-  border-radius:11px;padding:13px 16px;margin-bottom:14px;display:none;
-}
-.confirm-box.show{display:block;}
-.confirm-label{display:flex;align-items:flex-start;gap:9px;cursor:pointer;}
-.confirm-label input[type="checkbox"]{width:17px;height:17px;accent-color:var(--green);cursor:pointer;flex-shrink:0;margin-top:2px;}
-.confirm-label span{font-size:13px;color:var(--dim);line-height:1.65;}
+    /* ══════════════════════════════
+       SYSTEM — chip tags
+    ══════════════════════════════ */
+    .system { background: var(--warm); padding: 60px 24px; }
+    .system-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
+    }
+    .system h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 14px; }
+    .system p { font-size: 15px; color: var(--muted); }
+    .chips { display: flex; flex-wrap: wrap; gap: 10px; }
+    .chips span {
+      background: white; border: 1px solid var(--line);
+      border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600;
+    }
+    @media(max-width:768px){ .system-inner { grid-template-columns: 1fr; gap: 28px; } }
 
-.submit-btn{
-  width:100%;padding:16px;
-  background:var(--green);color:#000;
-  font-family:'Outfit',sans-serif;font-size:16px;font-weight:900;
-  border:none;border-radius:12px;cursor:pointer;
-  transition:transform .2s,box-shadow .2s,opacity .2s;
-  display:flex;align-items:center;justify-content:center;gap:10px;
-  margin-top:4px;
-}
-.submit-btn:hover:not(:disabled){transform:translateY(-2px);box-shadow:0 0 28px var(--grn-glow);}
-.submit-btn:disabled{opacity:.42;cursor:not-allowed;transform:none;box-shadow:none;}
-.form-trust{display:flex;flex-wrap:wrap;gap:12px;margin-top:18px;padding-top:16px;}
-.ftr-item{display:flex;align-items:center;gap:6px;font-size:12px;color:var(--muted);}
-.form-legal{margin-top:10px;font-size:11px;color:var(--muted);text-align:center;line-height:1.6;}
+    /* ══════════════════════════════
+       STEPS
+    ══════════════════════════════ */
+    .steps-sec { padding: 80px 24px; }
+    .steps-inner { max-width: var(--max); margin: 0 auto; }
+    .steps-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 20px;
+    }
+    .step-card {
+      background: var(--card); border-radius: var(--r);
+      border: 1px solid var(--line); padding: 24px; position: relative;
+    }
+    .step-num-big {
+      font-size: 2.8rem; font-weight: 800; color: var(--accent);
+      opacity: 0.18; line-height: 1; margin-bottom: 12px;
+    }
+    .step-card h3 { font-size: 0.95rem; font-weight: 700; margin-bottom: 6px; }
+    .step-card p { font-size: 13px; color: var(--muted); }
 
-/* Success */
-.success-box{display:none;text-align:center;padding:20px 0;}
-.suc-circle{
-  width:72px;height:72px;border-radius:50%;
-  background:var(--grn-bg);border:2px solid var(--green);
-  display:flex;align-items:center;justify-content:center;
-  font-size:32px;margin:0 auto 20px;
-}
-.success-box h3{font-size:22px;font-weight:800;margin-bottom:10px;}
-.success-box p{font-size:14px;color:var(--dim);line-height:1.8;}
+    /* ══════════════════════════════
+       CHECKOUT
+    ══════════════════════════════ */
+    .checkout { background: var(--warm); padding: 80px 24px; }
+    .checkout-inner { max-width: var(--max); margin: 0 auto; }
 
-/* ═══════ FOOTER ═══════ */
-footer{background:var(--bg);padding:36px 24px;text-align:center;}
-.footer-logo{font-size:18px;font-weight:900;margin-bottom:6px;}
-.footer-logo em{font-style:normal;color:var(--purple);}
-.footer-tag{font-size:12px;color:var(--muted);margin-bottom:16px;}
-.footer-links{display:flex;justify-content:center;gap:20px;margin-bottom:16px;flex-wrap:wrap;}
-.footer-links a{font-size:13px;color:var(--muted);transition:color .2s;}
-.footer-links a:hover{color:var(--dim);}
-.footer-copy{font-size:11px;color:#222;}
+    .shariah-note {
+      display: flex; gap: 12px; align-items: flex-start;
+      background: var(--accent-soft); border: 1px solid var(--accent);
+      border-radius: var(--r); padding: 18px 22px;
+      max-width: 580px; margin: 0 auto 32px; font-size: 14px;
+    }
+    .shariah-note .icon { font-size: 20px; flex-shrink: 0; margin-top: 2px; }
+    .shariah-note strong { display: block; margin-bottom: 4px; color: var(--accent-dark); }
+    .shariah-note p { color: var(--muted); }
 
-/* ═══════ SOCIAL PROOF NOTIF ═══════ */
-#saleNotif{
-  position:fixed;bottom:24px;left:-320px;z-index:9999;
-  background:var(--card);border:1px solid var(--border);border-left:3px solid var(--green);
-  border-radius:14px;padding:14px 18px;
-  display:flex;align-items:center;gap:12px;max-width:280px;
-  box-shadow:0 8px 32px rgba(0,0,0,.4);
-  transition:left .4s cubic-bezier(.34,1.56,.64,1);
-  pointer-events:none;
-}
-#saleNotif.show{left:24px;}
-.sn-ava{width:36px;height:36px;border-radius:50%;background:linear-gradient(135deg,var(--purple-d),var(--purple));display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0;}
-.sn-msg strong{color:var(--white);}
-.sn-msg span{color:var(--muted);}
-.sn-time{font-size:10px;color:var(--green);font-weight:600;margin-top:2px;}
-@media(max-width:480px){#saleNotif{left:14px;bottom:14px;max-width:calc(100vw - 28px);}}
+    .starter-card {
+      background: var(--brand);
+      border-radius: 16px; padding: 36px;
+      max-width: 560px; margin: 0 auto 28px;
+      text-align: center; color: white;
+    }
+    .starter-card .plan-badge-lg {
+      background: var(--accent); color: var(--brand);
+      font-size: 12px; font-weight: 800;
+      padding: 5px 16px; border-radius: 20px;
+      display: inline-block; margin-bottom: 16px;
+    }
+    .starter-card h3 { font-size: 1.4rem; color: white; margin-bottom: 8px; }
+    .starter-card .price-main { font-size: 3rem; font-weight: 800; color: var(--accent); line-height: 1; }
+    .starter-card .price-sub { font-size: 14px; color: rgba(255,255,255,0.5); margin-bottom: 24px; }
+    .starter-items {
+      display: flex; flex-direction: column; gap: 10px;
+      text-align: left; margin-bottom: 28px;
+    }
+    .starter-item {
+      display: flex; align-items: center; gap: 10px;
+      font-size: 14px; color: rgba(255,255,255,0.75);
+    }
+    .starter-item::before { content: '✓'; color: var(--accent); font-weight: 900; }
 
-/* ═══════ DESKTOP POLISH ═══════ */
-@media(min-width:1024px){
-  .story,.testi,.bonus,.keunggulan,.fup-sec,.plans,.calc,.offer-sec,.guarantee-sec{padding-left:48px;padding-right:48px;}
-  .solution{padding-left:48px;padding-right:48px;}
-  .hero-grid{padding-left:48px;padding-right:48px;}
-  .wrap{max-width:960px;}
-  .wrap-sm{max-width:720px;margin:0 auto;}
-}
-@media(min-width:1280px){.wrap{max-width:1100px;}}
+    .checkout-launch { text-align: center; max-width: 480px; margin: 0 auto 40px; }
+    .checkout-launch p { font-size: 14px; color: var(--muted); margin-bottom: 14px; }
 
-/* ═══ WHITE SECTION OVERRIDES — COMPLETE ═══ */
+    /* modal */
+    .checkout-modal {
+      position: fixed; inset: 0; background: rgba(0,0,0,0.65);
+      z-index: 200; display: flex; align-items: center;
+      justify-content: center; padding: 16px; backdrop-filter: blur(4px);
+    }
+    .checkout-modal[hidden] { display: none; }
+    .checkout-dialog {
+      background: white; border-radius: 16px; padding: 32px;
+      width: 100%; max-width: 500px; max-height: 90vh; overflow-y: auto;
+    }
+    .modal-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 22px; }
+    .modal-head h3 { font-size: 1.2rem; }
+    .modal-close {
+      background: var(--warm); border: none;
+      width: 32px; height: 32px; border-radius: 50%;
+      cursor: pointer; font-size: 16px; flex-shrink: 0;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .lead-form { display: flex; flex-direction: column; gap: 14px; }
+    .form-copy {
+      background: var(--warm); border-radius: 8px; padding: 14px;
+      display: flex; flex-direction: column; gap: 4px;
+    }
+    .form-copy span { font-size: 12px; color: var(--muted); }
+    .form-copy strong { font-size: 15px; }
+    .form-copy p { font-size: 13px; color: var(--muted); }
+    .lead-form label { display: flex; flex-direction: column; gap: 5px; font-size: 14px; font-weight: 600; }
+    .lead-form input {
+      padding: 11px 14px; border: 2px solid var(--line);
+      border-radius: 7px; font-size: 15px; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .lead-form input:focus { outline: none; border-color: var(--accent); }
+    .coupon-row { display: flex; gap: 8px; }
+    .coupon-row input { flex: 1; }
+    .coupon-message { font-size: 12px; color: var(--muted); margin-top: 4px; display: block; }
 
-/* ── Base text ── */
-.story,.fup-sec,.testi,.offer-sec{color:#1a1a2e;}
-.story h2,.story h3,.fup-sec h2,.fup-sec h3,
-.testi h2,.testi h3,.offer-sec h2,.offer-sec h3{color:#1a1a2e;}
-.story p,.fup-sec p,.testi p,.offer-sec p{color:#3d3d5c;}
-.story strong,.fup-sec strong,.testi strong,.offer-sec strong{color:#1a1a2e;}
-.story .sec-head p,.fup-sec .sec-head p,.testi .sec-head p,.offer-sec .sec-head p{color:#3d3d5c;}
-.story .tag,.fup-sec .tag,.testi .tag,.offer-sec .tag{background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;}
-.story .tag-g,.fup-sec .tag-g,.testi .tag-g,.offer-sec .tag-g{color:#16a34a;}
-.story .pull{color:#6d28d9;border-left-color:#6d28d9;}
-.story p{color:#3d3d5c;}
-.story p strong{color:#1a1a2e;}
+    .payment-panel { display: flex; flex-direction: column; gap: 22px; }
+    .payment-panel[hidden] { display: none; }
+    .payment-copy h3 { font-size: 1.1rem; margin-bottom: 6px; }
+    .payment-copy p { font-size: 14px; color: var(--muted); }
+    .payment-layout { display: grid; grid-template-columns: auto 1fr; gap: 20px; align-items: start; }
+    .qr-card { background: var(--warm); border-radius: 10px; padding: 16px; text-align: center; width: 160px; }
+    .fake-qr {
+      width: 120px; height: 120px; background: white;
+      border-radius: 6px; margin: 0 auto 10px;
+      display: grid; grid-template-columns: repeat(4,1fr); gap: 4px; padding: 10px;
+    }
+    .fake-qr span { background: var(--ink); border-radius: 2px; opacity: 0.75; }
+    .qr-card strong { font-size: 13px; display: block; margin-bottom: 3px; }
+    .qr-card small { font-size: 11px; color: var(--muted); }
+    .payment-summary { display: flex; flex-direction: column; gap: 9px; }
+    .payment-summary label { display: flex; flex-direction: column; gap: 3px; font-size: 12px; color: var(--muted); }
+    .payment-summary input {
+      background: var(--warm); border: 1px solid var(--line);
+      border-radius: 6px; padding: 8px 10px;
+      font-size: 14px; font-family: inherit; font-weight: 600; color: var(--ink);
+    }
+    .payable-field input { background: var(--accent-soft); border-color: var(--accent); color: var(--accent-dark); font-size: 1rem; }
+    @media(max-width:480px){ .payment-layout { grid-template-columns: 1fr; } .qr-card { width: 100%; } }
 
-/* ── FUP section ── */
-.fup-sec .fup-card{background:#f5f3ff;border:1px solid #ddd6fe;color:#1a1a2e;}
-.fup-sec .fup-card.bad{background:#fff1f2;border:1px solid #fecdd3;}
-.fup-sec .fup-card.good{background:#f0fdf4;border:1px solid #bbf7d0;}
-.fup-sec .fup-header{color:#1a1a2e !important;}
-.fup-sec .fup-card.bad .fup-header{color:#dc2626 !important;}
-.fup-sec .fup-card.good .fup-header{color:#16a34a !important;}
-.fup-sec .fup-item{color:#3d3d5c;}
-.fup-sec .fup-item strong{color:#1a1a2e;}
-.fup-sec .fup-v{color:#16a34a !important;}
-.fup-sec .fup-x{color:#dc2626 !important;}
+    /* guarantee */
+    .guarantee-box {
+      background: white; border: 2px solid var(--green);
+      border-radius: var(--r); padding: 28px; text-align: center;
+      max-width: 560px; margin: 36px auto 0;
+    }
+    .g-badge {
+      display: inline-block; background: var(--green); color: white;
+      font-size: 11px; font-weight: 700; padding: 4px 12px;
+      border-radius: 20px; margin-bottom: 10px;
+    }
+    .guarantee-box h3 { font-size: 1.05rem; margin-bottom: 8px; }
+    .guarantee-box p { font-size: 14px; color: var(--muted); }
 
-/* ── Testimoni section ── */
-.testi .testi-card{background:#f5f3ff;border:1px solid #ddd6fe;}
-.testi .testi-card::before{color:#c4b5fd;}
-.testi .testi-text{color:#3d3d5c !important;}
-.testi .testi-name{color:#1a1a2e !important;}
-.testi .testi-role{color:#6d28d9 !important;}
-.testi .testi-loc{color:#6d28d9 !important;}
-.testi .testi-stars{color:#f59e0b !important;}
-.testi .stats-row{background:#ddd6fe;border:1px solid #c4b5fd;}
-.testi .stat-box{background:#ede9fe;}
-.testi .stat-num{color:#1a1a2e !important;}
-.testi .stat-lbl{color:#6d28d9 !important;}
+    /* ══════════════════════════════
+       TESTIMONI
+    ══════════════════════════════ */
+    .testi { padding: 80px 24px; }
+    .testi-inner { max-width: var(--max); margin: 0 auto; }
+    .quote-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr));
+      gap: 16px; margin-bottom: 40px;
+    }
+    .quote-card {
+      background: var(--warm); border-radius: var(--r); padding: 20px;
+    }
+    .quote-card strong { display: block; font-size: 15px; margin-bottom: 8px; line-height: 1.5; }
+    .quote-card span { font-size: 11px; font-weight: 700; color: var(--accent-dark); text-transform: uppercase; letter-spacing: 0.08em; }
+    .testi-gallery {
+      display: grid; grid-template-columns: repeat(auto-fill, minmax(140px,1fr)); gap: 10px;
+    }
+    .testi-gallery .testi-placeholder {
+      background: var(--warm); border-radius: 8px;
+      aspect-ratio: 9/16; display: flex; align-items: center;
+      justify-content: center; font-size: 12px; color: var(--muted); text-align: center; padding: 8px;
+    }
 
-/* ── Offer section ── */
-.offer-sec .offer-shell{background:#f5f3ff;border:1px solid #ddd6fe;}
-.offer-sec .or-name{color:#1a1a2e !important;}
-.offer-sec .or-check{background:#ede9fe;color:#6d28d9 !important;border-color:#c4b5fd;}
-.offer-sec .or-val.w{color:#1a1a2e !important;}
-.offer-sec .or-val.g{color:#16a34a !important;}
-.offer-sec .offer-total{background:#ede9fe;border-color:#c4b5fd;color:#1a1a2e;}
-.offer-sec .offer-total *{color:#1a1a2e;}
-.offer-sec .ot-price{color:#6d28d9 !important;}
-.offer-sec .offer-row{border-color:#e9d5ff;}
+    /* ══════════════════════════════
+       HONEST NOTE
+    ══════════════════════════════ */
+    .honest {
+      background: var(--warm); padding: 60px 24px;
+    }
+    .honest-inner {
+      max-width: var(--max); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 2fr; gap: 56px; align-items: start;
+    }
+    .honest h2 { font-size: clamp(1.4rem, 2.5vw, 1.8rem); }
+    .honest p { font-size: 15px; color: var(--muted); line-height: 1.8; }
+    @media(max-width:640px){ .honest-inner { grid-template-columns: 1fr; gap: 16px; } }
 
-/* ═══════ DESKTOP POLISH ═══════ */
-@media(min-width:1024px){
-  .story,.testi,.bonus,.keunggulan,.fup-sec,.plans,.calc,.offer-sec,.guarantee-sec{padding-left:48px;padding-right:48px;}
-  .solution{padding-left:48px;padding-right:48px;}
-  .hero-grid{padding-left:48px;padding-right:48px;}
-  .wrap{max-width:960px;}
-  .wrap-sm{max-width:720px;margin:0 auto;}
-}
-@media(min-width:1280px){.wrap{max-width:1100px;}}
+    /* ══════════════════════════════
+       FAQ
+    ══════════════════════════════ */
+    .faq { padding: 80px 24px; }
+    .faq-inner { max-width: var(--max); margin: 0 auto; }
+    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq summary {
+      font-weight: 700; font-size: 15px; cursor: pointer;
+      list-style: none; display: flex; justify-content: space-between; align-items: center;
+    }
+    .faq summary::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--muted); }
+    .faq details[open] summary::after { content: '−'; }
+    .faq details p { font-size: 14px; color: var(--muted); margin-top: 10px; line-height: 1.75; }
 
-/* ═══ WHITE SECTION OVERRIDES ═══ */
-.story,.fup-sec,.testi,.offer-sec{color:#1a1a2e;}
-.story h2,.story h3,.fup-sec h2,.fup-sec h3,.testi h2,.testi h3,.offer-sec h2,.offer-sec h3{color:#1a1a2e;}
-.story p,.fup-sec p,.testi p,.offer-sec p{color:#3d3d5c;}
-.story strong,.fup-sec strong,.testi strong,.offer-sec strong{color:#1a1a2e;}
-.story .tag,.fup-sec .tag,.testi .tag,.offer-sec .tag{background:#ede9fe;color:#6d28d9;border-color:#c4b5fd;}
-.story .pull{color:#6d28d9;border-left-color:#6d28d9;}
-.story .section-title,.fup-sec .section-title,.testi .section-title,.offer-sec .section-title{color:#1a1a2e;}
-.story .sec-head p,.fup-sec .sec-head p,.testi .sec-head p,.offer-sec .sec-head p{color:#3d3d5c;}
-
-/* FUP cards */
-.fup-sec .fup-card{background:#f5f3ff;border:1px solid #ddd6fe;color:#1a1a2e;}
-.fup-sec .fup-card h3,.fup-sec .fup-header{color:#1a1a2e !important;}
-.fup-sec .fup-card.bad .fup-header{color:#dc2626 !important;}
-.fup-sec .fup-card.good .fup-header{color:#16a34a !important;}
-.fup-sec .fup-item{color:#3d3d5c;}
-.fup-sec .fup-item strong{color:#1a1a2e;}
-.fup-sec .fup-card.bad{background:#fff1f2;border:1px solid #fecdd3;}
-.fup-sec .fup-card.good{background:#f0fdf4;border:1px solid #bbf7d0;}
-
-/* Testi cards */
-.testi .testi-card{background:#f5f3ff;border:1px solid #ddd6fe;}
-.testi .testi-card::before{color:#c4b5fd;}
-.testi .testi-text{color:#3d3d5c !important;}
-.testi .testi-card p{color:#3d3d5c;}
-.testi .testi-name{color:#1a1a2e !important;}
-.testi .testi-role{color:#6d28d9 !important;}
-.testi .testi-stars{color:#f59e0b !important;}
-.testi .stats-row .stat-val{color:#6d28d9 !important;}
-.testi .stats-row .stat-lbl{color:#3d3d5c !important;}
-
-/* Offer section */
-.offer-sec .offer-shell{background:#f5f3ff;border:1px solid #ddd6fe;}
-.offer-sec .or-name{color:#1a1a2e !important;}
-.offer-sec .or-check{background:#ede9fe;color:#6d28d9 !important;border-color:#c4b5fd;}
-.offer-sec .or-val.w{color:#1a1a2e !important;}
-.offer-sec .or-val.g{color:#16a34a !important;}
-.offer-sec .offer-total{background:#ede9fe;border-color:#c4b5fd;color:#1a1a2e;}
-.offer-sec .offer-total strong,.offer-sec .offer-total *{color:#1a1a2e;}
-.offer-sec .ot-price{color:#6d28d9 !important;}
-.offer-sec .offer-row{border-color:#e9d5ff;}
-
-/* Testi - loc, stat-box, stats-row */
-.testi .testi-loc{color:#6d28d9 !important;}
-.testi .stat-box{background:#ede9fe;border:1px solid #ddd6fe;}
-.testi .stat-lbl{color:#6d28d9 !important;}
-.testi .stat-num{color:#1a1a2e !important;}
-.testi .stats-row{background:#ddd6fe;border:1px solid #c4b5fd;}
-
-/* FUP - fup-v fup-x fup-header stay ok since green/red are fine on white */
-.fup-sec .fup-item{color:#3d3d5c;}
-.fup-sec .fup-v{color:#16a34a !important;}
-.fup-sec .fup-x{color:#dc2626 !important;}
-
-/* Story - tag-g */
-.story .tag-g{color:#16a34a !important;}
-</style>
+    /* ══════════════════════════════
+       FINAL CTA
+    ══════════════════════════════ */
+    .final {
+      background: linear-gradient(135deg, var(--brand) 0%, var(--brand-mid) 60%, var(--brand-light) 100%);
+      color: white; text-align: center; padding: 100px 24px;
+      position: relative; overflow: hidden;
+    }
+    .final::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 50% 100%, rgba(0,201,167,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .final .kicker { color: rgba(255,255,255,0.4); }
+    .final h2 { font-size: clamp(1.8rem, 4vw, 3rem); color: white; max-width: 680px; margin: 0 auto 18px; }
+    .final p { color: rgba(255,255,255,0.55); max-width: 520px; margin: 0 auto 40px; font-size: 16px; }
+    .final .btn.wa { max-width: 380px; margin: 0 auto; position: relative; }
+  </style>
 </head>
+
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-logo">Rezeki<em>Digital</em></div>
-  <div class="nav-right">
-    <a class="nav-wa" id="navWaBtn" href="https://wa.me/60167388358?text=Salam%2C%20saya%20berminat%20nak%20tahu%20lebih%20lanjut%20tentang%20Eastel" target="_blank" rel="noopener">
-      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.085 1.506 5.802L.057 23.5l5.848-1.431A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.014-1.373l-.36-.213-3.72.911.944-3.614-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-      WhatsApp
-    </a>
-    <a href="#daftar" class="nav-cta">Daftar Sekarang</a>
-  </div>
-</nav>
+<!-- ── HEADER ── -->
+<header class="site-header">
+  <a class="brand" href="#top">
+    <span class="brand-mark">R</span>
+    <span>Rezeki Digital</span>
+  </a>
+  <nav class="nav-links">
+    <a href="#masalah">Masalah</a>
+    <a href="#pelan">Pelan</a>
+    <a href="#income">Buat Duit</a>
+    <a href="#daftar">Daftar</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+  <a class="hdr-cta" href="#daftar">Daftar Sekarang</a>
+</header>
 
-<!-- URGENCY BAR -->
-<div class="urg-bar">⚡ <strong>Slot terhad:</strong> Tinggal <strong id="slotCount">...</strong> / 20 minggu ini — <span id="slotMsg">sedang semak...</span></div>
+<main id="top">
 
-<!-- ══════════════════════════════════
-     HERO — HORMOZI: PROOF DAHULU
-══════════════════════════════════ -->
+<!-- ══════════════════════════════
+     1. HERO
+══════════════════════════════ -->
 <section class="hero">
-  <div class="hero-grid">
-
-    <!-- LEFT -->
-    <div class="hero-left">
-      <div class="hero-badge">
-        <div class="hero-badge-inner">
-          <div class="badge-dot"></div>
-          <span>Eastel 5G · Berlesen MCMC · <span id="dynamicDate"></span></span>
-        </div>
+  <div class="hero-inner wrap">
+    <div class="hero-copy">
+      <p class="eyebrow">Eastelpreneur — Side Income Dari Telco</p>
+      <h1>Kau Dah Bayar Telco Tiap Bulan.<br><em>Tapi Kenapa Tak Dapat Apa-Apa Balik?</em></h1>
+      <p class="lead">
+        Setiap bulan duit kau masuk poket syarikat telco. Takde komisyen, takde rebate, takde apa. Jadi ejen Eastel — guna data besar NO FUP 5G, dan dapat komisyen tiap kali orang dalam network kau reload.
+      </p>
+      <div class="hero-actions">
+        <a class="btn primary" href="#daftar" data-open-modal>Saya Nak Mulakan</a>
+        <a class="btn ghost" style="color:rgba(255,255,255,0.8); border-color:rgba(255,255,255,0.2);" href="#income">Tengok Berapa Boleh Dapat</a>
       </div>
-
-      <!-- HORMOZI: Headline specific, nombor nyata, bukan poetic tagline -->
-      <div class="hero-h1">
-        <h1>RM17 Modal. <span class="h-green">RM3,952</span> <span class="h-purple">Masuk</span><br class="br-desktop"> <span class="h-white">Bulan Pertama.</span></h1>
-      </div>
-
-      <p class="sub hero-sub">Selagi pengguna anda topup setiap bulan, <strong>komisyen masuk automatik</strong> — tanpa anda perlu buat apa-apa lagi. Bukan MLM. Telco berlesen dengan sistem referral yang sah.</p>
-
-      <div class="price-row hero-prices">
-        <div class="price-pill"><div class="lbl">Semenanjung</div><div class="val p">RM17</div><div class="note">Simkad RM10 + Pos RM7</div></div>
-        <div class="price-pill"><div class="lbl">Sabah / Sarawak</div><div class="val p">RM22</div><div class="note">Simkad RM10 + Pos RM12</div></div>
-        <div class="price-pill"><div class="lbl">Potensi Income</div><div class="val g">UNLIMITED</div><div class="note">Passive · Setiap bulan</div></div>
-      </div>
-
-      <div class="cta-row hero-cta-row">
-        <a href="#daftar" class="btn-green">Dapatkan Simkad →</a>
-        <button class="btn-ghost btn-ghost-solid" onclick="document.getElementById('komisyen').scrollIntoView({behavior:'smooth'})">Kira Komisyen Saya →</button>
-      </div>
-
-      <!-- HORMOZI: Risk reversal — SEBELUM mereka scroll, bukan lepas daftar -->
-      <p class="hero-ps hero-guar">P/S: Simkad tak sampai dalam 14 hari? Kami jamin refund penuh tanpa soal. Tiada risiko langsung.</p>
-
-      <div class="trust-strip hero-trust">
-        <div class="trust-item"><div class="trust-dot"></div>Berlesen MCMC Malaysia</div>
-        <div class="trust-item"><div class="trust-dot"></div>Patuh Syariah · Masyref</div>
-        <div class="trust-item"><div class="trust-dot"></div>Rangkaian U Mobile 5G</div>
-        <div class="trust-item"><div class="trust-dot"></div>Komisyen 18hb setiap bulan</div>
+      <div class="hero-points">
+        <span>Data 500GB NO FUP 5G — RM50 je sebulan</span>
+        <span>Komisyen 13% dari reload Level 1</span>
+        <span>Shariah-compliant, berlesen MCMC</span>
+        <span>Tak perlu stok, tak perlu modal besar</span>
+        <span>Guna sendiri pun dah berbaloi</span>
       </div>
     </div>
 
-    <!-- RIGHT: Screenshot sebenar wallet Eastel RM3,952.60 -->
-    <div class="hero-right rv">
-      <img
-        src="eastel-proof-wallet.jpg"
-        alt="Screenshot wallet Eastel RM3,952.60 — gaji pertama agent"
-
-      >
-    </div>
-
+    <aside class="hero-panel">
+      <span class="plan-badge">⭐ Paling Popular — EZ50</span>
+      <p class="plan-highlight">500GB Data</p>
+      <p class="plan-price">NO FUP 5G · Carry Forward · RM50/bulan</p>
+      <div class="plan-items">
+        <div class="plan-item"><span class="tag">NO FUP</span>500GB data laju penuh — tak slow bila habis</div>
+        <div class="plan-item"><span class="tag">5G</span>Powered by U Mobile — coverage terluas</div>
+        <div class="plan-item"><span class="tag">FREE</span>Roaming Indonesia, Singapura, Thailand</div>
+        <div class="plan-item"><span class="tag">CARRY</span>Data tak habis carry forward bulan depan</div>
+        <div class="plan-item"><span class="tag">UNLIMITED</span>Panggilan tanpa had ke semua rangkaian</div>
+      </div>
+      <div class="mini-flow">
+        <span>Daftar jadi Eastelpreneur</span>
+        <span>Guna sendiri — jimat RM balik</span>
+        <span>Ajak kawan & keluarga</span>
+        <span>Dapat komisyen tiap reload mereka</span>
+      </div>
+    </aside>
   </div>
 </section>
 
-<!-- ══════ STORY ══════ -->
-<section class="story">
-  <div class="story-inner">
-    <span class="tag rv">Kita Jujur Sekejap</span>
-    <div class="sec-head rv" style="margin-bottom:28px;">
-      <h2>Berapa Lama Lagi Anda Nak Tunggu?</h2>
-    </div>
-    <p class="rv d1">Gaji naik sikit, harga barang naik banyak. Kerja dari pagi sampai petang — tapi nombor dalam akaun <strong>masih sama seperti bulan lepas.</strong></p>
-    <p class="rv d2">Anda mungkin dah cuba banyak perkara. Jual online, ambil kerja sambilan, ikut kursus. Tapi masih tak bergerak — sebab semua tu perlukan modal besar, masa yang banyak, atau kemahiran yang anda belum ada.</p>
-    <div class="pull rv">"Yang anda perlukan bukanlah peluang yang besar — anda perlukan <em>permulaan yang betul.</em>"</div>
-    <p class="rv d1">Eastel baru sahaja melancarkan program Eastelpreneur. Pasaran masih lapang. <strong>Mereka yang masuk awal akan bina rangkaian paling besar</strong> — dan komisyen paling besar. Anda masih belum terlambat.</p>
-    <!-- Video placeholder — uncomment bila ada video -->
-    <div class="video-placeholder rv d2">
-      <div style="font-size:48px;">🎬</div>
-      <div style="font-size:13px;font-weight:700;color:var(--purple);letter-spacing:2px;text-transform:uppercase;">Video Pengenalan</div>
-      <div style="font-size:12px;color:var(--muted);text-align:center;line-height:1.6;padding:0 20px;">Upload ke YouTube → salin embed URL → gantikan div ini dengan iframe</div>
-    </div>
-  </div>
-</section>
 
-<!-- ══════ SOLUTION — 3 LANGKAH, 3 CARD ══════ -->
-<section class="solution">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag rv">Macam Mana Ia Berfungsi</span>
-      <h2 class="rv d1">Proses mudah.<br>3 langkah sahaja.</h2>
-      <p class="rv d2">Dari daftar hingga komisyen masuk — semuanya boleh dilakukan dari handphone anda.</p>
-    </div>
-    <div class="sol-grid rv d3">
-      <div class="sol-card">
-        <div class="sol-num">01</div>
-        <div class="sol-title">Bayar RM17 / RM22</div>
-        <div class="sol-body">Scan QR atau transfer ke akaun kami. Simkad Eastel 5G akan dipos terus ke rumah anda dalam 3–5 hari bekerja.</div>
-      </div>
-      <div class="sol-card">
-        <div class="sol-num">02</div>
-        <div class="sol-title">Dapat Agent ID Unik</div>
-        <div class="sol-body">Setelah bayaran disahkan, anda dapat Agent ID dan link peribadi. Kongsikan kepada sesiapa yang berminat jadi agent atau guna simkad.</div>
-      </div>
-      <div class="sol-card">
-        <div class="sol-num">03</div>
-        <div class="sol-title">Komisyen Masuk Setiap Bulan</div>
-        <div class="sol-body">Setiap kali pengguna anda topup simkad, komisyen dikreditkan ke akaun anda pada 18hb setiap bulan — automatik, tanpa kerja tambahan.</div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- ══════════════════════════════
+     2. NOTICE
+══════════════════════════════ -->
+<div class="notice">
+  <p>Kau dah subscribe plan telco. Dah guna data. Tapi tak pernah dapat apa-apa balik.</p>
+  <strong>Tukar je kepada telco yang bagi kau komisyen setiap kali orang dalam network kau reload.</strong>
+</div>
 
-<!-- ══════ KEUNGGULAN ══════ -->
-<section class="keunggulan">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag rv">Kenapa Eastel Beza</span>
-      <h2 class="rv d1">Bisnes yang masuk akal<br>dari semua sudut.</h2>
-      <p class="rv d2">Bukan sekadar jual simkad. Platform pendapatan berulang yang sah, mudah, dan boleh dibuat dari mana-mana.</p>
-    </div>
-    <div class="keunggulan-grid rv d3">
-      <div class="keunggulan-card"><div class="keunggulan-icon">📅</div><div class="keunggulan-title">Komisyen Masuk Setiap Bulan</div><div class="keunggulan-body">Selagi pengguna topup, komisyen masuk. Ini income pasif yang sebenar — bukan janji kosong.</div></div>
-      <div class="keunggulan-card"><div class="keunggulan-icon">🔗</div><div class="keunggulan-title">3 Tier · Unlimited Kedalaman</div><div class="keunggulan-body">T1=13%, T2=3%, T3=8%. Makin besar rangkaian, makin besar komisyen — tiada had bilangan pengguna.</div></div>
-      <div class="keunggulan-card"><div class="keunggulan-icon">📡</div><div class="keunggulan-title">Produk Yang Orang Memang Perlu</div><div class="keunggulan-body">Internet bukan kemewahan — ia keperluan. Selagi orang guna telefon, selagi itulah ada pasaran.</div></div>
-      <div class="keunggulan-card"><div class="keunggulan-icon">💸</div><div class="keunggulan-title">Modal Paling Rendah</div><div class="keunggulan-body">Bayar postage sahaja untuk mulakan bisnes telco sendiri. Bandingkan dengan bisnes lain — ini paling berbaloi.</div></div>
-      <div class="keunggulan-card"><div class="keunggulan-icon">☪️</div><div class="keunggulan-title">Patuh Syariah · Berlesen MCMC</div><div class="keunggulan-body">Bisnes halal, lesen sah, sijil Syariah dari Masyref Advisor. Dua perkara yang orang Malaysia ambil berat — selesai.</div></div>
-      <div class="keunggulan-card"><div class="keunggulan-icon">⚡</div><div class="keunggulan-title">5G · Data Besar · Harga Wajar</div><div class="keunggulan-body">200GB–999GB dari RM35. Nilai luar biasa bermakna senang convince orang — produk jual sendiri.</div></div>
-    </div>
-  </div>
-</section>
 
-<!-- ══════ FUP COMPARISON ══════ -->
-<section class="fup-sec">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag rv">Fakta Yang Ramai Tak Tahu</span>
-      <h2 class="rv d1">"Unlimited" tu sebenarnya<br>ada had tersembunyi.</h2>
-      <p class="rv d2">Kebanyakan operator claim unlimited tapi dalam fine print ada FUP. Eastel jujur tentang data — dan nilainya luar biasa.</p>
+<!-- ══════════════════════════════
+     3. PAIN — masalah lama
+══════════════════════════════ -->
+<section class="sec pain" id="masalah">
+  <div class="pain-inner">
+    <div>
+      <p class="kicker">Masalah sebenar</p>
+      <h2>Kau dah rasa semua benda ni kan?</h2>
     </div>
-    <div class="fup-grid rv d3">
-      <div class="fup-card bad">
-        <div class="fup-header">⚠ Operator Lain</div>
-        <div class="fup-list">
-          <div class="fup-item"><span class="fup-x">✕</span><span>Highspeed sebenar cuma <strong style="white-space:nowrap;">~60–100GB</strong> walaupun iklan kata "Unlimited"</span></div>
-          <div class="fup-item"><span class="fup-x">✕</span>Lepas FUP, speed throttle teruk — streaming pun susah</div>
-          <div class="fup-item"><span class="fup-x">✕</span>Data lebihan hangus — tiada carry forward</div>
-          <div class="fup-item"><span class="fup-x">✕</span>Had disembunyikan dalam syarat kecil yang ramai tak baca</div>
-        </div>
-      </div>
-      <div class="fup-card good">
-        <div class="fup-header">✓ Eastel</div>
-        <div class="fup-list">
-          <div class="fup-item"><span class="fup-v">✓</span>EZ35 — <strong>200GB</strong> highspeed, RM35/bulan</div>
-          <div class="fup-item"><span class="fup-v">✓</span>EZ50 — <strong>500GB</strong> highspeed, RM50/bulan</div>
-          <div class="fup-item"><span class="fup-v">✓</span>Kelajuan 5G sebenar — speedtest capai 400–500 Mbps</div>
-          <div class="fup-item"><span class="fup-v">✓</span>Data tak habis? <strong>Carry forward</strong> ke bulan depan</div>
-          <div class="fup-item"><span class="fup-v">✓</span>Jujur tentang had — FUP hanya pada minit panggilan (1,000 min)</div>
-        </div>
-      </div>
-    </div>
-    <div class="rv d4" style="margin-top:20px;background:#ede9fe;border:1px solid #c4b5fd;border-radius:14px;padding:18px 22px;display:flex;gap:14px;align-items:center;">
-      <span style="font-size:22px;flex-shrink:0;">💡</span>
-      <p style="font-size:14px;color:#3d3d5c;line-height:1.75;margin:0;"><strong style="color:#1a1a2e;">Kesimpulannya:</strong> Eastel jual data yang betul-betul besar dan jujur tentang had yang ada. Itulah yang pengguna akan rasa sendiri — dan sebab mereka kekal sebagai pelanggan.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ PLANS ══════ -->
-<section class="plans">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag rv">Pelan Data Eastel</span>
-      <h2 class="rv d1">Data banyak,<br>harga masuk akal.</h2>
-      <p class="rv d2">Semua pelan termasuk unlimited call, hotspot, dan data carry forward. Roaming percuma ke Indonesia, Singapura &amp; Thailand untuk EZ50 ke atas.</p>
-    </div>
-    <div class="plan-stack rv d3">
-      <div class="plan-row"><div class="plan-price">RM15</div><div class="plan-info"><div class="plan-name-row"><span class="plan-name">EZ15</span><span class="chip chip-p">30GB</span></div><div class="plan-perks">Unlimited call · Hotspot · 15 hari</div></div><div class="plan-arr">→</div></div>
-      <div class="plan-row"><div class="plan-price">RM35</div><div class="plan-info"><div class="plan-name-row"><span class="plan-name">EZ35</span><span class="chip chip-p">200GB</span></div><div class="plan-perks">Hotspot 100GB · Unlimited call · Data carry forward · 30 hari</div></div><div class="plan-arr">→</div></div>
-      <div class="plan-row top"><div class="plan-price">RM50</div><div class="plan-info"><div class="plan-name-row"><span class="plan-name">EZ50</span><span class="chip chip-p">500GB</span><span class="chip chip-g">Popular</span></div><div class="plan-perks">Hotspot penuh · Roaming 3GB · 30 hari</div></div><div class="plan-arr">→</div></div>
-      <div class="plan-row"><div class="plan-price">RM68</div><div class="plan-info"><div class="plan-name-row"><span class="plan-name">EZ68</span><span class="chip chip-p">700GB</span></div><div class="plan-perks">Hotspot penuh · Roaming 5GB · 30 hari</div></div><div class="plan-arr">→</div></div>
-      <div class="plan-row"><div class="plan-price">RM98</div><div class="plan-info"><div class="plan-name-row"><span class="plan-name">EZ98</span><span class="chip chip-p">999GB</span></div><div class="plan-perks">Hotspot penuh · Roaming 10GB · 30 hari</div></div><div class="plan-arr">→</div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ══════ CALCULATOR ══════ -->
-<section class="calc" id="komisyen">
-  <div class="wrap">
-    <div class="sec-head">
-      <span class="tag rv">Kira Komisyen Anda</span>
-      <h2 class="rv d1">Berapa yang boleh<br>anda jana setiap bulan?</h2>
-      <p class="rv d2">Mulakan dengan senario realistik. Lihat sendiri potensi apabila rangkaian mula berkembang.</p>
-    </div>
-
-    <!-- HORMOZI FIX: Scenario buttons — default = realistic, not dream numbers -->
-    <div class="scenario-bar rv d2">
-      <span style="font-size:13px;color:var(--muted);align-self:center;margin-right:4px;">Cuba senario:</span>
-      <button class="sc-btn active" onclick="setScenario(this,3,10,25)">🐢 Permulaan (3/10/25)</button>
-      <button class="sc-btn" onclick="setScenario(this,10,40,100)">🚶 Sederhana (10/40/100)</button>
-      <button class="sc-btn" onclick="setScenario(this,25,100,250)">🚀 Aktif (25/100/250)</button>
-    </div>
-
-    <div class="calc-shell rv d3">
-      <div class="calc-grid">
+    <div class="pain-cards">
+      <div class="pain-card">
+        <div class="pain-icon">📉</div>
         <div>
-          <div class="cf-lbl">Pelan Topup Pengguna</div>
-          <select class="cf-sel" id="planSel" onchange="kira()">
-            <option value="35">EZ35 — RM35/bulan</option>
-            <option value="50">EZ50 — RM50/bulan</option>
-            <option value="68">EZ68 — RM68/bulan</option>
-            <option value="98">EZ98 — RM98/bulan</option>
-          </select>
-        </div>
-        <div style="display:flex;flex-direction:column;justify-content:flex-end;">
-          <div style="font-size:12px;color:var(--muted);line-height:1.75;padding-top:4px;">T1 = pengguna terus anda<br>T2 = pengguna mereka<br>T3 = pengguna T2</div>
+          <h3>Data habis separuh bulan, lepas tu slow crawl</h3>
+          <p>FUP makan data kau. Lepas limit, kena throttle. Bayar penuh tapi dapat separuh servis.</p>
         </div>
       </div>
-      <div class="tier-cols">
-        <div class="tier-box t1">
-          <div class="tb-lbl">Tier 1</div>
-          <div class="tb-pct">Komisyen 13%</div>
-          <div class="cf-lbl">Bilangan pengguna</div>
-          <input type="number" class="cf-in" id="t1" value="3" min="0" oninput="kira()">
-          <div style="margin-top:10px;font-size:12px;color:var(--muted);">Hasil</div>
-          <div class="tb-amt" id="r1">RM0</div>
-        </div>
-        <div class="tier-box t2">
-          <div class="tb-lbl">Tier 2</div>
-          <div class="tb-pct">Komisyen 3%</div>
-          <div class="cf-lbl">Bilangan pengguna</div>
-          <input type="number" class="cf-in" id="t2" value="10" min="0" oninput="kira()">
-          <div style="margin-top:10px;font-size:12px;color:var(--muted);">Hasil</div>
-          <div class="tb-amt" id="r2">RM0</div>
-        </div>
-        <div class="tier-box t3">
-          <div class="tb-lbl">Tier 3</div>
-          <div class="tb-pct">Komisyen 8%</div>
-          <div class="cf-lbl">Bilangan pengguna</div>
-          <input type="number" class="cf-in" id="t3" value="25" min="0" oninput="kira()">
-          <div style="margin-top:10px;font-size:12px;color:var(--muted);">Hasil</div>
-          <div class="tb-amt" id="r3">RM0</div>
+      <div class="pain-card">
+        <div class="pain-icon">💸</div>
+        <div>
+          <h3>Bayar RM40–RM80 sebulan — duit hilang je</h3>
+          <p>Bulan-bulan keluar, tak ada apa masuk balik. Kalau kau tak guna, orang lain pun bayar tapi kau tak dapat apa.</p>
         </div>
       </div>
-      <div class="total-row">
-        <div><div class="total-lbl">Jumlah komisyen bulanan anggaran</div><div class="total-note">Dikreditkan 18hb setiap bulan</div></div>
-        <div class="total-num" id="totalNum">RM0</div>
+      <div class="pain-card">
+        <div class="pain-icon">🤔</div>
+        <div>
+          <h3>Nak side income tapi tak tahu dari mana nak mula</h3>
+          <p>Dah tengok banyak peluang. Ada yang kena modal besar, ada yang nampak macam scam. Penat dah nak consider.</p>
+        </div>
       </div>
-      <p class="calc-disc">⚠ Anggaran sahaja. Tidak termasuk Onboarding Bonus &amp; insentif lain. Tiada jaminan pendapatan minimum.</p>
+      <div class="pain-card">
+        <div class="pain-icon">⏰</div>
+        <div>
+          <h3>Kerja penuh masa — takde masa nak buat bisnes besar</h3>
+          <p>Bukan semua orang boleh quit kerja terus. Kena cari benda yang boleh jalan sambil-sambil kerja.</p>
+        </div>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ══════ SOCIAL PROOF ══════ -->
-<section class="testi">
-  <div class="wrap">
+
+<!-- ══════════════════════════════
+     4. AGITATE — korek lagi
+══════════════════════════════ -->
+<section class="agitate">
+  <div class="agitate-inner wrap">
+    <div class="agitate-copy">
+      <p class="kicker light">Kira balik</p>
+      <h2>Dalam 5 tahun, <em>berapa kau dah bagi</em> kepada telco kau sekarang?</h2>
+      <p>Kalau kau bayar RM50 sebulan — dalam setahun RM600 keluar. Dalam 5 tahun, RM3,000 dah pergi. Satu sen pun tak balik kepada kau.</p>
+      <p>Benda yang dah jadi keperluan harian ni — internet, call — kenapa kita biarkan je duit tu lesap? Sedangkan ada model yang bagi kau balik sebahagian daripada duit tu setiap bulan.</p>
+    </div>
+    <div class="math-box">
+      <span class="label">Kiraan simple — kalau kau daftar sekarang</span>
+      <div class="math-row">
+        <span>Plan EZ50 kau bayar</span>
+        <strong>RM50/bulan</strong>
+      </div>
+      <div class="math-row">
+        <span>10 orang kawan/keluarga guna EZ50</span>
+        <strong>10 × RM50 = RM500</strong>
+      </div>
+      <div class="math-row">
+        <span>Komisyen kau Level 1 (13%)</span>
+        <strong>RM65/bulan</strong>
+      </div>
+      <div class="math-row total">
+        <span>Plan kau bayar RM50 — dapat balik</span>
+        <strong>RM65 komisyen</strong>
+      </div>
+      <div class="math-row">
+        <span style="color:var(--accent); font-size:13px;">→ Telco kau jadi percuma, plus lebih lagi</span>
+        <span>🔁 Recurring tiap reload</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     5. SOLUTION
+══════════════════════════════ -->
+<section class="solution">
+  <div class="solution-inner wrap">
+    <div class="solution-copy">
+      <p class="kicker">Penyelesaian</p>
+      <h2>Tukar je telco kepada satu yang <em>bagi kau balik</em> setiap bulan.</h2>
+      <p>Eastel bukan sekadar telco biasa. Dia MVNO berlesen di bawah U Mobile — so coverage sama, kualiti sama. Tapi ada satu beza besar: dia ada sistem komisyen untuk Eastelpreneur.</p>
+      <p>Kau guna plan sendiri macam biasa. Tapi setiap kali orang dalam network kau reload, kau dapat komisyen. Masuk ke wallet kau. Boleh withdraw.</p>
+      <p>Tak perlu stok SIM card dalam beg. Tak perlu collect duit dari pelanggan. Semua online, semua auto.</p>
+    </div>
+    <div class="solution-proof">
+      <span class="proof-label">Kenapa Eastel lain dari yang lain</span>
+      <div class="proof-stat">
+        <div class="num">500GB</div>
+        <div class="desc">NO FUP 5G — Plan EZ50 RM50/bulan. Data tak slow sampai habis.</div>
+      </div>
+      <div class="proof-divider"></div>
+      <div class="proof-stat">
+        <div class="num">Sehingga 24%+50%</div>
+        <div class="desc">Komisyen tertinggi dalam industri MVNO Malaysia.</div>
+      </div>
+      <div class="proof-divider"></div>
+      <ul class="proof-list">
+        <li>Berlesen MCMC — bukan MLM haram</li>
+        <li>Shariah-compliant (sijil Masyref)</li>
+        <li>Data carry forward — tak bazir</li>
+        <li>Free roaming SG, Indon, Thailand</li>
+        <li>MNP — boleh kekal nombor lama</li>
+        <li>CTOS/CCRIS tak jadi halangan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     6. PLANS
+══════════════════════════════ -->
+<section class="sec plans" id="pelan">
+  <div class="plans-inner">
     <div class="sec-head">
-      <span class="tag rv">Bukti Sebenar</span>
-      <h2 class="rv d1">Mereka dah buktikan.<br>Anda bila lagi?</h2>
-      <p class="rv d2">Agent dari seluruh Malaysia sudah mulakan perjalanan mereka dengan modal RM17 sahaja.</p>
+      <p class="kicker">Pelan data</p>
+      <h2>Data besar, harga wajar, NO FUP 5G.</h2>
+      <p>Semua pelan carry forward — data tak habis bulan ni, bawa ke bulan depan. Semua ada hotspot.</p>
     </div>
-
-    <div class="stats-row rv d2">
-      <div class="stat-box"><div class="stat-num" style="color:var(--green);">5G</div><div class="stat-lbl">Rangkaian U Mobile</div></div>
-      <div class="stat-box"><div class="stat-num" style="color:var(--purple);">MCMC</div><div class="stat-lbl">Berlesen Rasmi</div></div>
-      <div class="stat-box"><div class="stat-num" style="color:var(--gold);">☪</div><div class="stat-lbl">Patuh Syariah</div></div>
-      <div class="stat-box"><div class="stat-num" style="color:var(--purple);">18hb</div><div class="stat-lbl">Komisyen Dibayar</div></div>
-    </div>
-
-    <div class="testi-grid rv d3">
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Mula-mula ragu-ragu. Tapi selepas dapat komisyen pertama RM312 bulan pertama, terus aktif cari pengguna. Sekarang dah ada 40+ pengguna."</div>
-        <div class="testi-author"><div class="testi-ava">😊</div><div><div class="testi-name">Hafizah M.</div><div class="testi-loc">Kuala Lumpur</div></div></div>
+    <div class="plan-grid">
+      <div class="plan-card">
+        <div class="plan-name">EZ35</div>
+        <div class="plan-price-big">RM35<span>/bln</span></div>
+        <div class="plan-data">200GB + 100GB</div>
+        <span class="no-fup">NO FUP 5G</span>
+        <ul class="plan-features">
+          <li>Panggilan tanpa had</li>
+          <li>10 SMS</li>
+          <li>Hotspot included</li>
+          <li>Data carry forward</li>
+          <li>Tempoh sah 30 hari</li>
+        </ul>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Modal RM17 je. Dalam 2 minggu dah dapat semula modal tu. Sekarang komisyen masuk setiap bulan tanpa buat apa-apa. Alhamdulillah."</div>
-        <div class="testi-author"><div class="testi-ava">🙌</div><div><div class="testi-name">Azri H.</div><div class="testi-loc">Johor Bahru</div></div></div>
+
+      <div class="plan-card popular">
+        <span class="pop-badge">⭐ Paling Popular</span>
+        <div class="plan-name">EZ50</div>
+        <div class="plan-price-big">RM50<span>/bln</span></div>
+        <div class="plan-data">500GB</div>
+        <span class="no-fup">NO FUP 5G</span>
+        <ul class="plan-features">
+          <li>Panggilan tanpa had</li>
+          <li>10 SMS</li>
+          <li>3GB Roaming (SG, ID, TH)</li>
+          <li>Hotspot included</li>
+          <li>Data carry forward</li>
+        </ul>
       </div>
-      <div class="testi-card">
-        <div class="testi-stars">★★★★★</div>
-        <div class="testi-text">"Saya housewife. Guna masa lapang je kongsikan link ni kat group WA. Alhamdulillah ada tambahan income tiap bulan tanpa keluar rumah."</div>
-        <div class="testi-author"><div class="testi-ava">💪</div><div><div class="testi-name">Suraya A.</div><div class="testi-loc">Selangor</div></div></div>
+
+      <div class="plan-card">
+        <div class="plan-name">EZ68</div>
+        <div class="plan-price-big">RM68<span>/bln</span></div>
+        <div class="plan-data">700GB</div>
+        <span class="no-fup">NO FUP 5G</span>
+        <ul class="plan-features">
+          <li>Panggilan tanpa had</li>
+          <li>10 SMS</li>
+          <li>5GB Roaming (SG, ID, TH)</li>
+          <li>Hotspot included</li>
+          <li>Data carry forward</li>
+        </ul>
+      </div>
+
+      <div class="plan-card">
+        <div class="plan-name">EZ98</div>
+        <div class="plan-price-big">RM98<span>/bln</span></div>
+        <div class="plan-data">999GB</div>
+        <span class="no-fup">NO FUP 5G</span>
+        <ul class="plan-features">
+          <li>Panggilan tanpa had</li>
+          <li>10 SMS</li>
+          <li>10GB Roaming (SG, ID, TH)</li>
+          <li>Hotspot included</li>
+          <li>Data carry forward</li>
+        </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ══════ GUARANTEE SECTION — HORMOZI: jaminan perlu stand alone, bukan footnote ══════ -->
-<section class="guarantee-sec">
-  <div class="wrap rv">
-    <div class="guarantee-box">
-      <div class="guarantee-icon">🛡️</div>
+
+<!-- ══════════════════════════════
+     7. INCOME — macam mana buat duit
+══════════════════════════════ -->
+<section class="sec income" id="income">
+  <div class="income-inner">
+    <div class="sec-head">
+      <p class="kicker">Macam mana buat duit</p>
+      <h2>Bukan jual-jual. Refer orang, dapat komisyen tiap bulan.</h2>
+      <p>Selagi orang dalam network kau reload, kau dapat komisyen. Bukan sekali je — recurring setiap bulan.</p>
+    </div>
+
+    <div class="income-grid">
+      <div class="income-card">
+        <div class="step-num">01</div>
+        <h3>Daftar jadi Eastelpreneur</h3>
+        <p>Beli SIM starter kit RM10. Setup akaun. Aktifkan plan pilihan kau. Done — kau dah jadi ejen yang boleh refer orang.</p>
+      </div>
+      <div class="income-card">
+        <div class="step-num">02</div>
+        <h3>Guna sendiri dulu</h3>
+        <p>Cuba data 5G dia. Tengok sendiri betapa laju dan stabil. Benda paling mudah nak jual adalah benda yang kau sendiri dah rasa best.</p>
+      </div>
+      <div class="income-card">
+        <div class="step-num">03</div>
+        <h3>Share kepada orang sekeliling</h3>
+        <p>Kawan, adik-beradik, jiran. Orang yang kau dah tahu bayar telco tiap bulan. Tunjuk mereka pelan, bagi link referral kau.</p>
+      </div>
+      <div class="income-card">
+        <div class="step-num">04</div>
+        <h3>Komisyen masuk tiap bulan</h3>
+        <p>Setiap kali mereka reload — kau dapat komisyen. Automatic. Masuk wallet. Boleh withdraw. Tanpa kau perlu buat apa-apa lagi.</p>
+      </div>
+    </div>
+
+    <div class="komisyen-box">
+      <h3>Struktur komisyen Eastelpreneur</h3>
+      <p class="sub">Komisyen recurring — masuk setiap reload, bukan sekali bayar sahaja</p>
+      <div class="komisyen-tiers">
+        <div class="tier">
+          <div class="pct">13%</div>
+          <div class="lv">Level 1</div>
+          <div class="desc">Orang yang kau refer terus</div>
+        </div>
+        <div class="tier">
+          <div class="pct">3%</div>
+          <div class="lv">Level 2</div>
+          <div class="desc">Orang yang dirujuk oleh Level 1 kau</div>
+        </div>
+        <div class="tier">
+          <div class="pct">8%</div>
+          <div class="lv">Level 3</div>
+          <div class="desc">Network level 3 dari kau</div>
+        </div>
+      </div>
+      <div class="komisyen-example">
+        <div class="ex-item">
+          <div class="num">10 orang</div>
+          <div class="lbl">Level 1 guna EZ50</div>
+        </div>
+        <div class="ex-item">
+          <div class="num">RM65</div>
+          <div class="lbl">Komisyen/bulan kau</div>
+        </div>
+        <div class="ex-item">
+          <div class="num">RM780</div>
+          <div class="lbl">Dalam setahun</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     8. SYSTEM — chip tags
+══════════════════════════════ -->
+<section class="system">
+  <div class="system-inner wrap">
+    <div>
+      <p class="kicker">Mudah nak mula</p>
+      <h2>Kalau kau boleh WhatsApp, kau boleh buat ni.</h2>
+      <p>Tak perlu ada background sales. Tak perlu buka kedai. Semua boleh buat dari phone je.</p>
+    </div>
+    <div class="chips">
+      <span>Beli SIM RM10</span>
+      <span>Aktif akaun</span>
+      <span>Pilih plan data</span>
+      <span>Guna sendiri</span>
+      <span>Share link referral</span>
+      <span>Orang daftar & reload</span>
+      <span>Komisyen masuk wallet</span>
+      <span>Withdraw duit</span>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     9. STEPS
+══════════════════════════════ -->
+<section class="sec steps-sec">
+  <div class="steps-inner">
+    <div class="sec-head">
+      <p class="kicker">Cara mula</p>
+      <h2>5 langkah dari zero ke komisyen pertama.</h2>
+    </div>
+    <div class="steps-grid">
+      <div class="step-card">
+        <div class="step-num-big">01</div>
+        <h3>Hubungi agen Rezeki Digital</h3>
+        <p>Tekan butang WhatsApp di bawah. Kami guide kau dari awal hingga akhir.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-big">02</div>
+        <h3>Beli SIM starter kit</h3>
+        <p>RM10 sahaja. Dalam SIM dah ada 5GB data + 30 minit call untuk cuba.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-big">03</div>
+        <h3>Daftar & aktifkan akaun</h3>
+        <p>Setup MyDigital ID untuk verifikasi. Pilih plan yang sesuai dengan gaya hidup kau.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-big">04</div>
+        <h3>Cuba guna — rasa sendiri</h3>
+        <p>Guna data 5G dia. Buat speedtest. Bila kau dah yakin, lebih mudah nak cerita kepada orang lain.</p>
+      </div>
+      <div class="step-card">
+        <div class="step-num-big">05</div>
+        <h3>Share & dapat komisyen</h3>
+        <p>Guna link referral kau. Share kepada orang sekeliling. Komisyen masuk setiap bulan, auto.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     10. CHECKOUT / DAFTAR
+══════════════════════════════ -->
+<section class="sec checkout" id="daftar">
+  <div class="checkout-inner">
+    <div class="sec-head center">
+      <p class="kicker">Mulakan sekarang</p>
+      <h2>Langkah pertama — SIM starter kit RM10.</h2>
+      <p>Bukan bayar untuk impian. Kau bayar untuk cuba sendiri. Guna dulu, baru decide nak serius atau tidak.</p>
+    </div>
+
+    <div class="shariah-note">
+      <div class="icon">✅</div>
       <div>
-        <div class="guarantee-title">Jaminan Penuh — Tiada Risiko</div>
-        <p class="guarantee-body">
-          Kami percaya dengan produk kami. Jika <strong>simkad tidak sampai dalam 14 hari</strong> selepas bayaran disahkan, kami akan <strong>refund penuh</strong> — tiada soal ditanya, tiada syarat tersembunyi.<br><br>
-          Hubungi kami melalui WhatsApp dengan bukti bayaran dan tarikh. Itu sahaja. <strong>Tiada risiko pada pihak anda.</strong>
-        </p>
+        <strong>Shariah-compliant — disahkan Masyref Advisor</strong>
+        <p>Program Eastelpreneur telah mendapat sijil Shariah-compliant. Bukan MLM, bukan skim. Berlesen MCMC.</p>
       </div>
+    </div>
+
+    <div class="starter-card">
+      <span class="plan-badge-lg">Starter Kit — Cara Paling Mudah Nak Mula</span>
+      <h3>SIM Eastel + Akaun Eastelpreneur</h3>
+      <div class="price-main">RM10</div>
+      <div class="price-sub">Bayaran sekali · Bukan subscription</div>
+      <ul class="starter-items">
+        <li>SIM card fizikal dengan 5GB data percuma</li>
+        <li>30 minit panggilan percuma untuk test</li>
+        <li>Akaun Eastelpreneur diaktifkan</li>
+        <li>Link referral peribadi untuk share</li>
+        <li>Kami guide setup dari awal sampai siap</li>
+        <li>Boleh pilih plan EZ35/EZ50/EZ68/EZ98 selepas aktif</li>
+      </ul>
+      <a class="btn wa lg" href="#" data-open-modal style="max-width:100%;">Saya Nak Daftar Sekarang</a>
+    </div>
+
+    <!-- SLOT BAR -->
+    <div class="slot-bar-wrap">
+      <div class="slot-bar-label">
+        <span>Slot yang dah diambil minggu ini</span>
+        <strong><span class="slot-taken">—</span> / <span class="slot-max">20</span></strong>
+      </div>
+      <div class="slot-bar-bg">
+        <div class="slot-bar-fill" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="guarantee-box">
+      <span class="g-badge">100% Transparent</span>
+      <h3>Kalau kau rasa ini bukan untuk kau, takde paksaan.</h3>
+      <p>Kami tak kejar-kejar. Kau cuba sendiri. Kalau berbaloi, kau teruskan. Kalau tak sesuai, kau tahu dah jawapannya. RM10 untuk tahu — berbaloi ke tidak.</p>
     </div>
   </div>
 </section>
 
-<!-- ══════ BONUS ══════ -->
-<section class="bonus">
-  <div class="wrap">
+
+<!-- ══════════════════════════════
+     11. TESTIMONI
+══════════════════════════════ -->
+<section class="sec testi" id="testimoni">
+  <div class="testi-inner">
     <div class="sec-head">
-      <span class="tag rv">Bonus Eksklusif</span>
-      <h2 class="rv d1">Daftar hari ini,<br>dapat 3 bonus percuma.</h2>
-      <p class="rv d2">Saya nak pastikan anda berjaya dari hari pertama.</p>
+      <p class="kicker">Feedback pengguna</p>
+      <h2>Orang macam kau yang dah cuba cakap macam ni.</h2>
+      <p>Bukan sales script. Ini feedback real dari pengguna Eastel — pasal data, pasal komisyen, pasal pengalaman guna.</p>
     </div>
-    <div class="bonus-cards rv d3">
-      <div class="bonus-card">
-        <div class="bonus-top">
-          <div class="bm-wrap">
-            <div class="bm-bar"><div class="bm-dots"><span></span><span></span><span></span></div><div class="bm-url">rezeki.digital/?id=anda</div></div>
-            <div class="bm-body">
-              <div class="bm-hero-s"></div>
-              <div class="bm-line w80"></div><div class="bm-line w60"></div>
-              <div class="bm-btn"></div>
-              <div style="display:flex;gap:5px;margin-top:7px;"><div style="flex:1;height:30px;background:#1e1e2e;border-radius:5px;border:1px solid #2a2a3e;"></div><div style="flex:1;height:30px;background:#1e1e2e;border-radius:5px;border:1px solid #2a2a3e;"></div></div>
-            </div>
-          </div>
-        </div>
-        <div class="bonus-bottom">
-          <div class="bonus-title">Website Khas Untuk Agent <span class="free-chip">Percuma</span></div>
-          <div class="bonus-desc">Website peribadi untuk anda rekrut agent baru. Siap guna, tinggal share link sahaja — tiada coding diperlukan.</div>
-        </div>
+
+    <div class="quote-grid">
+      <div class="quote-card">
+        <strong>"Data dia memang laju. Dah 2 minggu guna, takde slow langsung walaupun streaming."</strong>
+        <span>Kualiti Data</span>
       </div>
-      <div class="bonus-card">
-        <div class="bonus-top">
-          <div class="tm-wrap">
-            <div class="tm-header"><div class="tm-ava"></div><div><div class="tm-name">rezekidigital</div><div class="tm-handle">@rezekidigital · Hari 1</div></div></div>
-            <div class="tm-line w90"></div><div class="tm-line w75"></div><div class="tm-line w60"></div>
-            <div class="tm-tag">#Eastel #5G #PassiveIncome</div>
-            <div class="tm-actions"><span>♡ 24</span><span>↺ 8</span><span>Kongsi</span></div>
-          </div>
-        </div>
-        <div class="bonus-bottom">
-          <div class="bonus-title">Content Threads 30 Hari <span class="free-chip">Percuma</span></div>
-          <div class="bonus-desc">30 hari konten siap tulis untuk promosi Eastel di Threads. Copy, paste, post — sesimple tu.</div>
-        </div>
+      <div class="quote-card">
+        <strong>"Bulan pertama dah dapat komisyen RM47 dari 7 orang kawan yang daftar."</strong>
+        <span>Komisyen Pertama</span>
       </div>
-      <div class="bonus-card">
-        <div class="bonus-top">
-          <div class="cm-wrap">
-            <div class="cm-header"><div class="cm-ava">RD</div><div><div class="cm-name">Rezeki Digital Support</div><div class="cm-status">● Online sekarang</div></div></div>
-            <div class="cm-msgs">
-              <div class="cm-msg l">Salam! Ada soalan? 😊</div>
-              <div class="cm-msg r">Macam mana nak promote?</div>
-              <div class="cm-msg l">Saya guide step by step! 💪</div>
-              <div class="cm-msg r">Terima kasih!</div>
-              <div class="cm-msg l">Kita berjaya sama 🚀</div>
-            </div>
-          </div>
-        </div>
-        <div class="bonus-bottom">
-          <div class="bonus-title">Sokongan Upline Aktif <span class="free-chip">Percuma</span></div>
-          <div class="bonus-desc">Anda tidak berseorangan. Saya sedia bantu dari strategi pemasaran hingga soalan teknikal.</div>
-        </div>
+      <div class="quote-card">
+        <strong>"Plan RM50 dengan 500GB — telco lain takde bagi macam ni."</strong>
+        <span>Nilai Untuk Duit</span>
       </div>
+      <div class="quote-card">
+        <strong>"Suka sebab Shariah-compliant. Tak rasa bersalah recommend kepada orang."</strong>
+        <span>Ketenangan Hati</span>
+      </div>
+    </div>
+
+    <div class="testi-gallery">
+      <!-- Letak screenshot testimoni WhatsApp / Telegram di sini -->
+      <!-- <img src="assets/testi-01.jpg" alt="..." loading="lazy" /> -->
+      <div class="testi-placeholder">Screenshot testimoni 01</div>
+      <div class="testi-placeholder">Screenshot testimoni 02</div>
+      <div class="testi-placeholder">Screenshot testimoni 03</div>
+      <div class="testi-placeholder">Screenshot testimoni 04</div>
+      <div class="testi-placeholder">Screenshot testimoni 05</div>
+      <div class="testi-placeholder">Screenshot testimoni 06</div>
     </div>
   </div>
 </section>
 
-<!-- ══════ OFFER SUMMARY ══════ -->
-<section class="offer-sec">
-  <div class="wrap">
-    <div class="offer-shell rv">
-      <span class="tag tag-g" style="position:relative;z-index:1;">Apa Yang Anda Dapat Hari Ini</span>
-      <h2 style="font-size:clamp(1.7rem,4vw,2.4rem);font-weight:900;letter-spacing:-.7px;margin-bottom:28px;position:relative;z-index:1;">Semua ini dengan <span style="color:var(--green);">RM17</span> sahaja</h2>
-      <div class="offer-list">
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Simkad Eastel 5G rasmi</div><div class="or-val w">✓ Termasuk</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Agent ID unik anda</div><div class="or-val g">PERCUMA</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Komisyen 3 tier (13% / 3% / 8%)</div><div class="or-val g">SEUMUR HIDUP</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Pos terus ke rumah anda</div><div class="or-val w">✓ Termasuk</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Website peribadi agent</div><div class="or-val g">PERCUMA</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Content 30 hari Threads</div><div class="or-val g">PERCUMA</div></div>
-        <div class="offer-row"><div class="or-name"><div class="or-check">✓</div>Sokongan upline aktif</div><div class="or-val g">PERCUMA</div></div>
-      </div>
-      <div class="offer-total">
-        <div><div style="font-size:13px;color:#1a1a2e;">Jumlah pelaburan anda</div><div style="font-size:11px;color:#6d28d9;margin-top:2px;">Sabah / Sarawak — RM22 · Semenanjung — RM17</div></div>
-        <div class="ot-price">RM17</div>
-      </div>
-      <a href="#daftar" class="btn-green" style="width:100%;justify-content:center;font-size:16px;padding:17px;border-radius:12px;">Ya, Saya Mahu Mulakan Sekarang →</a>
-      <p style="text-align:center;font-size:12px;color:#6d28d9;margin-top:10px;">🛡️ Jaminan refund 14 hari · Tiada kontrak · Batalkan bila-bila masa</p>
+
+<!-- ══════════════════════════════
+     12. HONEST
+══════════════════════════════ -->
+<section class="honest">
+  <div class="honest-inner wrap">
+    <div>
+      <p class="kicker">Jujur dulu</p>
+      <h2>Ini bukan jalan cepat kaya.</h2>
     </div>
+    <p>Kalau kau expect komisyen besar dalam bulan pertama tanpa buat apa-apa — ni bukan untuk kau. Komisyen membesar ikut saiz network kau. Makin ramai orang dalam network kau reload setiap bulan, makin besar komisyen kau. Mulanya mungkin kecil — tapi dia recurring. Setiap bulan, selagi mereka guna.</p>
   </div>
 </section>
 
-<!-- ══════ FAQ ══════ -->
-<section class="faq">
-  <div style="max-width:860px;margin:0 auto;padding:0 24px;box-sizing:border-box;text-align:center;">
-    <div class="sec-head" style="margin-left:auto;margin-right:auto;">
-      <span class="tag rv">Soalan Lazim</span>
-      <h2 class="rv d1">Ada soalan? Kami<br>dah jawab di sini.</h2>
-      <p class="rv d2">Kalau soalan anda tak ada di sini, boleh terus WhatsApp kami.</p>
+
+<!-- ══════════════════════════════
+     13. FAQ
+══════════════════════════════ -->
+<section class="sec faq" id="faq">
+  <div class="faq-inner">
+    <div class="sec-head">
+      <p class="kicker">Soalan biasa</p>
+      <h2>Jawapan terus sebelum kau decide.</h2>
     </div>
-    <div class="faq-stack rv d2">
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Ini MLM ke? Saya risau dengan skim haram. <span class="faq-arr">+</span></button><div class="faq-a">Tidak. Eastel adalah syarikat telco berlesen MCMC yang menggunakan rangkaian U Mobile. Program Eastelpreneur adalah sistem referral — anda dapat komisyen bila pengguna anda topup, bukan bila merekrut semata-mata. Turut mendapat pensijilan Syariah dari Masyref Advisor.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Macam mana komisyen masuk? Bila boleh keluarkan? <span class="faq-arr">+</span></button><div class="faq-a">Komisyen dikira berdasarkan topup pengguna setiap bulan dan dibayar pada 18hb bulan berikutnya terus ke wallet Eastel anda. Dari situ anda boleh withdraw ke akaun bank Malaysia bila-bila masa.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Saya tiada pengalaman bisnes. Boleh buat ke? <span class="faq-arr">+</span></button><div class="faq-a">Boleh. Anda dapat website percuma yang siap guna dan content calendar 30 hari. Tak perlu tahu marketing atau coding. Mulakan dengan kongsikan kepada keluarga dan kawan-kawan anda dahulu.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Berapa lama simkad sampai selepas saya daftar? <span class="faq-arr">+</span></button><div class="faq-a">Selepas bayaran disahkan, simkad akan dipos dalam 1–2 hari bekerja. Semenanjung: 2–5 hari bekerja. Sabah/Sarawak: 3–7 hari. Jika tidak sampai dalam 14 hari, kami refund penuh.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Boleh buat part-time? Saya ada kerja tetap. <span class="faq-arr">+</span></button><div class="faq-a">Boleh. Ramai agent buat ini sebagai pendapatan sampingan. Tak perlu tinggalkan kerja tetap. Kongsikan kepada kenalan anda, bina rangkaian perlahan-lahan, komisyen masuk setiap bulan.</div></div>
-      <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Coverage Eastel macam mana di kawasan saya? <span class="faq-arr">+</span></button><div class="faq-a">Eastel menggunakan rangkaian U Mobile yang meliputi lebih 80% kawasan berpenduduk di Malaysia termasuk 5G. Semak peta coverage rasmi U Mobile untuk kawasan anda.</div></div>
-    </div>
+
+    <details open>
+      <summary>Ini MLM ke?</summary>
+      <p>Bukan. Eastel adalah syarikat telco berlesen MCMC di bawah Anchor Communications Sdn Bhd. Program Eastelpreneur adalah incentive-based referral programme — bukan MLM. Program ini juga telah mendapat sijil Shariah-compliant dari Masyref Advisor.</p>
+    </details>
+    <details>
+      <summary>Coverage dia macam mana? Coverage U Mobile okay ke?</summary>
+      <p>Eastel guna infrastruktur rangkaian U Mobile — 4G dan 5G. Coverage boleh disemak terus di coverage map U Mobile. U Mobile salah satu coverage terluas dan terpantas di Malaysia sekarang.</p>
+    </details>
+    <details>
+      <summary>Apa maksud NO FUP 5G?</summary>
+      <p>FUP (Fair Use Policy) biasanya bermakna data kau akan di-throttle (diperlahan) selepas melebihi had tertentu. NO FUP bermaksud kelajuan data kau kekal laju dari awal sampai habis quota — tidak diperlahan. Ini beza besar berbanding banyak telco lain.</p>
+    </details>
+    <details>
+      <summary>Komisyen macam mana masuk? Bila boleh withdraw?</summary>
+      <p>Komisyen masuk ke Eastel Wallet kau secara automatik setiap bulan berdasarkan reload network kau. Dari situ boleh withdraw — prosedur withdrawal ikut syarat platform Eastel.</p>
+    </details>
+    <details>
+      <summary>Kena recruit ramai-ramai ke untuk dapat duit?</summary>
+      <p>Tak perlu recruit ramai-ramai. Mulakan dengan orang sekeliling — kawan, keluarga — yang memang dah bayar telco tiap bulan. 10 orang pun dah boleh cover plan kau sendiri dan dapat lebih lagi.</p>
+    </details>
+    <details>
+      <summary>Nombor lama boleh kekal tak?</summary>
+      <p>Boleh. Eastel sokong MNP (Mobile Number Portability) — kau boleh port in nombor lama ke Eastel dalam masa 2 hari bekerja tanpa tukar nombor.</p>
+    </details>
+    <details>
+      <summary>CTOS / CCRIS teruk boleh daftar?</summary>
+      <p>Boleh. Status CTOS atau CCRIS tidak jadi halangan untuk daftar Eastel. Ini prepaid — bukan postpaid yang perlukan credit check.</p>
+    </details>
+    <details>
+      <summary>Macam mana nak mula dengan Rezeki Digital?</summary>
+      <p>Tekan butang WhatsApp di bawah. Kami akan guide kau untuk beli SIM starter kit RM10, setup akaun, aktifkan plan, dan mula guna. Keseluruhan proses boleh selesai dalam sehari.</p>
+    </details>
   </div>
 </section>
 
-<!-- ══════ FORM ══════ -->
-<section class="form-sec" id="daftar">
-  <div class="wrap-sm" style="text-align:center;">
-    <span class="tag tag-g rv">Langkah Pertama</span>
-    <h2 class="rv d1" style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;letter-spacing:-.8px;margin-bottom:10px;">Isi borang.<br>Kami pos simkad terus.</h2>
-    <p class="rv d2" style="font-size:15px;color:var(--dim);margin-bottom:36px;max-width:480px;line-height:1.8;margin-left:auto;margin-right:auto;">Tiada commitment jangka panjang. Tiada hidden charges. Isi borang, pilih kawasan, scan QR, simkad tiba di depan pintu anda.</p>
 
-    <div class="form-card rv d3">
-      <div id="formFields">
-        <div class="slot-warn" id="slotWarn">⚡ Slot minggu ini: <strong id="slotCountForm">...</strong> / 20 — daftar sebelum penuh!</div>
-
-        <div class="fg"><label>Nama Penuh</label><input type="text" id="f-nama" placeholder="Nama seperti dalam IC"></div>
-        <div class="fg-row">
-          <div class="fg"><label>No. WhatsApp</label><input type="tel" id="f-wa" placeholder="0123456789"></div>
-          <div class="fg"><label>Emel</label><input type="email" id="f-email" placeholder="nama@email.com"></div>
-        </div>
-        <div class="fg"><label>Alamat Penghantaran Lengkap</label><textarea id="f-alamat" placeholder="No. rumah, jalan, taman, poskod, bandar, negeri..."></textarea></div>
-        <div class="fg">
-          <label>Kawasan Penghantaran</label>
-          <select id="f-kawasan" onchange="tunjukQR(this.value)">
-            <option value="">-- Pilih kawasan anda --</option>
-            <option value="Semenanjung Malaysia">Semenanjung Malaysia — RM17</option>
-            <option value="Sabah">Sabah — RM22</option>
-            <option value="Sarawak">Sarawak — RM22</option>
-          </select>
-        </div>
-        <div class="fg"><label>Referral / Agent ID (jika ada)</label><input type="text" id="f-refid" placeholder="Tinggalkan kosong jika tiada"></div>
-
-        <!-- QR Section -->
-        <div class="qr-sec" id="qrSection">
-          <div style="font-size:10px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--purple);margin-bottom:6px;">Bayaran Simkad + Postage</div>
-          <div style="font-size:13px;color:var(--dim);margin-bottom:14px;">Bayar kepada <strong style="color:#fff;">Mohamad Nasrol</strong></div>
-          <div style="display:flex;align-items:center;gap:16px;">
-            <div class="qr-css-box">
-              <img src="eastel-qr.jpg" alt="QR Bayaran"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" style="display:block;">
-              <div style="display:none;flex-direction:column;align-items:center;justify-content:center;position:absolute;inset:0;">
-                <div class="qr-dots"></div>
-                <div class="qr-corner tl"></div>
-                <div class="qr-corner tr"></div>
-                <div class="qr-corner bl"></div>
-                <div class="qr-center">💳</div>
-              </div>
-            </div>
-            <div>
-              <div style="font-size:11px;color:var(--muted);margin-bottom:4px;">Jumlah dibayar</div>
-              <div id="qrAmount" style="font-size:36px;font-weight:900;color:var(--purple);letter-spacing:-1px;line-height:1;margin-bottom:6px;">—</div>
-              <div style="font-size:11px;color:var(--muted);line-height:1.6;">Scan QR · DuitNow · TnG · Maybank</div>
-            </div>
-          </div>
-          <div style="font-size:12px;color:var(--muted);margin-top:10px;">Simpan resit anda. Kami sahkan dalam 1–2 jam.</div>
-        </div>
-
-        <!-- Confirm checkbox -->
-        <div class="confirm-box" id="confirmBox">
-          <label class="confirm-label">
-            <input type="checkbox" id="confirmPay" onchange="toggleSubmit()">
-            <span>Saya <strong style="color:#fff;">telah membuat bayaran</strong> seperti jumlah di atas dan ingin menghantar permohonan ini.</span>
-          </label>
-        </div>
-
-        <button class="submit-btn" id="submitBtn" onclick="hantar()" disabled>
-          <span>Sila pilih kawasan dahulu ☝️</span>
-        </button>
-
-        <div class="form-trust">
-          <div class="ftr-item">🔒 Data selamat</div>
-          <div class="ftr-item">🛡️ Jaminan refund 14 hari</div>
-          <div class="ftr-item">✅ Berlesen MCMC</div>
-          <div class="ftr-item">📦 Pos 1–2 hari kerja</div>
-        </div>
-        <p class="form-legal">Dengan menghantar borang ini, anda bersetuju untuk dihubungi melalui WhatsApp dan emel. Data anda tidak dikongsi kepada pihak ketiga.</p>
-      </div>
-
-      <!-- Success state -->
-      <div class="success-box" id="successBox">
-        <div class="suc-circle">🎉</div>
-        <h3>Terima kasih! Permohonan diterima.</h3>
-        <p>Klik butang di bawah untuk hantar bukti bayaran via WhatsApp. Simkad akan dipos sebaik disahkan. Insya-Allah, semoga menjadi permulaan rezeki yang berkat. 🤲</p>
-        <a id="waBtnSuccess" href="#" target="_blank" rel="noopener"
-           style="display:flex;align-items:center;justify-content:center;gap:10px;width:100%;padding:15px;background:#25d366;color:#fff;font-family:'Outfit',sans-serif;font-size:15px;font-weight:900;border-radius:12px;margin-top:14px;">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.107.547 4.085 1.506 5.802L.057 23.5l5.848-1.431A11.927 11.927 0 0012 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 21.818a9.818 9.818 0 01-5.014-1.373l-.36-.213-3.72.911.944-3.614-.234-.373A9.818 9.818 0 1112 21.818z"/></svg>
-          Hantar Bukti Bayaran via WhatsApp
-        </a>
-      </div>
-    </div>
-  </div>
+<!-- ══════════════════════════════
+     14. FINAL CTA
+══════════════════════════════ -->
+<section class="final">
+  <p class="kicker">Last call</p>
+  <h2>Kau dah bayar telco tiap bulan. Dah masa duit tu bagi balik kepada kau.</h2>
+  <p>Guna data 500GB NO FUP 5G. Refer orang sekeliling. Dapat komisyen recurring setiap bulan. Mulakan dengan RM10.</p>
+  <a class="btn wa lg" id="final-wa-btn" href="https://wa.me/60167388358" target="_blank" rel="noopener" data-open-modal>
+    Daftar Sekarang — Mulakan Dengan RM10
+  </a>
 </section>
 
-<!-- FOOTER -->
-<footer>
-  <div class="footer-logo">Rezeki<em>Digital</em></div>
-  <div class="footer-tag">Platform Eastelpreneur · Berlesen MCMC · Patuh Syariah · U Mobile 5G</div>
-  <div class="footer-links">
-    <a href="https://wa.me/60167388358" id="footerWaBtn" target="_blank" rel="noopener">WhatsApp Kami</a>
-    <a href="https://eastel.com.my" target="_blank" rel="noopener">Laman Rasmi Eastel</a>
-    <a href="https://eastelpreneur.com" target="_blank" rel="noopener">Eastelpreneur</a>
-  </div>
-  <div class="footer-copy">© 2026 Rezeki Digital · Dikendalikan oleh Eastelpreneur bebas · Bukan laman web rasmi Eastel Mobile</div>
-</footer>
+</main>
 
-<!-- Social Proof Notif -->
-<div id="saleNotif">
-  <div class="sn-ava" id="snAva">😊</div>
-  <div>
-    <div class="sn-msg"><strong id="snName">Ahmad</strong> <span id="snText">dari Selangor baru mendaftar!</span></div>
-    <div class="sn-time" id="snTime">Baru sahaja</div>
+
+<!-- ══════════════════════════════
+     MODAL CHECKOUT
+══════════════════════════════ -->
+<div class="checkout-modal" id="checkout-modal" hidden>
+  <div class="checkout-dialog" role="dialog" aria-modal="true">
+    <div class="modal-head">
+      <div>
+        <p class="kicker">Pendaftaran</p>
+        <h3>Tinggalkan detail kau dulu.</h3>
+      </div>
+      <button class="modal-close" id="close-checkout" type="button">✕</button>
+    </div>
+
+    <!-- FORM STATE -->
+    <form class="lead-form" id="lead-form">
+      <div class="form-copy">
+        <span>Pakej yang dipilih</span>
+        <strong>SIM Starter Kit + Akaun Eastelpreneur — RM10</strong>
+        <p>Isi detail kau. Kami akan hubungi melalui WhatsApp untuk langkah seterusnya.</p>
+      </div>
+      <label>Nama penuh
+        <input id="f-nama" type="text" placeholder="Contoh: Ahmad Firdaus" required />
+      </label>
+      <label>No WhatsApp
+        <input id="f-wa" type="tel" placeholder="Contoh: 0123456789" required />
+      </label>
+      <label>Email
+        <input id="f-email" type="email" placeholder="Contoh: ahmad@email.com" />
+      </label>
+      <label>Alamat
+        <input id="f-alamat" type="text" placeholder="Contoh: No 12, Jalan Mawar" />
+      </label>
+      <label>Kawasan / Bandar
+        <input id="f-kawasan" type="text" placeholder="Contoh: Alor Gajah, Melaka" />
+      </label>
+      <div id="form-error" style="display:none; background:#fef2f2; border:1px solid #fca5a5; border-radius:8px; padding:12px; font-size:14px; color:#dc2626;"></div>
+      <button class="btn primary lg" type="submit" id="submit-btn">
+        <span id="submit-text">Hantar Pendaftaran</span>
+      </button>
+    </form>
+
+    <!-- THANK YOU STATE -->
+    <div id="thankyou-state" hidden>
+      <div style="text-align:center; padding: 8px 0 20px;">
+        <div style="font-size:3rem; margin-bottom:12px;">✅</div>
+        <h3 style="margin-bottom:8px;">Pendaftaran Berjaya!</h3>
+        <p style="font-size:14px; color:var(--muted); margin-bottom:24px;">Terima kasih. Detail kau dah kami terima. Semak ringkasan di bawah.</p>
+      </div>
+
+      <div style="background:var(--warm); border-radius:10px; padding:20px; margin-bottom:20px; display:flex; flex-direction:column; gap:10px;">
+        <div style="display:flex; justify-content:space-between; font-size:14px;">
+          <span style="color:var(--muted);">Nama</span>
+          <strong id="ty-nama"></strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:14px;">
+          <span style="color:var(--muted);">WhatsApp</span>
+          <strong id="ty-wa"></strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:14px;">
+          <span style="color:var(--muted);">Kawasan</span>
+          <strong id="ty-kawasan"></strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:14px;">
+          <span style="color:var(--muted);">Pakej</span>
+          <strong>SIM Starter Kit — RM10</strong>
+        </div>
+        <div style="display:flex; justify-content:space-between; font-size:14px;">
+          <span style="color:var(--muted);">Ejen kau</span>
+          <strong id="ty-agent"></strong>
+        </div>
+      </div>
+
+      <p style="font-size:13px; color:var(--muted); text-align:center; margin-bottom:16px;">
+        Tekan butang di bawah untuk sahkan kepada ejen kau melalui WhatsApp.
+      </p>
+      <a class="btn wa lg" id="ty-wa-btn" href="#" target="_blank" rel="noopener">
+        WhatsApp Ejen Sekarang
+      </a>
+    </div>
+
   </div>
 </div>
 
-<!-- ══════════════════════════════════
-     JAVASCRIPT — SEMUA BUGS FIXED
-     FIX 1: kawasanRaw & _harga → module-level let (hantar() accessible)
-     FIX 2: hero-grid → CSS class (bukan inline style)
-     FIX 3: Calculator scenario buttons dengan default realistic
-     FIX 4: QR image onerror → CSS fallback
-     FIX 5: fetch no-cors + WA backup
-══════════════════════════════════ -->
+
+<style>
+  /* loading spinner */
+  .spinner {
+    display: inline-block; width: 16px; height: 16px;
+    border: 2px solid rgba(255,255,255,0.4);
+    border-top-color: white; border-radius: 50%;
+    animation: spin 0.7s linear infinite; margin-right: 8px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* slot bar */
+  .slot-bar-wrap { margin: 0 auto 28px; max-width: 560px; }
+  .slot-bar-label { display: flex; justify-content: space-between; font-size: 13px; margin-bottom: 6px; }
+  .slot-bar-label span { color: var(--muted); }
+  .slot-bar-label strong { color: var(--accent-dark); }
+  .slot-bar-bg { background: var(--line); border-radius: 20px; height: 8px; overflow: hidden; }
+  .slot-bar-fill { background: var(--accent); height: 100%; border-radius: 20px; transition: width 1s ease; }
+</style>
+
+
 <script>
-const GAS_URL = 'https://script.google.com/macros/s/AKfycby9AGYgsu7dEXE29Yjv8bkllUVMQym-NKSpcFzY6LdCuyLNZ5OOv0PiOahkZ2RHesTh/exec';
-const WA_NUM  = '60167388358';
-const urlParams = new URLSearchParams(window.location.search);
-const agentId   = urlParams.get('id') || '';
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
 
-// ── FIX 1: kawasanRaw & _harga di module-level ──────────────────
-let kawasanRaw = '';
-let _harga     = '';
+  // ── state global ──
+  let agentData = {
+    agent_id  : 'default',
+    nama      : 'Mohamad Nasrol',
+    whatsapp  : '60167388358',
+    qr_uri    : '',
+    max_slot  : 20,
+    slot_taken: 0,
+  };
 
-// ── Dynamic date ─────────────────────────────────────────────────
-(function(){
-  const months = ['Januari','Februari','Mac','April','Mei','Jun','Julai','Ogos','September','Oktober','November','Disember'];
-  const n = new Date();
-  const el = document.getElementById('dynamicDate');
-  if(el) el.textContent = n.getDate()+' '+months[n.getMonth()]+' '+n.getFullYear();
-})();
+  // ── ambil ?id= dari URL ──
+  const urlParams = new URLSearchParams(window.location.search);
+  const agentId   = urlParams.get('id') || '';
 
-// ── Auto-fill ref ID from URL ─────────────────────────────────────
-if(agentId){
-  const ri = document.getElementById('f-refid');
-  if(ri) ri.value = agentId;
-}
-
-// ── Slot counter ──────────────────────────────────────────────────
-(async function(){
-  const elC = document.getElementById('slotCount');
-  const elM = document.getElementById('slotMsg');
-  const elCF= document.getElementById('slotCountForm');
-  const elW = document.getElementById('slotWarn');
-  const MAX = 20;
-  try {
-    const ctrl = new AbortController();
-    setTimeout(()=>ctrl.abort(), 5000);
-    const res = await fetch(GAS_URL+'?action=getSlots',{signal:ctrl.signal});
-    const d   = await res.json();
-    const used= parseInt(d.used)||0;
-    const left= Math.max(0, MAX-used);
-    if(elC) elC.textContent = left;
-    if(elCF) elCF.textContent = left;
-    if(left <= 3){
-      if(elM) elM.innerHTML = '🔴 <strong>HAMPIR PENUH!</strong>';
-      if(elW) elW.style.background = 'rgba(239,68,68,.1)';
-    } else if(left <= 8){
-      if(elM) elM.textContent = '⚠ terhad — jangan tunggu!';
-    } else {
-      if(elM) elM.textContent = 'masih ada — daftar sekarang.';
+  // ══════════════════════════════
+  // 1. LOAD AGENT DATA ON PAGE LOAD
+  // ══════════════════════════════
+  async function loadAgent() {
+    try {
+      const url = GAS_URL + (agentId ? `?id=${encodeURIComponent(agentId)}` : '');
+      const res  = await fetch(url);
+      const json = await res.json();
+      if (json.ok && json.data) {
+        agentData = json.data;
+        applyAgentData(json.data);
+      }
+    } catch(err) {
+      console.warn('GAS load error:', err);
+      // fallback — page papar dengan default data
     }
-  } catch(e){
-    if(elC) elC.textContent = '<20';
-    if(elCF) elCF.textContent = '<20';
-    if(elM) elM.textContent = 'masih ada minggu ini.';
-  }
-})();
-
-// ── QR / kawasan selection ────────────────────────────────────────
-function tunjukQR(val){
-  // FIX 1: simpan ke module-level variables
-  kawasanRaw = val;
-  _harga     = (val==='Sabah'||val==='Sarawak') ? 'RM22' : 'RM17';
-
-  const qrSec  = document.getElementById('qrSection');
-  const qrAmt  = document.getElementById('qrAmount');
-  const cfBox  = document.getElementById('confirmBox');
-  const chk    = document.getElementById('confirmPay');
-  const btn    = document.getElementById('submitBtn');
-
-  if(!val){
-    if(qrSec) qrSec.classList.remove('show');
-    if(cfBox) cfBox.classList.remove('show');
-    if(btn){btn.disabled=true;btn.innerHTML='<span>Sila pilih kawasan dahulu ☝️</span>';}
-    return;
   }
 
-  if(qrAmt) qrAmt.textContent = _harga;
-  if(qrSec) qrSec.classList.add('show');
-  if(chk)   chk.checked = false;
-  if(cfBox) cfBox.classList.add('show');
-  if(btn){btn.disabled=true;btn.style.opacity='.42';btn.innerHTML='<span>Sila sahkan bayaran dahulu ☝️</span>';}
-
-  setTimeout(()=>qrSec&&qrSec.scrollIntoView({behavior:'smooth',block:'nearest'}),100);
-}
-
-function toggleSubmit(){
-  const checked = document.getElementById('confirmPay').checked;
-  const kawasan = document.getElementById('f-kawasan').value;
-  const btn     = document.getElementById('submitBtn');
-  if(checked && kawasan){
-    btn.disabled = false;
-    btn.style.opacity = '1';
-    btn.innerHTML = '<span>Hantar Permohonan Saya →</span>';
-  } else {
-    btn.disabled = true;
-    btn.style.opacity = '.42';
-    btn.innerHTML = '<span>Sila sahkan bayaran dahulu ☝️</span>';
-  }
-}
-
-// ── Form submission ───────────────────────────────────────────────
-async function hantar(){
-  const nama   = document.getElementById('f-nama').value.trim();
-  const wa     = document.getElementById('f-wa').value.trim();
-  const email  = document.getElementById('f-email').value.trim();
-  const alamat = document.getElementById('f-alamat').value.trim();
-  const refid  = document.getElementById('f-refid').value.trim() || agentId;
-  const cp     = document.getElementById('confirmPay');
-
-  // Validation
-  if(!nama||!wa||!email||!alamat||!kawasanRaw){
-    alert('Sila lengkapkan semua maklumat yang diperlukan termasuk kawasan penghantaran.');
-    return;
-  }
-  if(!/^\d{9,12}$/.test(wa.replace(/[-\s]/g,''))){
-    alert('Sila masukkan nombor WhatsApp yang sah (contoh: 0123456789).');
-    return;
-  }
-  if(!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)){
-    alert('Sila masukkan alamat emel yang sah.');
-    return;
-  }
-  if(!cp||!cp.checked){
-    alert('Sila sahkan bahawa anda telah membuat bayaran terlebih dahulu.');
-    return;
-  }
-
-  const btn = document.getElementById('submitBtn');
-  btn.disabled = true;
-  btn.innerHTML = '<span>Menghantar...</span>';
-
-  const masa = new Date().toLocaleString('ms-MY',{
-    dateStyle:'full', timeStyle:'short', timeZone:'Asia/Kuala_Lumpur'
-  });
-
-  // FIX 3: no-cors → Image pixel workaround agar tak block UI
-  try{
-    const params = new URLSearchParams({
-      action:'daftar', nama, whatsapp:wa, email, alamat,
-      kawasan:kawasanRaw, harga:_harga, refId:refid, masa
+  function applyAgentData(d) {
+    // nama agent dalam header/footer
+    document.querySelectorAll('.agent-name').forEach(el => el.textContent = d.nama);
+    document.querySelectorAll('.agent-wa').forEach(el => {
+      el.href = `https://wa.me/${d.whatsapp}`;
     });
-    new Image().src = GAS_URL + '?' + params.toString();
-  }catch(e){/* silent */}
 
-  // Bina WA message untuk backup konfirmasi
-  const waMsg = encodeURIComponent(
-    `Assalamualaikum, saya *${nama}* telah membuat bayaran ${_harga} untuk simkad Eastel.\n\n`+
-    `📋 *Butiran:*\nNama: ${nama}\nNo. WA: ${wa}\nKawasan: ${kawasanRaw}\nAmaun: ${_harga}\n\n`+
-    `Sila proses penghantaran. Terima kasih! 🙏`
-  );
+    // slot tracker bar
+    const taken = d.slot_taken || 0;
+    const max   = d.max_slot   || 20;
+    const pct   = Math.min(Math.round((taken / max) * 100), 100);
 
-  const wabtn = document.getElementById('waBtnSuccess');
-  if(wabtn) wabtn.href = `https://wa.me/${WA_NUM}?text=${waMsg}`;
+    document.querySelectorAll('.slot-taken').forEach(el => el.textContent = taken);
+    document.querySelectorAll('.slot-max').forEach(el => el.textContent = max);
+    document.querySelectorAll('.slot-bar-fill').forEach(el => el.style.width = pct + '%');
 
-  // Show success
-  document.getElementById('formFields').style.display = 'none';
-  document.getElementById('successBox').style.display = 'block';
+    // QR payment
+    if (d.qr_uri) {
+      document.querySelectorAll('.payment-qr-img').forEach(el => {
+        el.src = d.qr_uri;
+        el.style.display = 'block';
+      });
+      document.querySelectorAll('.fake-qr').forEach(el => el.style.display = 'none');
+    }
 
-  // Auto-open WA after 1.5s
-  setTimeout(()=>{
-    window.open(`https://wa.me/${WA_NUM}?text=${waMsg}`, '_blank');
-  }, 1500);
-}
+    // final CTA WA button
+    const finalWa = document.getElementById('final-wa-btn');
+    if (finalWa) {
+      const msg = encodeURIComponent(`Salam ${d.nama}, saya nak tahu lebih lanjut tentang Eastelpreneur Rezeki Digital.`);
+      finalWa.href = `https://wa.me/${d.whatsapp}?text=${msg}`;
+    }
+  }
 
-// ── Calculator ───────────────────────────────────────────────────
-function fmt(n){ return 'RM'+n.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g,','); }
+  // ══════════════════════════════
+  // 2. MODAL OPEN / CLOSE
+  // ══════════════════════════════
+  const modal    = document.getElementById('checkout-modal');
+  const openBtns = document.querySelectorAll('[data-open-modal]');
+  const closeBtn = document.getElementById('close-checkout');
 
-function kira(){
-  const plan = parseFloat(document.getElementById('planSel').value)||35;
-  const n1   = parseInt(document.getElementById('t1').value)||0;
-  const n2   = parseInt(document.getElementById('t2').value)||0;
-  const n3   = parseInt(document.getElementById('t3').value)||0;
-  const r1 = plan*n1*0.13;
-  const r2 = plan*n2*0.03;
-  const r3 = plan*n3*0.08;
-  document.getElementById('r1').textContent      = fmt(r1);
-  document.getElementById('r2').textContent      = fmt(r2);
-  document.getElementById('r3').textContent      = fmt(r3);
-  document.getElementById('totalNum').textContent= fmt(r1+r2+r3);
-}
+  openBtns.forEach(btn => btn.addEventListener('click', e => {
+    e.preventDefault();
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+  }));
 
-// FIX: Scenario buttons — realistic defaults first
-function setScenario(btn, v1, v2, v3){
-  document.getElementById('t1').value = v1;
-  document.getElementById('t2').value = v2;
-  document.getElementById('t3').value = v3;
-  kira();
-  document.querySelectorAll('.sc-btn').forEach(b=>b.classList.remove('active'));
-  btn.classList.add('active');
-}
+  if(closeBtn) closeBtn.addEventListener('click', closeModal);
+  if(modal) modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
 
-kira(); // initial calc dengan nilai realistik
+  function closeModal() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+  }
 
-// ── FAQ accordion ────────────────────────────────────────────────
-function toggleFaq(btn){
-  const item   = btn.closest('.faq-item');
-  const isOpen = item.classList.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
-  if(!isOpen) item.classList.add('open');
-}
+  // ══════════════════════════════
+  // 3. FORM SUBMIT → GAS doPost
+  // ══════════════════════════════
+  const leadForm   = document.getElementById('lead-form');
+  const submitBtn  = document.getElementById('submit-btn');
+  const submitText = document.getElementById('submit-text');
+  const formError  = document.getElementById('form-error');
 
-// ── Scroll reveal ────────────────────────────────────────────────
-const io = new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
-  });
-},{threshold:.1,rootMargin:'0px 0px -35px 0px'});
-document.querySelectorAll('.rv').forEach(el=>io.observe(el));
+  if(leadForm) {
+    leadForm.addEventListener('submit', async e => {
+      e.preventDefault();
+      formError.style.display = 'none';
 
-// ── Social proof notif ───────────────────────────────────────────
-const _sales = [
-  {n:'Ahmad Faris',l:'Kuala Lumpur',e:'👨'},
-  {n:'Nurul Ain',l:'Selangor',e:'👩'},
-  {n:'Hafiz Rahman',l:'Johor Bahru',e:'👨'},
-  {n:'Siti Hajar',l:'Pulau Pinang',e:'👩'},
-  {n:'Khairul',l:'Melaka',e:'👨'},
-  {n:'Farah Nadia',l:'Pahang',e:'👩'},
-  {n:'Zulaikha',l:'Kedah',e:'👩'},
-  {n:'Izzat Hakim',l:'Perak',e:'👨'},
-  {n:'Nur Fatin',l:'N. Sembilan',e:'👩'},
-  {n:'Ridhwan',l:'Terengganu',e:'👨'},
-];
-let _si = Math.floor(Math.random()*_sales.length);
-function showNotif(){
-  const el = document.getElementById('saleNotif');
-  if(!el) return;
-  const d  = _sales[_si%_sales.length]; _si++;
-  const mins = Math.floor(Math.random()*59)+1;
-  document.getElementById('snAva').textContent  = d.e;
-  document.getElementById('snName').textContent = d.n;
-  document.getElementById('snText').textContent = 'dari '+d.l+' baru mendaftar!';
-  document.getElementById('snTime').textContent = mins+' minit lalu';
-  el.classList.add('show');
-  setTimeout(()=>el.classList.remove('show'), 5000);
-}
-setTimeout(()=>{ showNotif(); setInterval(showNotif, Math.floor(Math.random()*20000)+30000); }, 9000);
+      const nama    = document.getElementById('f-nama').value.trim();
+      const wa      = document.getElementById('f-wa').value.trim();
+      const email   = document.getElementById('f-email').value.trim();
+      const alamat  = document.getElementById('f-alamat').value.trim();
+      const kawasan = document.getElementById('f-kawasan').value.trim();
+
+      if (!nama || !wa) {
+        showError('Nama dan No WhatsApp wajib diisi.');
+        return;
+      }
+
+      // loading state
+      submitBtn.disabled = true;
+      submitText.innerHTML = '<span class="spinner"></span>Menghantar...';
+
+      const payload = {
+        agent_id : agentData.agent_id,
+        nama, whatsapp: wa, email, alamat, kawasan,
+        amaun    : 'RM10',
+      };
+
+      try {
+        const res  = await fetch(GAS_URL, {
+          method : 'POST',
+          body   : JSON.stringify(payload),
+        });
+        const json = await res.json();
+
+        if (json.ok) {
+          showThankYou(nama, wa, kawasan);
+        } else {
+          showError(json.message || 'Ralat. Cuba sekali lagi.');
+          submitBtn.disabled = false;
+          submitText.textContent = 'Hantar Pendaftaran';
+        }
+      } catch(err) {
+        showError('Gagal hantar. Semak connection dan cuba lagi.');
+        submitBtn.disabled = false;
+        submitText.textContent = 'Hantar Pendaftaran';
+      }
+    });
+  }
+
+  function showError(msg) {
+    formError.textContent = msg;
+    formError.style.display = 'block';
+  }
+
+  function showThankYou(nama, wa, kawasan) {
+    // hide form, show thank you
+    leadForm.hidden = true;
+    const ty = document.getElementById('thankyou-state');
+    ty.hidden = false;
+
+    // isi detail
+    document.getElementById('ty-nama').textContent    = nama;
+    document.getElementById('ty-wa').textContent      = wa;
+    document.getElementById('ty-kawasan').textContent = kawasan || '—';
+    document.getElementById('ty-agent').textContent   = agentData.nama;
+
+    // WA button ke agent
+    const waBtn = document.getElementById('ty-wa-btn');
+    const msg   = encodeURIComponent(
+      `Salam ${agentData.nama},\n\nSaya baru je daftar melalui Rezeki Digital.\n\nNama: ${nama}\nNo fon: ${wa}\nKawasan: ${kawasan || '—'}\nPakej: SIM Starter Kit — RM10\n\nTolong guide saya untuk langkah seterusnya. Terima kasih.`
+    );
+    waBtn.href = `https://wa.me/${agentData.whatsapp}?text=${msg}`;
+  }
+
+  // ══════════════════════════════
+  // 4. INIT
+  // ══════════════════════════════
+  loadAgent();
 </script>
 
 </body>
