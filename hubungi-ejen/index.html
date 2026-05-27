@@ -293,12 +293,24 @@
             <span class="val" id="d-kawasan">—</span>
           </div>
           <div class="detail-row">
+            <span class="lbl">Lokasi</span>
+            <span class="val" id="d-lokasi">—</span>
+          </div>
+          <div class="detail-row">
             <span class="lbl">Pakej</span>
             <span class="val">SIM Starter Kit</span>
           </div>
           <div class="detail-row">
-            <span class="lbl">Amaun</span>
-            <span class="val green">RM10</span>
+            <span class="lbl">SIM</span>
+            <span class="val">RM10.00</span>
+          </div>
+          <div class="detail-row">
+            <span class="lbl">Postage</span>
+            <span class="val" id="d-postage">—</span>
+          </div>
+          <div class="detail-row" style="border-top: 2px solid var(--line); margin-top:4px; padding-top:12px;">
+            <span class="lbl" style="font-weight:700; color:var(--ink);">Jumlah Dibayar</span>
+            <span class="val green" id="d-total">—</span>
           </div>
         </div>
 
@@ -319,7 +331,7 @@
             <div class="step-item">
               <div class="step-num">1</div>
               <p>Tekan butang WhatsApp di bawah untuk hubungi ejen kau.
-                <span>Mesej dah siap — kau cuma perlu tekan Send.</span>
+                <span>Mesej dah siap — kau cuma perlu <strong>attach screenshot slip payment</strong> dan tekan Send.</span>
               </p>
             </div>
             <div class="step-item">
@@ -379,9 +391,12 @@
       const d = JSON.parse(raw);
 
       // isi detail
-      document.getElementById('d-nama').textContent    = d.nama    || '—';
+      document.getElementById('d-nama').textContent    = d.nama     || '—';
       document.getElementById('d-wa').textContent      = d.whatsapp || '—';
       document.getElementById('d-kawasan').textContent = d.kawasan  || '—';
+      document.getElementById('d-lokasi').textContent  = d.lokasi   || '—';
+      document.getElementById('d-postage').textContent = d.postage ? 'RM'+d.postage+'.00' : '—';
+      document.getElementById('d-total').textContent   = d.amaun    || '—';
 
       // ejen info
       const ejenNama = d.agent_nama || 'Rezeki Digital';
@@ -393,7 +408,7 @@
 
       // WA button — mesej auto-filled
       const msg = encodeURIComponent(
-        `Salam ${ejenNama},\n\nSaya baru je daftar melalui Rezeki Digital.\n\nNama: ${d.nama}\nNo fon: ${d.whatsapp}\nKawasan: ${d.kawasan || '—'}\nPakej: SIM Starter Kit — RM10\n\nTolong guide saya untuk langkah seterusnya. Terima kasih.`
+        `Salam ${ejenNama},\n\nSaya baru je buat payment untuk SIM Starter Kit Eastelpreneur.\n\nNama: ${d.nama}\nNo fon: ${d.whatsapp}\nKawasan: ${d.kawasan || '—'}\nLokasi: ${d.lokasi || '—'}\nPakej: SIM Starter Kit — RM10\nPostage: RM${d.postage||0}\nJumlah dibayar: ${d.amaun || '—'}\n\n[SILA ATTACH SCREENSHOT SLIP PAYMENT DI SINI]\n\nTolong proses pendaftaran saya. Terima kasih.`
       );
       document.getElementById('wa-btn').href = `https://wa.me/${ejenWa}?text=${msg}`;
 
@@ -408,4 +423,3 @@
 
 </body>
 </html>
-
