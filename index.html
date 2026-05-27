@@ -1237,19 +1237,20 @@
   <div class="checkout-dialog" role="dialog" aria-modal="true">
     <div class="modal-head">
       <div>
-        <p class="kicker">Pendaftaran</p>
-        <h3>Tinggalkan detail kau dulu.</h3>
+        <p class="kicker" id="modal-kicker">Langkah 1 dari 2</p>
+        <h3 id="modal-title">Isi detail penghantaran.</h3>
       </div>
       <button class="modal-close" id="close-checkout" type="button">✕</button>
     </div>
 
-    <!-- FORM STATE -->
+    <!-- ── STEP 1: FORM ── -->
     <form class="lead-form" id="lead-form">
       <div class="form-copy">
-        <span>Pakej yang dipilih</span>
-        <strong>SIM Starter Kit + Akaun Eastelpreneur — RM10</strong>
-        <p>Isi detail kau. Kami akan hubungi melalui WhatsApp untuk langkah seterusnya.</p>
+        <span>Pakej</span>
+        <strong>SIM Starter Kit + Akaun Eastelpreneur</strong>
+        <p>SIM akan dipos ke alamat kau selepas payment disahkan.</p>
       </div>
+
       <label>Nama penuh
         <input id="f-nama" type="text" placeholder="Contoh: Ahmad Firdaus" required />
       </label>
@@ -1259,55 +1260,96 @@
       <label>Email
         <input id="f-email" type="email" placeholder="Contoh: ahmad@email.com" />
       </label>
-      <label>Alamat
-        <input id="f-alamat" type="text" placeholder="Contoh: No 12, Jalan Mawar" />
+      <label>Alamat penuh (untuk pos)
+        <input id="f-alamat" type="text" placeholder="Contoh: No 12, Jalan Mawar 3, Taman Suria" required />
       </label>
-      <label>Kawasan / Bandar
-        <input id="f-kawasan" type="text" placeholder="Contoh: Alor Gajah, Melaka" />
+      <label>Poskod
+        <input id="f-poskod" type="text" placeholder="Contoh: 78000" maxlength="5" required />
       </label>
+      <label>Bandar
+        <input id="f-bandar" type="text" placeholder="Contoh: Alor Gajah" required />
+      </label>
+
+      <!-- lokasi pilihan → auto kira postage -->
+      <label>Lokasi penghantaran
+        <select id="f-lokasi" required>
+          <option value="" disabled selected>— Pilih lokasi —</option>
+          <option value="semenanjung" data-postage="7">Semenanjung Malaysia</option>
+          <option value="sabah-sarawak" data-postage="12">Sabah / Sarawak</option>
+        </select>
+      </label>
+
+      <!-- jumlah summary -->
+      <div class="amount-box" id="amount-box" hidden>
+        <div class="amount-row">
+          <span>SIM Starter Kit</span>
+          <span>RM10.00</span>
+        </div>
+        <div class="amount-row">
+          <span>Postage (<span id="lokasi-label">—</span>)</span>
+          <span>RM<span id="postage-amt">0</span>.00</span>
+        </div>
+        <div class="amount-row total">
+          <span>Jumlah bayar</span>
+          <strong>RM<span id="total-amt">0</span>.00</strong>
+        </div>
+      </div>
+
       <div id="form-error" style="display:none; background:#fef2f2; border:1px solid #fca5a5; border-radius:8px; padding:12px; font-size:14px; color:#dc2626;"></div>
+
       <button class="btn primary lg" type="submit" id="submit-btn">
-        <span id="submit-text">Hantar Pendaftaran</span>
+        <span id="submit-text">Teruskan ke Payment →</span>
       </button>
     </form>
 
-    <!-- THANK YOU STATE -->
-    <div id="thankyou-state" hidden>
-      <div style="text-align:center; padding: 8px 0 20px;">
-        <div style="font-size:3rem; margin-bottom:12px;">✅</div>
-        <h3 style="margin-bottom:8px;">Pendaftaran Berjaya!</h3>
-        <p style="font-size:14px; color:var(--muted); margin-bottom:24px;">Terima kasih. Detail kau dah kami terima. Semak ringkasan di bawah.</p>
+    <!-- ── STEP 2: PAYMENT ── -->
+    <div id="payment-state" hidden>
+
+      <div class="payment-summary-box">
+        <div class="ps-row"><span>Nama</span><strong id="ps-nama">—</strong></div>
+        <div class="ps-row"><span>Lokasi</span><strong id="ps-lokasi">—</strong></div>
+        <div class="ps-row"><span>SIM Starter Kit</span><strong>RM10.00</strong></div>
+        <div class="ps-row"><span>Postage</span><strong id="ps-postage">—</strong></div>
+        <div class="ps-row total"><span>Jumlah bayar</span><strong id="ps-total">—</strong></div>
       </div>
 
-      <div style="background:var(--warm); border-radius:10px; padding:20px; margin-bottom:20px; display:flex; flex-direction:column; gap:10px;">
-        <div style="display:flex; justify-content:space-between; font-size:14px;">
-          <span style="color:var(--muted);">Nama</span>
-          <strong id="ty-nama"></strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; font-size:14px;">
-          <span style="color:var(--muted);">WhatsApp</span>
-          <strong id="ty-wa"></strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; font-size:14px;">
-          <span style="color:var(--muted);">Kawasan</span>
-          <strong id="ty-kawasan"></strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; font-size:14px;">
-          <span style="color:var(--muted);">Pakej</span>
-          <strong>SIM Starter Kit — RM10</strong>
-        </div>
-        <div style="display:flex; justify-content:space-between; font-size:14px;">
-          <span style="color:var(--muted);">Ejen kau</span>
-          <strong id="ty-agent"></strong>
+      <div class="qr-section">
+        <p class="qr-instruction">Scan QR di bawah untuk bayar. Lepas bayar, screenshot slip dan tekan butang WhatsApp.</p>
+        <div class="qr-wrap">
+          <img id="modal-qr-img" src="" alt="QR Payment" style="display:none;" />
+          <div class="fake-qr" id="modal-fake-qr" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span>
+          </div>
+          <p class="qr-name" id="qr-agent-name">Rezeki Digital</p>
         </div>
       </div>
 
-      <p style="font-size:13px; color:var(--muted); text-align:center; margin-bottom:16px;">
-        Tekan butang di bawah untuk sahkan kepada ejen kau melalui WhatsApp.
-      </p>
-      <a class="btn wa lg" id="ty-wa-btn" href="#" target="_blank" rel="noopener">
-        WhatsApp Ejen Sekarang
-      </a>
+      <div class="payment-steps">
+        <div class="ps-step">
+          <div class="ps-num">1</div>
+          <p>Scan QR dan bayar <strong id="step-total">—</strong></p>
+        </div>
+        <div class="ps-step">
+          <div class="ps-num">2</div>
+          <p>Screenshot resit / slip payment</p>
+        </div>
+        <div class="ps-step">
+          <div class="ps-num">3</div>
+          <p>Tekan butang WhatsApp di bawah — attach screenshot dalam chat</p>
+        </div>
+      </div>
+
+      <div id="form-error2" style="display:none; background:#fef2f2; border:1px solid #fca5a5; border-radius:8px; padding:12px; font-size:14px; color:#dc2626; margin-bottom:12px;"></div>
+
+      <button class="btn wa lg" id="confirm-payment-btn" type="button">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="white" style="flex-shrink:0"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Dah Bayar — Hantar Slip ke WhatsApp
+      </button>
+
+      <button class="btn-text-back" id="back-to-form" type="button">← Balik semak detail</button>
     </div>
 
   </div>
@@ -1331,191 +1373,240 @@
   .slot-bar-label strong { color: var(--accent-dark); }
   .slot-bar-bg { background: var(--line); border-radius: 20px; height: 8px; overflow: hidden; }
   .slot-bar-fill { background: var(--accent); height: 100%; border-radius: 20px; transition: width 1s ease; }
+
+  /* select field */
+  .lead-form select {
+    padding: 11px 14px; border: 2px solid var(--line);
+    border-radius: 7px; font-size: 15px; font-family: inherit;
+    background: white; cursor: pointer;
+    transition: border-color 0.2s; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b7280' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+  }
+  .lead-form select:focus { outline: none; border-color: var(--accent); }
+
+  /* amount summary box */
+  .amount-box {
+    background: var(--accent-soft);
+    border: 1px solid var(--accent);
+    border-radius: 10px; padding: 16px 18px;
+    display: flex; flex-direction: column; gap: 8px;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from { opacity:0; transform:translateY(-4px); } to { opacity:1; transform:translateY(0); } }
+  .amount-row { display: flex; justify-content: space-between; font-size: 14px; color: var(--muted); }
+  .amount-row.total { border-top: 1px solid var(--accent); padding-top: 8px; margin-top: 2px; }
+  .amount-row.total span { color: var(--ink); font-weight: 700; }
+  .amount-row.total strong { color: var(--accent-dark); font-size: 1.1rem; }
+
+  /* payment summary box */
+  .payment-summary-box {
+    background: var(--warm); border-radius: 10px;
+    padding: 16px 18px; margin-bottom: 20px;
+    display: flex; flex-direction: column; gap: 8px;
+  }
+  .ps-row { display: flex; justify-content: space-between; font-size: 14px; }
+  .ps-row span { color: var(--muted); }
+  .ps-row strong { font-weight: 700; }
+  .ps-row.total { border-top: 1px solid var(--line); padding-top: 10px; margin-top: 4px; }
+  .ps-row.total span { color: var(--ink); font-weight: 700; font-size: 15px; }
+  .ps-row.total strong { color: var(--accent-dark); font-size: 1.15rem; }
+
+  /* QR section */
+  .qr-section { text-align: center; margin-bottom: 20px; }
+  .qr-instruction { font-size: 14px; color: var(--muted); margin-bottom: 16px; line-height: 1.6; }
+  .qr-wrap {
+    display: inline-flex; flex-direction: column; align-items: center;
+    background: white; border: 2px solid var(--line);
+    border-radius: 14px; padding: 20px; gap: 10px;
+  }
+  .qr-wrap img { width: 180px; height: 180px; object-fit: contain; border-radius: 8px; }
+  .fake-qr {
+    width: 180px; height: 180px; background: white;
+    display: grid; grid-template-columns: repeat(4,1fr);
+    gap: 6px; padding: 16px; border-radius: 8px;
+  }
+  .fake-qr span { background: var(--ink); border-radius: 3px; opacity: 0.8; }
+  .qr-name { font-size: 13px; font-weight: 700; color: var(--muted); }
+
+  /* payment steps */
+  .payment-steps {
+    display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px;
+  }
+  .ps-step { display: flex; gap: 12px; align-items: flex-start; }
+  .ps-num {
+    width: 24px; height: 24px; background: var(--accent-soft);
+    border-radius: 50%; display: flex; align-items: center;
+    justify-content: center; font-size: 12px; font-weight: 800;
+    color: var(--accent-dark); flex-shrink: 0; margin-top: 2px;
+  }
+  .ps-step p { font-size: 14px; line-height: 1.5; }
+
+  /* back button */
+  .btn-text-back {
+    display: block; width: 100%; text-align: center;
+    padding: 10px; font-size: 13px; color: var(--muted);
+    background: none; border: none; cursor: pointer;
+    font-family: inherit; margin-top: 8px;
+    transition: color 0.2s;
+  }
+  .btn-text-back:hover { color: var(--ink); }
 </style>
 
 
 <script>
-  const GAS_URL = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
+  const GAS_URL    = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
+  const POSTAGE    = { semenanjung: 7, 'sabah-sarawak': 12 };
+  const LOKASI_LBL = { semenanjung: 'Semenanjung Malaysia', 'sabah-sarawak': 'Sabah / Sarawak' };
 
-  // ── state global ──
-  let agentData = {
-    agent_id  : 'default',
-    nama      : 'Mohamad Nasrol',
-    whatsapp  : '60167388358',
-    qr_uri    : '',
-    max_slot  : 20,
-    slot_taken: 0,
-  };
+  let agentData = { agent_id:'default', nama:'Mohamad Nasrol', whatsapp:'60167388358', qr_uri:'', max_slot:20, slot_taken:0 };
+  let submissionData = {};
 
-  // ── ambil ?id= dari URL ──
   const urlParams = new URLSearchParams(window.location.search);
   const agentId   = urlParams.get('id') || '';
 
-  // ══════════════════════════════
-  // 1. LOAD AGENT DATA ON PAGE LOAD
-  // ══════════════════════════════
   async function loadAgent() {
     try {
-      const url = GAS_URL + (agentId ? `?id=${encodeURIComponent(agentId)}` : '');
+      const url  = GAS_URL + (agentId ? '?id='+encodeURIComponent(agentId) : '');
       const res  = await fetch(url);
       const json = await res.json();
-      if (json.ok && json.data) {
-        agentData = json.data;
-        applyAgentData(json.data);
-      }
-    } catch(err) {
-      console.warn('GAS load error:', err);
-      // fallback — page papar dengan default data
-    }
+      if (json.ok && json.data) { agentData = json.data; applyAgentData(json.data); }
+    } catch(err) { console.warn('GAS load error:', err); }
   }
 
   function applyAgentData(d) {
-    // nama agent dalam header/footer
     document.querySelectorAll('.agent-name').forEach(el => el.textContent = d.nama);
-    document.querySelectorAll('.agent-wa').forEach(el => {
-      el.href = `https://wa.me/${d.whatsapp}`;
-    });
-
-    // slot tracker bar
-    const taken = d.slot_taken || 0;
-    const max   = d.max_slot   || 20;
-    const pct   = Math.min(Math.round((taken / max) * 100), 100);
-
+    const taken = d.slot_taken||0, max = d.max_slot||20;
+    const pct   = Math.min(Math.round((taken/max)*100),100);
     document.querySelectorAll('.slot-taken').forEach(el => el.textContent = taken);
     document.querySelectorAll('.slot-max').forEach(el => el.textContent = max);
-    document.querySelectorAll('.slot-bar-fill').forEach(el => el.style.width = pct + '%');
-
-    // QR payment
+    document.querySelectorAll('.slot-bar-fill').forEach(el => el.style.width = pct+'%');
     if (d.qr_uri) {
-      document.querySelectorAll('.payment-qr-img').forEach(el => {
-        el.src = d.qr_uri;
-        el.style.display = 'block';
-      });
-      document.querySelectorAll('.fake-qr').forEach(el => el.style.display = 'none');
+      const qrImg = document.getElementById('modal-qr-img');
+      const fakeQr = document.getElementById('modal-fake-qr');
+      if (qrImg)  { qrImg.src = d.qr_uri; qrImg.style.display = 'block'; }
+      if (fakeQr) fakeQr.style.display = 'none';
     }
-
-    // final CTA WA button
+    const agentNameEl = document.getElementById('qr-agent-name');
+    if (agentNameEl) agentNameEl.textContent = d.nama;
     const finalWa = document.getElementById('final-wa-btn');
     if (finalWa) {
-      const msg = encodeURIComponent(`Salam ${d.nama}, saya nak tahu lebih lanjut tentang Eastelpreneur Rezeki Digital.`);
-      finalWa.href = `https://wa.me/${d.whatsapp}?text=${msg}`;
+      const msg = encodeURIComponent('Salam '+d.nama+', saya nak tahu lebih lanjut tentang Eastelpreneur Rezeki Digital.');
+      finalWa.href = 'https://wa.me/'+d.whatsapp+'?text='+msg;
     }
   }
 
-  // ══════════════════════════════
-  // 2. MODAL OPEN / CLOSE
-  // ══════════════════════════════
+  // modal open/close
   const modal    = document.getElementById('checkout-modal');
-  const openBtns = document.querySelectorAll('[data-open-modal]');
   const closeBtn = document.getElementById('close-checkout');
-
-  openBtns.forEach(btn => btn.addEventListener('click', e => {
-    e.preventDefault();
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
+  document.querySelectorAll('[data-open-modal]').forEach(btn => btn.addEventListener('click', e => {
+    e.preventDefault(); modal.hidden = false; document.body.style.overflow = 'hidden';
   }));
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  if (modal) modal.addEventListener('click', e => { if (e.target===modal) closeModal(); });
+  function closeModal() { modal.hidden=true; document.body.style.overflow=''; }
 
-  if(closeBtn) closeBtn.addEventListener('click', closeModal);
-  if(modal) modal.addEventListener('click', e => { if(e.target === modal) closeModal(); });
-
-  function closeModal() {
-    modal.hidden = true;
-    document.body.style.overflow = '';
+  // lokasi → kira jumlah
+  const lokasiSel = document.getElementById('f-lokasi');
+  const amountBox = document.getElementById('amount-box');
+  if (lokasiSel) {
+    lokasiSel.addEventListener('change', () => {
+      const val = lokasiSel.value, postage = POSTAGE[val]||0, total = 10+postage;
+      document.getElementById('lokasi-label').textContent = LOKASI_LBL[val]||'';
+      document.getElementById('postage-amt').textContent  = postage;
+      document.getElementById('total-amt').textContent    = total;
+      amountBox.hidden = false;
+    });
   }
 
-  // ══════════════════════════════
-  // 3. FORM SUBMIT → GAS doPost
-  // ══════════════════════════════
+  // form submit → GAS → payment step
   const leadForm   = document.getElementById('lead-form');
   const submitBtn  = document.getElementById('submit-btn');
   const submitText = document.getElementById('submit-text');
   const formError  = document.getElementById('form-error');
 
-  if(leadForm) {
+  if (leadForm) {
     leadForm.addEventListener('submit', async e => {
       e.preventDefault();
       formError.style.display = 'none';
-
-      const nama    = document.getElementById('f-nama').value.trim();
-      const wa      = document.getElementById('f-wa').value.trim();
-      const email   = document.getElementById('f-email').value.trim();
-      const alamat  = document.getElementById('f-alamat').value.trim();
-      const kawasan = document.getElementById('f-kawasan').value.trim();
-
-      if (!nama || !wa) {
-        showError('Nama dan No WhatsApp wajib diisi.');
-        return;
+      const nama   = document.getElementById('f-nama').value.trim();
+      const wa     = document.getElementById('f-wa').value.trim();
+      const email  = document.getElementById('f-email').value.trim();
+      const alamat = document.getElementById('f-alamat').value.trim();
+      const poskod = document.getElementById('f-poskod').value.trim();
+      const bandar = document.getElementById('f-bandar').value.trim();
+      const lokasi = lokasiSel.value;
+      if (!nama||!wa||!alamat||!poskod||!bandar||!lokasi) {
+        showError('Sila lengkapkan semua ruangan yang wajib diisi.'); return;
       }
-
-      // loading state
+      const postage = POSTAGE[lokasi]||0, total = 10+postage;
+      const kawasan = bandar+', '+poskod+' ('+LOKASI_LBL[lokasi]+')';
       submitBtn.disabled = true;
-      submitText.innerHTML = '<span class="spinner"></span>Menghantar...';
-
+      submitText.innerHTML = '<span class="spinner"></span>Menyimpan...';
       const payload = {
-        agent_id : agentData.agent_id,
-        nama, whatsapp: wa, email, alamat, kawasan,
-        amaun    : 'RM10',
+        agent_id: agentData.agent_id, nama, whatsapp:wa, email,
+        alamat  : alamat+', '+poskod+' '+bandar,
+        kawasan : LOKASI_LBL[lokasi], amaun: 'RM'+total,
       };
-
       try {
-        const res  = await fetch(GAS_URL, {
-          method : 'POST',
-          body   : JSON.stringify(payload),
-        });
+        const res  = await fetch(GAS_URL, { method:'POST', body:JSON.stringify(payload) });
         const json = await res.json();
-
         if (json.ok) {
-          // simpan ke sessionStorage lalu redirect
-          sessionStorage.setItem('rd_submission', JSON.stringify({
-            nama,
-            whatsapp : wa,
-            kawasan,
-            agent_id  : agentData.agent_id,
-            agent_nama: agentData.nama,
-            agent_wa  : agentData.whatsapp,
-          }));
-          window.location.href = '/hubungi-ejen/';
+          submissionData = { nama, whatsapp:wa, kawasan, lokasi, postage, total, amaun:'RM'+total, alamat:payload.alamat };
+          showPaymentStep(submissionData);
         } else {
-          showError(json.message || 'Ralat. Cuba sekali lagi.');
-          submitBtn.disabled = false;
-          submitText.textContent = 'Hantar Pendaftaran';
+          showError(json.message||'Ralat. Cuba sekali lagi.');
         }
-      } catch(err) {
-        showError('Gagal hantar. Semak connection dan cuba lagi.');
-        submitBtn.disabled = false;
-        submitText.textContent = 'Hantar Pendaftaran';
-      }
+      } catch(err) { showError('Gagal hantar. Semak connection dan cuba lagi.'); }
     });
   }
 
   function showError(msg) {
-    formError.textContent = msg;
-    formError.style.display = 'block';
+    formError.textContent = msg; formError.style.display = 'block';
+    submitBtn.disabled = false; submitText.textContent = 'Teruskan ke Payment →';
   }
 
-  function showThankYou(nama, wa, kawasan) {
-    // hide form, show thank you
+  function showPaymentStep(d) {
     leadForm.hidden = true;
-    const ty = document.getElementById('thankyou-state');
-    ty.hidden = false;
-
-    // isi detail
-    document.getElementById('ty-nama').textContent    = nama;
-    document.getElementById('ty-wa').textContent      = wa;
-    document.getElementById('ty-kawasan').textContent = kawasan || '—';
-    document.getElementById('ty-agent').textContent   = agentData.nama;
-
-    // WA button ke agent
-    const waBtn = document.getElementById('ty-wa-btn');
-    const msg   = encodeURIComponent(
-      `Salam ${agentData.nama},\n\nSaya baru je daftar melalui Rezeki Digital.\n\nNama: ${nama}\nNo fon: ${wa}\nKawasan: ${kawasan || '—'}\nPakej: SIM Starter Kit — RM10\n\nTolong guide saya untuk langkah seterusnya. Terima kasih.`
-    );
-    waBtn.href = `https://wa.me/${agentData.whatsapp}?text=${msg}`;
+    document.getElementById('payment-state').hidden = false;
+    document.getElementById('modal-kicker').textContent = 'Langkah 2 dari 2';
+    document.getElementById('modal-title').textContent  = 'Scan QR dan bayar sekarang.';
+    document.getElementById('ps-nama').textContent    = d.nama;
+    document.getElementById('ps-lokasi').textContent  = LOKASI_LBL[d.lokasi];
+    document.getElementById('ps-postage').textContent = 'RM'+d.postage+'.00';
+    document.getElementById('ps-total').textContent   = 'RM'+d.total+'.00';
+    document.getElementById('step-total').textContent = 'RM'+d.total+'.00';
   }
 
-  // ══════════════════════════════
-  // 4. INIT
-  // ══════════════════════════════
+  // balik ke form
+  const backBtn = document.getElementById('back-to-form');
+  if (backBtn) {
+    backBtn.addEventListener('click', () => {
+      document.getElementById('payment-state').hidden = true;
+      leadForm.hidden = false;
+      submitBtn.disabled = false;
+      submitText.textContent = 'Teruskan ke Payment →';
+      document.getElementById('modal-kicker').textContent = 'Langkah 1 dari 2';
+      document.getElementById('modal-title').textContent  = 'Isi detail penghantaran.';
+    });
+  }
+
+  // confirm payment → sessionStorage → redirect
+  const confirmBtn = document.getElementById('confirm-payment-btn');
+  if (confirmBtn) {
+    confirmBtn.addEventListener('click', () => {
+      const d = submissionData;
+      sessionStorage.setItem('rd_submission', JSON.stringify({
+        nama      : d.nama, whatsapp: d.whatsapp, kawasan: d.kawasan,
+        lokasi    : LOKASI_LBL[d.lokasi], postage: d.postage,
+        total     : d.total, amaun: d.amaun,
+        agent_id  : agentData.agent_id, agent_nama: agentData.nama, agent_wa: agentData.whatsapp,
+      }));
+      window.location.href = '/hubungi-ejen/';
+    });
+  }
+
   loadAgent();
 </script>
 
