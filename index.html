@@ -693,6 +693,26 @@
     @media(max-width:640px){ .honest-inner { grid-template-columns: 1fr; gap: 16px; } }
 
     /* ══════════════════════════════
+       PROOF SECTION
+    ══════════════════════════════ */
+    .proof-sec { background: var(--brand); padding: 80px 24px; }
+    .proof-inner { max-width:var(--max);margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center; }
+    .proof-copy .kicker { color: rgba(255,255,255,0.4); }
+    .proof-copy h2 { font-size:clamp(1.7rem,3vw,2.4rem);color:white;margin-bottom:16px; }
+    .proof-copy > p { color:rgba(255,255,255,0.6);font-size:15px;line-height:1.8;margin-bottom:24px; }
+    .proof-highlights { display:flex;flex-direction:column;gap:12px;margin-bottom:20px; }
+    .proof-hl { display:flex;align-items:center;gap:16px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:10px;padding:14px 18px; }
+    .proof-hl strong { font-size:1.3rem;font-weight:800;color:var(--accent);min-width:110px; }
+    .proof-hl span { font-size:13px;color:rgba(255,255,255,0.55); }
+    .proof-disclaimer { font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:20px; }
+    .proof-img-wrap { display:flex;flex-direction:column;gap:16px; }
+    .proof-img-wrap img { width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1); }
+    .proof-caption { display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 16px; }
+    .proof-caption span { font-size:1.2rem;flex-shrink:0; }
+    .proof-caption p { font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;font-style:italic; }
+    @media(max-width:768px){ .proof-inner { grid-template-columns:1fr;gap:32px; } .proof-img-wrap { order:-1; } }
+
+    /* ══════════════════════════════
        FAQ
     ══════════════════════════════ */
     .faq { padding: 80px 24px; }
@@ -797,8 +817,8 @@
      2. NOTICE
 ══════════════════════════════ -->
 <div class="notice">
-  <p>Anda dah subscribe plan telco. Tapi tak pernah dapat apa-apa balik?</p>
-  <strong>Tukar je kepada telco yang bagi anda komisyen setiap kali network anda topup.</strong>
+  <p>Anda dah subscribe plan telco. Dah guna data. Tapi tak pernah dapat apa-apa balik.</p>
+  <strong>Tukar je kepada telco yang bagi anda komisyen setiap kali orang dalam network anda reload.</strong>
 </div>
 
 
@@ -890,7 +910,7 @@
   <div class="solution-inner wrap">
     <div class="solution-copy">
       <p class="kicker">Penyelesaian</p>
-      <h2>Tukar je telco kepada yang <em>boleh bagi anda balik</em> setiap bulan!</h2>
+      <h2>Tukar je telco kepada satu yang <em>bagi anda balik</em> setiap bulan.</h2>
       <p>Eastel bukan sekadar telco biasa. Dia MVNO berlesen di bawah U Mobile — so coverage sama, kualiti sama. Tapi ada satu beza besar: dia ada sistem komisyen untuk Eastelpreneur.</p>
       <p>Anda guna plan sendiri macam biasa. Tapi setiap kali orang dalam network anda reload, anda dapat komisyen. Masuk ke wallet anda. Boleh withdraw.</p>
       <p>Tak perlu stok SIM card dalam beg. Tak perlu collect duit dari pelanggan. Semua online, semua auto.</p>
@@ -998,7 +1018,7 @@
 <section class="sec income" id="income">
   <div class="income-inner">
     <div class="sec-head">
-      <p class="kicker">Macam mana buat duit?</p>
+      <p class="kicker">Macam mana buat duit</p>
       <h2>Bukan menjual. Sebaliknya, refer orang. Anda dapat komisyen tiap bulan!</h2>
       <p>Selagi orang dalam network anda reload, anda dapat komisyen. Bukan sekali je — recurring setiap bulan.</p>
     </div>
@@ -1017,7 +1037,7 @@
       <div class="income-card">
         <div class="step-num">03</div>
         <h3>Share kepada orang sekeliling</h3>
-        <p>Kawan, adik-beradik, jiran. Orang yang anda dah tahu bayar telco tiap bulan. Tunjuk mereka pelan, bagi link website referral anda.</p>
+        <p>Kawan, adik-beradik, jiran. Orang yang anda dah tahu bayar telco tiap bulan. Tunjuk mereka pelan, bagi link referral anda.</p>
       </div>
       <div class="income-card">
         <div class="step-num">04</div>
@@ -1188,9 +1208,9 @@
 <section class="system">
   <div class="system-inner wrap">
     <div>
-      <p class="kicker">Mudahnya nak bermula!</p>
+      <p class="kicker">Mudah nak mula</p>
       <h2>Kalau anda boleh WhatsApp, In shaa Allah anda boleh buat!</h2>
-      <p>Tak perlu ada background sales. Tak perlu buka kedai. Semua boleh buat dari phone je.Oh ye, kami juga berikan anda website percuma!</p>
+      <p>Tak perlu ada background sales. Tak perlu buka kedai. Semua boleh buat dari phone je. Oh ye, kami juga berikan anda website percuma!</p>
     </div>
     <div class="chips">
       <span>Beli SIM RM10</span>
@@ -1294,8 +1314,8 @@
 
     <div class="guarantee-box">
       <span class="g-badge">100% Transparent</span>
-      <h3>Kalau anda rasa ini bukan untuk anda, tiada paksaan.</h3>
-      <p>Kami tak kejar. Anda cuba sendiri. Kalau berbaloi, anda teruskan. Kalau tak sesuai, anda tahu dah jawapannya. Hanya RM10 untuk test berbaloi atau tidak.</p>
+      <h3>Kalau anda rasa ini bukan untuk anda, takde paksaan.</h3>
+      <p>Kami tak kejar-kejar. Anda cuba sendiri. Kalau berbaloi, anda teruskan. Kalau tak sesuai, anda tahu dah jawapannya. RM10 untuk tahu — berbaloi ke tidak.</p>
     </div>
   </div>
 </section>
@@ -1309,7 +1329,7 @@
     <div class="sec-head">
       <p class="kicker">Apa Feedback pengguna?</p>
       <h2>Mereka macam anda, tapi mereka dah bermula.</h2>
-      <p>Ini feedback real dari pengguna Eastel — pasal data, pasal komisyen, pasal pengalaman guna.</p>
+      <p>Bukan sales script. Ini feedback real dari pengguna Eastel — pasal data, pasal komisyen, pasal pengalaman guna.</p>
     </div>
 
     <div class="quote-grid">
@@ -1351,7 +1371,7 @@
 <section class="sec bonus-eastel">
   <div class="wrap">
     <div class="sec-head">
-      <p class="kicker">Lebih dari sekadar komisyen!</p>
+      <p class="kicker">Lebih dari sekadar komisyen</p>
       <h2>Bonus & reward lain yang anda boleh dapat sebagai Eastelpreneur?</h2>
       <p>Selain komisyen reload bulanan, Eastel ada banyak lagi incentive untuk ahlinya.</p>
     </div>
@@ -1407,8 +1427,8 @@
       <div class="rezeki-card">
         <div class="rezeki-num">01</div>
         <div class="rezeki-icon">🌐</div>
-        <h3>Website Anda Sendiri</h3>
-        <p>Anda dapat link unik anda sendiri — <strong>rezeki.digital/?id=namaanda</strong>. Share kepada sesiapa sahaja. Bila orang daftar dari link anda, submission terus masuk ke anda.</p>
+        <h3>Website Referral Peribadi</h3>
+        <p>Anda dapat link unik anda sendiri — <strong>rezeki.digital/?id=namakau</strong>. Share kepada sesiapa sahaja. Bila orang daftar dari link anda, submission terus masuk ke anda.</p>
         <div class="rezeki-tag">Siap setup oleh kami</div>
       </div>
 
@@ -1416,21 +1436,21 @@
         <div class="rezeki-num">02</div>
         <div class="rezeki-icon">📅</div>
         <h3>Content Calendar Threads</h3>
-        <p>Tak tahu nak post apa? Kami sediakan content calendar khusus untuk platform Threads — supaya anda boleh terus bermula bina audience dan promote Eastel dengan lebih konsisten.</p>
+        <p>Tak tahu nak post apa? Kami sediakan content calendar khusus untuk platform Threads — supaya anda boleh mula bina audience dan promote Eastel dengan lebih konsisten.</p>
         <div class="rezeki-tag">Template siap guna</div>
       </div>
 
       <div class="rezeki-card">
         <div class="rezeki-num">03</div>
         <div class="rezeki-icon">💬</div>
-        <h3>WhatsApp Support </h3>
-        <p>Ada soalan? Ada masalah setup? Anda ada akses terus ke kami melalui WhatsApp. Tak perlu tercari-cari sendiri.</p>
+        <h3>WhatsApp Support Upline</h3>
+        <p>Ada soalan? Ada masalah setup? Anda ada akses terus ke kami sebagai upline melalui WhatsApp. Tak perlu tercari-cari sendiri.</p>
         <div class="rezeki-tag">Support berterusan</div>
       </div>
     </div>
 
     <div class="rezeki-cta-box">
-      <p>Semua bonus ini Percuma — hanya untuk yang daftar melalui Rezeki Digital.</p>
+      <p>Semua bonus ini percuma — hanya untuk yang join melalui Rezeki Digital.</p>
       <a class="btn primary" href="#daftar" data-open-modal>Daftar & Dapatkan Semua Bonus Ini</a>
     </div>
   </div>
@@ -1446,7 +1466,56 @@
       <p class="kicker">Kami jujur dulu...</p>
       <h2>Ini bukan jalan untuk cepat kaya.</h2>
     </div>
-    <p>Kalau anda expect komisyen besar dalam bulan pertama tanpa buat apa-apa — ni bukan untuk anda. Komisyen membesar ikut saiz network anda. Makin ramai orang dalam network anda reload setiap bulan, maka makin besar komisyen anda. Mulanya mungkin kecil — tapi income berterusan. Setiap bulan, selagi mereka reload topup.</p>
+    <p>Kalau anda expect komisyen besar dalam bulan pertama tanpa buat apa-apa — ni bukan untuk anda. Komisyen membesar ikut saiz network anda. Makin ramai orang dalam network anda reload setiap bulan, makin besar komisyen anda. Mulanya mungkin kecil — tapi income berterusan. Setiap bulan, selagi mereka reload topup.</p>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     PROOF — RESULT SEBENAR
+══════════════════════════════ -->
+<section class="sec proof-sec">
+  <div class="proof-inner wrap">
+
+    <div class="proof-copy">
+      <p class="kicker">Tapi tengok ni dulu...</p>
+      <h2>Baru sebulan. Tak mustahil.</h2>
+      <p>Ini bukan cerita rekaan. Screenshot dari seorang Eastelpreneur yang baru sebulan tukar dari Celcom ke Eastel. Internet laju, murah — dan komisyen masuk sampai empat ribu.</p>
+
+      <div class="proof-highlights">
+        <div class="proof-hl">
+          <strong>RM4,083</strong>
+          <span>Lifetime Earnings — bulan pertama</span>
+        </div>
+        <div class="proof-hl">
+          <strong>Elite Member</strong>
+          <span>Rank dicapai dalam masa singkat</span>
+        </div>
+        <div class="proof-hl">
+          <strong>100%</strong>
+          <span>Progress ke Ambassador Member</span>
+        </div>
+      </div>
+
+      <p class="proof-disclaimer">* Hasil ini adalah pengalaman individu. Hasil anda bergantung kepada usaha dan saiz network yang dibina.</p>
+
+      <a class="btn primary" href="#daftar" data-open-modal style="margin-top:8px; width:auto; display:inline-flex;">
+        Saya Nak Cuba Mulakan
+      </a>
+    </div>
+
+    <div class="proof-img-wrap">
+      <img
+        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-testi-faizal.jpg"
+        alt="Testimoni Eastelpreneur — RM4,083 dalam sebulan"
+        loading="lazy"
+      />
+      <div class="proof-caption">
+        <span>📱</span>
+        <p>"Baru sebulan tukar celcom kepada Eastel. Internet laju, padu dan murah. Opssss tak pernah terfikir dapat sampai empat ribu dalam masa satu bulan." — faizal_mohamaad</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1494,7 +1563,7 @@
       <p>Boleh. Status CTOS atau CCRIS tidak jadi halangan untuk daftar Eastel. Ini prepaid — bukan postpaid yang perlukan credit check.</p>
     </details>
     <details>
-      <summary>Macam mana nak bermula dengan Rezeki Digital?</summary>
+      <summary>Macam mana nak mula dengan Rezeki Digital?</summary>
       <p>Tekan butang WhatsApp di bawah. Kami akan guide anda untuk beli SIM starter kit RM10, setup akaun, aktifkan plan, dan mula guna. Keseluruhan proses boleh selesai dalam sehari.</p>
     </details>
   </div>
@@ -1506,10 +1575,10 @@
 ══════════════════════════════ -->
 <section class="final">
   <p class="kicker">Last call</p>
-  <h2>Selama ni anda bayar telco setiap bulan. Sekarang, biar telco yang bayar anda!</h2>
-  <p>Guna data 500GB NO FUP 5G. Refer orang sekeliling. Dapat komisyen recurring setiap bulan. Mulakan dengan hanya RM10.</p>
+  <h2>Anda dah bayar telco tiap bulan. Dah masa duit tu bagi balik kepada anda.</h2>
+  <p>Guna data 500GB NO FUP 5G. Refer orang sekeliling. Dapat komisyen recurring setiap bulan. Mulakan dengan RM10.</p>
   <a class="btn wa lg" id="final-wa-btn" style="max-width:380px; margin:0 auto;" href="https://wa.me/60167388358" target="_blank" rel="noopener" data-open-modal>
-    Mula Dengan Hanya RM10 Sahaja
+    Daftar Sekarang — Mulakan Dengan RM10
   </a>
 </section>
 
