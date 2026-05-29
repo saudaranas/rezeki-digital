@@ -713,8 +713,99 @@
     @media(max-width:768px){ .proof-inner { grid-template-columns:1fr;gap:32px; } .proof-img-wrap { order:-1; } }
 
     /* ══════════════════════════════
-       FAQ
+       RM10 OPPORTUNITY COST
     ══════════════════════════════ */
+    .rm10-sec { background: var(--warm); }
+    .rm10-head { text-align: center; max-width: 600px; margin: 0 auto 48px; }
+    .rm10-head h2 { font-size: clamp(1.8rem, 3vw, 2.5rem); margin-bottom: 12px; }
+    .rm10-head p { color: var(--muted); font-size: 16px; }
+
+    .rm10-compare {
+      display: flex; align-items: center; gap: 20px;
+      max-width: 700px; margin: 0 auto 48px;
+    }
+    .rm10-card {
+      flex: 1; border-radius: 16px; padding: 28px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .rm10-card.left {
+      background: white; border: 2px solid var(--line);
+    }
+    .rm10-card.right {
+      background: var(--brand);
+      border: 2px solid var(--accent);
+    }
+    .rm10-emoji { font-size: 2.5rem; }
+    .rm10-label {
+      font-weight: 800; font-size: 1.05rem;
+    }
+    .rm10-card.right .rm10-label { color: white; }
+    .rm10-list { display: flex; flex-direction: column; gap: 8px; }
+    .rm10-list li {
+      font-size: 14px; display: flex; gap: 8px; align-items: flex-start;
+    }
+    .rm10-card.left .rm10-list li { color: var(--muted); }
+    .rm10-card.right .rm10-list li { color: rgba(255,255,255,0.65); }
+    .rm10-list li::before {
+      content: '—'; flex-shrink: 0; opacity: 0.4;
+    }
+    .rm10-card.right .rm10-list li::before {
+      content: '✓'; color: var(--accent); opacity: 1; font-weight: 900;
+    }
+    .rm10-verdict {
+      font-size: 13px; font-weight: 700;
+      padding: 8px 14px; border-radius: 20px;
+      text-align: center; align-self: flex-start;
+    }
+    .rm10-verdict.bad { background: #fef2f2; color: #dc2626; }
+    .rm10-verdict.good { background: rgba(0,201,167,0.15); color: var(--accent-dark); }
+
+    .rm10-vs {
+      font-size: 1.2rem; font-weight: 900;
+      color: var(--muted); flex-shrink: 0;
+    }
+
+    /* dream grid */
+    .rm10-dream {
+      max-width: 700px; margin: 0 auto 40px;
+      background: white; border-radius: 16px;
+      border: 1px solid var(--line); padding: 28px;
+    }
+    .rm10-dream-label {
+      font-size: 14px; font-weight: 700;
+      color: var(--muted); margin-bottom: 20px;
+      text-align: center;
+    }
+    .rm10-dream-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .dream-item {
+      display: flex; flex-direction: column;
+      align-items: center; gap: 8px;
+      text-align: center; padding: 16px 8px;
+      background: var(--warm); border-radius: 10px;
+    }
+    .dream-item span { font-size: 1.8rem; }
+    .dream-item p { font-size: 13px; color: var(--ink); font-weight: 600; line-height: 1.4; }
+
+    /* bottom CTA */
+    .rm10-bottom {
+      text-align: center; max-width: 480px; margin: 0 auto;
+    }
+    .rm10-bottom p {
+      font-size: 14px; color: var(--muted);
+      font-style: italic; margin-bottom: 20px;
+      line-height: 1.6;
+    }
+    .rm10-bottom .btn { width: auto; display: inline-flex; padding: 14px 32px; }
+
+    @media(max-width: 640px) {
+      .rm10-compare { flex-direction: column; }
+      .rm10-vs { align-self: center; }
+      .rm10-dream-grid { grid-template-columns: repeat(2, 1fr); }
+    }
     .faq { padding: 80px 24px; }
     .faq-inner { max-width: var(--max); margin: 0 auto; }
     .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
@@ -1262,6 +1353,89 @@
         <p>Guna website anda. Share kepada orang sekeliling. Komisyen masuk setiap bulan, auto.</p>
       </div>
     </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
+     RM10 — OPPORTUNITY COST
+══════════════════════════════ -->
+<section class="sec rm10-sec">
+  <div class="wrap">
+
+    <div class="rm10-head">
+      <p class="kicker">Satu soalan je</p>
+      <h2>RM10 ni anda nak buat apa?</h2>
+      <p>Dua pilihan. Dua jalan berbeza. Tapi hanya satu yang masih bagi anda duit bulan depan.</p>
+    </div>
+
+    <div class="rm10-compare">
+
+      <div class="rm10-card left">
+        <div class="rm10-emoji">🍛</div>
+        <div class="rm10-label">RM10 untuk makan</div>
+        <ul class="rm10-list">
+          <li>Kenyang — tapi sejam je</li>
+          <li>Habis terus, tiada lagi</li>
+          <li>Esok lapar lagi</li>
+          <li>Nilai akhir: RM0</li>
+        </ul>
+        <div class="rm10-verdict bad">Habis dalam sejam</div>
+      </div>
+
+      <div class="rm10-vs">VS</div>
+
+      <div class="rm10-card right">
+        <div class="rm10-emoji">📱</div>
+        <div class="rm10-label">RM10 untuk Eastel</div>
+        <ul class="rm10-list">
+          <li>SIM + akaun Eastelpreneur aktif</li>
+          <li>Potensi komisyen bulan pertama</li>
+          <li>Berulang setiap bulan</li>
+          <li>Nilai akhir: bergantung usaha anda</li>
+        </ul>
+        <div class="rm10-verdict good">Berpotensi bagi balik lebih</div>
+      </div>
+
+    </div>
+
+    <div class="rm10-dream">
+      <p class="rm10-dream-label">Dengan komisyen berulang, anda boleh:</p>
+      <div class="rm10-dream-grid">
+        <div class="dream-item">
+          <span>🚗</span>
+          <p>Bayar ansuran kereta</p>
+        </div>
+        <div class="dream-item">
+          <span>💍</span>
+          <p>Tabung untuk kahwin</p>
+        </div>
+        <div class="dream-item">
+          <span>👨‍👩‍👧</span>
+          <p>Belanja family makan</p>
+        </div>
+        <div class="dream-item">
+          <span>🕌</span>
+          <p>Sedekah & zakat lebih</p>
+        </div>
+        <div class="dream-item">
+          <span>✈️</span>
+          <p>Simpan untuk travel</p>
+        </div>
+        <div class="dream-item">
+          <span>📚</span>
+          <p>Bayar yuran pengajian</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="rm10-bottom">
+      <p>"Baru sebulan. Tak pernah terfikir dapat sampai empat ribu." — Eastelpreneur, Mei 2026</p>
+      <a class="btn primary" href="#daftar" data-open-modal>
+        Saya Nak Mulakan Dengan RM10
+      </a>
+    </div>
+
   </div>
 </section>
 
