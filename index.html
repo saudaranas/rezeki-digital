@@ -217,9 +217,32 @@
     }
     .mini-flow span::before { content: '→'; color: var(--accent); font-weight: 700; }
 
+    .hero-video-panel {
+      background: transparent !important;
+      border: none !important;
+      padding: 0 !important;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .hero-video {
+      width: 100%;
+      border-radius: 16px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+      border: 1px solid rgba(255,255,255,0.1);
+      background: #000;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+    }
+    .hero-video-caption {
+      font-size: 13px;
+      color: rgba(255,255,255,0.45);
+      text-align: center;
+    }
+
     @media(max-width:768px){
       .hero-inner { grid-template-columns: 1fr; }
-      .hero-panel { display: none; }
+      .hero-video-panel { display: block; }
     }
 
     /* ══════════════════════════════
@@ -898,9 +921,9 @@
   <div class="hero-inner wrap">
     <div class="hero-copy">
       <p class="eyebrow">Eastelpreneur — Side Income Dari Telco</p>
-      <h1>Anda Topup Tiap Bulan.<br><em>Tapi Tak Pernah Dapat Apa-Apa Balik?</em></h1>
+      <h1>Anda Dah Bayar Telco Tiap Bulan.<br><em>Tapi Kenapa Tak Dapat Apa-Apa Balik?</em></h1>
       <p class="lead">
-        Setiap bulan duit anda masuk poket syarikat telco. Takde komisyen, takde rebate, takde apa. Jadi je ejen Eastel — guna data besar NO FUP 5G, dan dapat komisyen setiap kali rakan-rakan anda topup.
+        Setiap bulan duit anda masuk poket syarikat telco. Takde komisyen, takde rebate, takde apa. Jadi ejen Eastel — guna data besar NO FUP 5G, dan dapat komisyen tiap kali orang dalam network anda reload.
       </p>
       <div class="hero-actions">
         <a class="btn primary" href="#daftar" data-open-modal>Saya Nak Mulakan</a>
@@ -915,23 +938,16 @@
       </div>
     </div>
 
-    <aside class="hero-panel">
-      <span class="plan-badge">⭐ Paling Popular — EZ50</span>
-      <p class="plan-highlight">500GB Data</p>
-      <p class="plan-price">NO FUP 5G · Carry Forward · RM50/bulan</p>
-      <div class="plan-items">
-        <div class="plan-item"><span class="tag">NO FUP</span>500GB data laju penuh — tak slow bila habis</div>
-        <div class="plan-item"><span class="tag">5G</span>Powered by U Mobile — coverage terluas</div>
-        <div class="plan-item"><span class="tag">FREE</span>Roaming Indonesia, Singapura, Thailand</div>
-        <div class="plan-item"><span class="tag">CARRY</span>Data tak habis carry forward bulan depan</div>
-        <div class="plan-item"><span class="tag">UNLIMITED</span>Panggilan tanpa had ke semua rangkaian</div>
-      </div>
-      <div class="mini-flow">
-        <span>Daftar jadi Eastelpreneur</span>
-        <span>Guna sendiri — jimat RM balik</span>
-        <span>Ajak kawan & keluarga</span>
-        <span>Dapat komisyen tiap reload mereka</span>
-      </div>
+    <aside class="hero-panel hero-video-panel">
+      <video
+        class="hero-video"
+        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-intro.mp4"
+        controls
+        playsinline
+        preload="metadata"
+        poster=""
+      ></video>
+      <p class="hero-video-caption">▶ Kenali Eastel & Peluang Eastelpreneur</p>
     </aside>
   </div>
 </section>
@@ -966,7 +982,7 @@
       <div class="pain-card">
         <div class="pain-icon">💸</div>
         <div>
-          <h3>Bayar RM40–RM80 sebulan — duit keluar je</h3>
+          <h3>Bayar RM40–RM80 sebulan — duit hilang je</h3>
           <p>Bulan-bulan keluar, tak ada apa masuk balik. Kalau anda tak guna, orang lain pun bayar tapi anda tak dapat apa.</p>
         </div>
       </div>
@@ -1861,11 +1877,11 @@
      14. FINAL CTA
 ══════════════════════════════ -->
 <section class="final">
-  <p class="kicker">Last call!</p>
-  <h2>Selama ini anda topup tiap bulan. Kali ini duit masuk berterusan!</h2>
-  <p>Guna data 500GB NO FUP 5G. Share dengan orang sekeliling. Anda boleh dapat komisyen recurring setiap bulan. Mulakan dengan hanya RM10 je.</p>
+  <p class="kicker">Last call</p>
+  <h2>Anda dah bayar telco tiap bulan. Dah masa duit tu bagi balik kepada anda.</h2>
+  <p>Guna data 500GB NO FUP 5G. Refer orang sekeliling. Dapat komisyen recurring setiap bulan. Mulakan dengan RM10.</p>
   <a class="btn wa lg" id="final-wa-btn" style="max-width:380px; margin:0 auto;" href="https://wa.me/60167388358" target="_blank" rel="noopener" data-open-modal>
-    Daftar Sekarang. Mulakan Dengan Hanya RM10!
+    Daftar Sekarang — Mulakan Dengan RM10
   </a>
 </section>
 
