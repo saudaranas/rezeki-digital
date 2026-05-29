@@ -268,6 +268,38 @@
 
     @media(max-width:768px){ .pain-inner { grid-template-columns: 1fr; gap: 28px; } }
 
+
+    /* ══════════════════════════════
+       FUP SECTION
+    ══════════════════════════════ */
+    .fup-sec { background: white; }
+    .fup-head { text-align:center;max-width:680px;margin:0 auto 40px; }
+    .fup-head h2 { font-size:clamp(1.7rem,3vw,2.3rem);margin-bottom:14px; }
+    .fup-head p { color:var(--muted);font-size:16px;line-height:1.7; }
+    .fup-head strong { color:var(--ink); }
+    .fup-explainer { display:flex;flex-direction:column;gap:28px; }
+    .fup-what { background:#fff8f0;border:1px solid #fed7aa;border-radius:14px;padding:24px 28px;max-width:700px;margin:0 auto;width:100%; }
+    .fup-what-label { font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#ea580c;margin-bottom:10px; }
+    .fup-what p { font-size:15px;color:var(--ink);line-height:1.75;margin-bottom:10px; }
+    .fup-what p:last-child { margin-bottom:0;color:var(--muted);font-size:14px; }
+    .fup-vs { display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto;width:100%; }
+    .fup-col { border-radius:14px;padding:24px;border:2px solid var(--line); }
+    .fup-col.bad { background:#fafafa;border-color:var(--line); }
+    .fup-col.good { background:var(--accent-soft);border-color:var(--accent); }
+    .fup-col-header { display:flex;align-items:center;gap:10px;margin-bottom:18px; }
+    .fup-col-icon { font-size:1.4rem; }
+    .fup-col-header strong { font-size:1rem;font-weight:800; }
+    .fup-col.good .fup-col-header strong { color:var(--accent-dark); }
+    .fup-list { display:flex;flex-direction:column;gap:12px;list-style:none; }
+    .fup-list li { font-size:14px;color:var(--ink);display:flex;flex-direction:column;gap:4px;line-height:1.5; }
+    .fup-col.bad .fup-list li { color:var(--muted); }
+    .fup-tag { display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;letter-spacing:0.05em;align-self:flex-start; }
+    .bad-tag { background:#fee2e2;color:#dc2626; }
+    .good-tag { background:var(--accent);color:var(--brand); }
+    .fup-bottom { text-align:center;max-width:580px;margin:0 auto;background:var(--warm);border-radius:12px;padding:20px 28px;font-size:15px;color:var(--muted);line-height:1.7; }
+    .fup-bottom strong { color:var(--ink); }
+    @media(max-width:640px){ .fup-vs { grid-template-columns:1fr; } }
+
     /* ══════════════════════════════
        AGITATE — korek lagi
     ══════════════════════════════ */
@@ -957,6 +989,86 @@
 
 
 <!-- ══════════════════════════════
+     FUP — UNLIMITED BUKAN UNLIMITED
+══════════════════════════════ -->
+<section class="sec fup-sec">
+  <div class="wrap">
+
+    <div class="fup-head">
+      <p class="kicker">Rupanya begini...</p>
+      <h2>Telco Anda Kata "Unlimited" Tapi Internet Anda Masih Slow?</h2>
+      <p>Bukan salah phone anda. Bukan salah coverage. Ada satu benda nama <strong>FUP</strong> yang telco tak highlight dalam iklan mereka.</p>
+    </div>
+
+    <div class="fup-explainer">
+      <div class="fup-what">
+        <div class="fup-what-label">Apa itu FUP?</div>
+        <p><strong>Fair Usage Policy (FUP)</strong> adalah had tersembunyi dalam plan "unlimited". Bila anda dah cecah had tu — internet anda akan diturunkan kepada kelajuan yang sangat perlahan. Anda masih boleh guna, tapi streaming jadi buffer, video call jadi putus-putus, upload jadi lambat.</p>
+        <p>Paling menyakitkan — had FUP ini biasanya tidak dinyatakan dengan jelas dalam iklan. Anda baru tahu bila internet tiba-tiba slow.</p>
+      </div>
+
+      <div class="fup-vs">
+        <div class="fup-col bad">
+          <div class="fup-col-header">
+            <span class="fup-col-icon">😤</span>
+            <strong>Telco lain</strong>
+          </div>
+          <ul class="fup-list">
+            <li>
+              <span class="fup-tag bad-tag">Ada FUP</span>
+              Plan "unlimited" — tapi ada had tersembunyi
+            </li>
+            <li>
+              <span class="fup-tag bad-tag">Throttled</span>
+              Internet slow hingga 512Kbps bila FUP habis
+            </li>
+            <li>
+              <span class="fup-tag bad-tag">Terhad</span>
+              Uncapped speed hanya pada waktu tertentu sahaja
+            </li>
+            <li>
+              <span class="fup-tag bad-tag">Confusing</span>
+              Terma FUP dalam tulisan kecil, susah nak faham
+            </li>
+          </ul>
+        </div>
+
+        <div class="fup-col good">
+          <div class="fup-col-header">
+            <span class="fup-col-icon">✅</span>
+            <strong>Eastel</strong>
+          </div>
+          <ul class="fup-list">
+            <li>
+              <span class="fup-tag good-tag">NO FUP</span>
+              500GB data — laju penuh dari mula sampai habis
+            </li>
+            <li>
+              <span class="fup-tag good-tag">5G</span>
+              Kelajuan tak dikurangkan, tak di-throttle
+            </li>
+            <li>
+              <span class="fup-tag good-tag">24/7</span>
+              Laju sama siang atau malam, weekday atau weekend
+            </li>
+            <li>
+              <span class="fup-tag good-tag">Jelas</span>
+              500GB adalah 500GB. Tiada helah, tiada had tersembunyi
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="fup-bottom">
+      <p>500GB NO FUP bermakna anda dapat <strong>kelajuan penuh</strong> untuk streaming, video call, hotspot — setiap hari, setiap masa, sampai 500GB habis.</p>
+    </div>
+
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════
      4. AGITATE — korek lagi
 ══════════════════════════════ -->
 <section class="agitate">
@@ -1110,7 +1222,7 @@
   <div class="income-inner">
     <div class="sec-head">
       <p class="kicker">Macam mana buat duit</p>
-      <h2>Bukan menjual. Sebaliknya, share peluang. Anda dapat komisyen tiap bulan!</h2>
+      <h2>Bukan menjual. Sebaliknya, refer orang. Anda dapat komisyen tiap bulan!</h2>
       <p>Selagi orang dalam network anda reload, anda dapat komisyen. Bukan sekali je — recurring setiap bulan.</p>
     </div>
 
@@ -1432,7 +1544,7 @@
     <div class="rm10-bottom">
       <p>"Baru sebulan. Tak pernah terfikir dapat sampai empat ribu." — Eastelpreneur, Mei 2026</p>
       <a class="btn primary" href="#daftar" data-open-modal>
-        Saya Nak Mulakan Dengan RM10!
+        Saya Nak Mulakan Dengan RM10
       </a>
     </div>
 
@@ -1502,7 +1614,7 @@
   <div class="testi-inner">
     <div class="sec-head">
       <p class="kicker">Apa Feedback pengguna?</p>
-      <h2>Mereka pun macam anda, tapi mereka dah bermula.</h2>
+      <h2>Mereka macam anda, tapi mereka dah bermula.</h2>
       <p>Bukan sales script. Ini feedback real dari pengguna Eastel — pasal data, pasal komisyen, pasal pengalaman guna.</p>
     </div>
 
@@ -1587,14 +1699,14 @@
 
 
 <!-- ══════════════════════════════
-     BONUS DARI REZEKI DIGITAL
+     BONUS REZEKI DIGITAL
 ══════════════════════════════ -->
 <section class="sec bonus-rezeki">
   <div class="wrap">
     <div class="sec-head center">
       <p class="kicker">Bonus Eksklusif!</p>
-      <h2>Di website ini, anda bukan sekadar dapat SIM card...</h2>
-      <p>Selain incentive Eastelpreneur, anda akan dapat 3 bonus tambahan apabila daftar daripada Rezeki Digital — PERCUMA untuk bantu anda bermula dengan lebih mudah!</p>
+      <h2>Di website ini, anda bukan sekadar dapat SIM.</h2>
+      <p>Selain incentive Eastelpreneur, anda akan dapat 3 bonus tambahan apabila daftar daripada Rezeki Digital — PERCUMA, untuk bantu anda bermula dengan lebih mudah!</p>
     </div>
 
     <div class="rezeki-bonus-grid">
@@ -1602,7 +1714,7 @@
         <div class="rezeki-num">01</div>
         <div class="rezeki-icon">🌐</div>
         <h3>Website Referral Peribadi</h3>
-        <p>Anda dapat link unik anda sendiri — <strong>rezeki.digital/?id=namaanda</strong>. Share kepada sesiapa sahaja. Bila orang daftar dari link anda, submission terus masuk ke anda.</p>
+        <p>Anda dapat link unik anda sendiri — <strong>rezeki.digital/?id=namakau</strong>. Share kepada sesiapa sahaja. Bila orang daftar dari link anda, submission terus masuk ke anda.</p>
         <div class="rezeki-tag">Siap setup oleh kami</div>
       </div>
 
@@ -1748,8 +1860,8 @@
      14. FINAL CTA
 ══════════════════════════════ -->
 <section class="final">
-  <p class="kicker">Last call!</p>
-  <h2>Anda dah bayar telco tiap bulan. Dah tiba masa duit tu bagi balik kepada anda.</h2>
+  <p class="kicker">Last call</p>
+  <h2>Anda dah bayar telco tiap bulan. Dah masa duit tu bagi balik kepada anda.</h2>
   <p>Guna data 500GB NO FUP 5G. Refer orang sekeliling. Dapat komisyen recurring setiap bulan. Mulakan dengan RM10.</p>
   <a class="btn wa lg" id="final-wa-btn" style="max-width:380px; margin:0 auto;" href="https://wa.me/60167388358" target="_blank" rel="noopener" data-open-modal>
     Daftar Sekarang — Mulakan Dengan RM10
