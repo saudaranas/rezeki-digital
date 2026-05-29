@@ -1,0 +1,771 @@
+<!doctype html>
+<html lang="ms">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Portal Ejen — Rezeki Digital</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --brand:       #0f2027;
+      --brand-mid:   #203a43;
+      --accent:      #00c9a7;
+      --accent-dark: #00a88b;
+      --accent-soft: #e6faf6;
+      --paper:       #f8f9fa;
+      --warm:        #f0f4f3;
+      --ink:         #111827;
+      --muted:       #6b7280;
+      --line:        #e5e7eb;
+      --card:        #ffffff;
+      --green:       #10b981;
+      --red:         #ef4444;
+      --yellow:      #f59e0b;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-size: 15px; line-height: 1.6;
+      color: var(--ink); background: var(--paper);
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    /* ══════════════════════════════
+       HEADER
+    ══════════════════════════════ */
+    .site-header {
+      background: var(--brand);
+      height: 60px; display: flex; align-items: center;
+      padding: 0 24px; gap: 16px;
+      position: sticky; top: 0; z-index: 100;
+    }
+    .brand {
+      display: flex; align-items: center; gap: 10px;
+      font-weight: 800; font-size: 16px; color: white;
+    }
+    .brand-mark {
+      width: 30px; height: 30px; background: var(--accent);
+      border-radius: 7px; display: flex; align-items: center;
+      justify-content: center; font-size: 14px; font-weight: 900;
+      color: var(--brand);
+    }
+    .header-right {
+      margin-left: auto; display: flex; align-items: center; gap: 12px;
+    }
+    .agent-badge {
+      background: rgba(255,255,255,0.1);
+      border-radius: 20px; padding: 5px 14px;
+      font-size: 13px; font-weight: 600; color: white;
+      display: none;
+    }
+    .btn-logout {
+      background: rgba(255,255,255,0.1); border: none;
+      color: rgba(255,255,255,0.7); font-family: inherit;
+      font-size: 13px; font-weight: 600; padding: 6px 14px;
+      border-radius: 6px; cursor: pointer;
+      transition: background 0.2s; display: none;
+    }
+    .btn-logout:hover { background: rgba(255,255,255,0.2); color: white; }
+
+    /* ══════════════════════════════
+       LOGIN PAGE
+    ══════════════════════════════ */
+    #login-page {
+      min-height: calc(100vh - 60px);
+      display: flex; align-items: center;
+      justify-content: center; padding: 40px 24px;
+    }
+    .login-card {
+      background: white; border-radius: 20px;
+      border: 1px solid var(--line);
+      padding: 40px 36px; width: 100%; max-width: 400px;
+      box-shadow: 0 4px 40px rgba(0,0,0,0.06);
+    }
+    .login-icon {
+      width: 56px; height: 56px;
+      background: var(--accent-soft);
+      border-radius: 14px; margin-bottom: 20px;
+      display: flex; align-items: center;
+      justify-content: center; font-size: 1.6rem;
+    }
+    .login-card h1 { font-size: 1.4rem; margin-bottom: 6px; }
+    .login-card p { font-size: 14px; color: var(--muted); margin-bottom: 28px; }
+
+    .login-form { display: flex; flex-direction: column; gap: 14px; }
+    .login-form label {
+      display: flex; flex-direction: column; gap: 5px;
+      font-size: 13px; font-weight: 700; color: var(--ink);
+    }
+    .login-form input {
+      padding: 12px 14px; border: 2px solid var(--line);
+      border-radius: 8px; font-size: 15px; font-family: inherit;
+      transition: border-color 0.2s; letter-spacing: 0.05em;
+    }
+    .login-form input:focus { outline: none; border-color: var(--accent); }
+
+    .login-error {
+      background: #fef2f2; border: 1px solid #fca5a5;
+      border-radius: 8px; padding: 10px 14px;
+      font-size: 13px; color: var(--red); display: none;
+    }
+    .btn-login {
+      background: var(--accent); color: var(--brand);
+      border: none; border-radius: 8px; padding: 13px;
+      font-family: inherit; font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-login:hover { background: var(--accent-dark); }
+    .btn-login:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    /* ══════════════════════════════
+       DASHBOARD
+    ══════════════════════════════ */
+    #dashboard-page { display: none; padding: 24px; max-width: 960px; margin: 0 auto; }
+
+    /* tab nav */
+    .tab-nav {
+      display: flex; gap: 4px;
+      background: var(--warm); border-radius: 10px;
+      padding: 4px; margin-bottom: 24px;
+    }
+    .tab-btn {
+      flex: 1; padding: 9px 16px;
+      border: none; border-radius: 7px;
+      font-family: inherit; font-size: 13px; font-weight: 600;
+      cursor: pointer; color: var(--muted);
+      background: transparent; transition: all 0.2s;
+    }
+    .tab-btn.active {
+      background: white; color: var(--ink);
+      box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── STATS CARDS ── */
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(160px,1fr));
+      gap: 16px; margin-bottom: 24px;
+    }
+    .stat-card {
+      background: white; border-radius: 12px;
+      border: 1px solid var(--line); padding: 20px;
+    }
+    .stat-label { font-size: 12px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
+    .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent-dark); line-height: 1; }
+    .stat-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+
+    /* referral box */
+    .referral-box {
+      background: var(--brand); border-radius: 12px;
+      padding: 20px 24px; margin-bottom: 24px;
+      display: flex; align-items: center; gap: 16px; flex-wrap: wrap;
+    }
+    .referral-box .ref-label { font-size: 12px; color: rgba(255,255,255,0.45);
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .referral-box .ref-url { font-size: 14px; color: var(--accent); font-weight: 600; word-break: break-all; }
+    .btn-copy {
+      margin-left: auto; flex-shrink: 0;
+      background: var(--accent); color: var(--brand);
+      border: none; border-radius: 7px; padding: 8px 18px;
+      font-family: inherit; font-size: 13px; font-weight: 700;
+      cursor: pointer; transition: background 0.2s;
+    }
+    .btn-copy:hover { background: var(--accent-dark); }
+
+    /* ── SUBMISSIONS TABLE ── */
+    .table-wrap { overflow-x: auto; border-radius: 12px; border: 1px solid var(--line); }
+    table { width: 100%; border-collapse: collapse; background: white; }
+    th {
+      background: var(--warm); padding: 12px 16px;
+      font-size: 12px; font-weight: 700; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      text-align: left; white-space: nowrap;
+    }
+    td { padding: 12px 16px; font-size: 14px; border-top: 1px solid var(--line); }
+    tr:hover td { background: var(--warm); }
+
+    .status-badge {
+      display: inline-block; padding: 3px 10px;
+      border-radius: 20px; font-size: 11px; font-weight: 700;
+    }
+    .status-Baru { background: #fef3c7; color: #92400e; }
+    .status-Proses { background: var(--accent-soft); color: var(--accent-dark); }
+    .status-Selesai { background: #d1fae5; color: #065f46; }
+
+    .empty-state {
+      text-align: center; padding: 48px 24px;
+      color: var(--muted); font-size: 14px;
+    }
+    .empty-state .empty-icon { font-size: 2.5rem; margin-bottom: 12px; }
+
+    /* wa link in table */
+    .wa-link {
+      display: inline-flex; align-items: center; gap: 5px;
+      color: #25d366; font-weight: 600; font-size: 13px;
+    }
+
+    /* ── PROFILE FORM ── */
+    .profile-form {
+      background: white; border-radius: 12px;
+      border: 1px solid var(--line); padding: 28px;
+      display: flex; flex-direction: column; gap: 16px;
+    }
+    .profile-form h3 { font-size: 1.05rem; margin-bottom: 4px; }
+    .profile-form .form-sub { font-size: 13px; color: var(--muted); margin-bottom: 8px; }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+    .form-group { display: flex; flex-direction: column; gap: 5px; }
+    .form-group label { font-size: 13px; font-weight: 700; }
+    .form-group input {
+      padding: 11px 14px; border: 2px solid var(--line);
+      border-radius: 8px; font-size: 14px; font-family: inherit;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus { outline: none; border-color: var(--accent); }
+    .form-group small { font-size: 11px; color: var(--muted); }
+
+    .qr-preview {
+      background: var(--warm); border-radius: 10px; padding: 16px;
+      display: flex; align-items: center; gap: 16px;
+    }
+    .qr-preview img {
+      width: 80px; height: 80px; border-radius: 8px;
+      object-fit: contain; background: white;
+    }
+    .qr-preview-info { flex: 1; }
+    .qr-preview-info p { font-size: 13px; color: var(--muted); }
+    .qr-preview-info strong { font-size: 14px; display: block; margin-bottom: 4px; }
+
+    .divider { height: 1px; background: var(--line); }
+
+    .btn-save {
+      background: var(--accent); color: var(--brand);
+      border: none; border-radius: 8px; padding: 12px 28px;
+      font-family: inherit; font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: background 0.2s; align-self: flex-start;
+    }
+    .btn-save:hover { background: var(--accent-dark); }
+    .btn-save:disabled { opacity: 0.6; cursor: not-allowed; }
+
+    .save-msg {
+      font-size: 13px; padding: 10px 14px;
+      border-radius: 8px; display: none;
+    }
+    .save-msg.ok { background: #d1fae5; color: #065f46; }
+    .save-msg.err { background: #fef2f2; color: var(--red); }
+
+    /* spinner */
+    .spinner {
+      display: inline-block; width: 14px; height: 14px;
+      border: 2px solid rgba(15,32,39,0.3);
+      border-top-color: var(--brand); border-radius: 50%;
+      animation: spin 0.7s linear infinite; margin-right: 6px;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    @media(max-width: 640px) {
+      #dashboard-page { padding: 16px; }
+      .form-row { grid-template-columns: 1fr; }
+      .referral-box { flex-direction: column; align-items: flex-start; }
+      .btn-copy { margin-left: 0; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header class="site-header">
+  <a class="brand" href="/">
+    <span class="brand-mark">R</span>
+    <span>Rezeki Digital</span>
+  </a>
+  <div class="header-right">
+    <span class="agent-badge" id="agent-badge">—</span>
+    <button class="btn-logout" id="btn-logout">Log Keluar</button>
+  </div>
+</header>
+
+
+<!-- ══════════════════════════════
+     LOGIN PAGE
+══════════════════════════════ -->
+<div id="login-page">
+  <div class="login-card">
+    <div class="login-icon">🔐</div>
+    <h1>Portal Ejen</h1>
+    <p>Masukkan ID dan PIN anda untuk akses dashboard.</p>
+
+    <form class="login-form" id="login-form">
+      <label>
+        ID Ejen
+        <input id="login-id" type="text" placeholder="Contoh: nasrol" autocomplete="username" required />
+      </label>
+      <label>
+        PIN
+        <input id="login-pin" type="password" placeholder="• • • • • •" maxlength="6" inputmode="numeric" autocomplete="current-password" required />
+      </label>
+      <div class="login-error" id="login-error"></div>
+      <button class="btn-login" type="submit" id="btn-login">
+        <span id="login-btn-text">Masuk</span>
+      </button>
+    </form>
+  </div>
+</div>
+
+
+<!-- ══════════════════════════════
+     DASHBOARD
+══════════════════════════════ -->
+<div id="dashboard-page">
+
+  <!-- TAB NAV -->
+  <div class="tab-nav">
+    <button class="tab-btn active" data-tab="overview">📊 Overview</button>
+    <button class="tab-btn" data-tab="submissions">📋 Submissions</button>
+    <button class="tab-btn" data-tab="profile">⚙️ Profil</button>
+  </div>
+
+  <!-- ── TAB: OVERVIEW ── -->
+  <div class="tab-panel active" id="tab-overview">
+
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-label">Jumlah Submission</div>
+        <div class="stat-value" id="stat-total">—</div>
+        <div class="stat-sub">Sejak mula aktif</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Slot Minggu Ini</div>
+        <div class="stat-value" id="stat-slot">—</div>
+        <div class="stat-sub" id="stat-slot-sub">— / — slot</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Status Akaun</div>
+        <div class="stat-value" style="font-size:1.2rem;" id="stat-status">—</div>
+        <div class="stat-sub">Eastelpreneur</div>
+      </div>
+    </div>
+
+    <div class="referral-box">
+      <div>
+        <div class="ref-label">Link Referral Anda</div>
+        <div class="ref-url" id="ref-url">—</div>
+      </div>
+      <button class="btn-copy" id="btn-copy-ref">Salin Link</button>
+    </div>
+
+    <!-- QR preview -->
+    <div class="profile-form" style="margin-bottom:0;">
+      <h3>QR Payment Anda</h3>
+      <p class="form-sub">QR ini akan dipaparkan kepada pelanggan semasa checkout di website anda.</p>
+      <div class="qr-preview">
+        <img id="qr-preview-img" src="" alt="QR" style="display:none;" />
+        <div id="qr-placeholder" style="width:80px;height:80px;background:var(--line);border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1.5rem;">📷</div>
+        <div class="qr-preview-info">
+          <strong>QR DuitNow / Bank</strong>
+          <p>Belum ada QR? Pergi ke tab <strong>Profil</strong> untuk paste link QR anda.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ── TAB: SUBMISSIONS ── -->
+  <div class="tab-panel" id="tab-submissions">
+
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:12px;">
+      <div>
+        <h3 style="font-size:1.05rem;">Senarai Pelanggan</h3>
+        <p style="font-size:13px; color:var(--muted);">Semua submission yang masuk melalui link anda.</p>
+      </div>
+      <button class="btn-copy" id="btn-refresh" style="background:var(--warm);color:var(--ink);">↻ Refresh</button>
+    </div>
+
+    <div class="table-wrap">
+      <table id="submissions-table">
+        <thead>
+          <tr>
+            <th>Tarikh</th>
+            <th>Nama</th>
+            <th>WhatsApp</th>
+            <th>Kawasan</th>
+            <th>Amaun</th>
+            <th>Status</th>
+          </tr>
+        </thead>
+        <tbody id="submissions-body">
+          <tr>
+            <td colspan="6">
+              <div class="empty-state">
+                <div class="empty-icon">📭</div>
+                <p>Tiada submission lagi. Share link referral anda untuk mula!</p>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+  </div>
+
+  <!-- ── TAB: PROFILE ── -->
+  <div class="tab-panel" id="tab-profile">
+
+    <form class="profile-form" id="profile-form">
+      <h3>Maklumat Profil</h3>
+      <p class="form-sub">Maklumat ini akan dipaparkan kepada pelanggan dan digunakan dalam sistem Rezeki Digital.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label>Nama Penuh</label>
+          <input id="p-nama" type="text" placeholder="Nama anda" />
+        </div>
+        <div class="form-group">
+          <label>No WhatsApp</label>
+          <input id="p-wa" type="tel" placeholder="60123456789" />
+          <small>Format: 601XXXXXXXX (tanpa +)</small>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label>Email</label>
+        <input id="p-email" type="email" placeholder="email@example.com" />
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Link QR Payment</h3>
+      <p class="form-sub">Paste link terus ke gambar QR DuitNow atau bank anda. Pelanggan akan scan QR ini untuk bayar.</p>
+
+      <div class="form-group">
+        <label>URL Gambar QR</label>
+        <input id="p-qr" type="url" placeholder="https://i.postimg.cc/..." />
+        <small>Upload QR ke postimg.cc atau imgur, kemudian paste link gambar di sini.</small>
+      </div>
+
+      <div class="qr-preview" id="qr-live-preview" style="display:none;">
+        <img id="qr-live-img" src="" alt="QR Preview" style="width:80px;height:80px;border-radius:8px;object-fit:contain;background:white;" />
+        <div class="qr-preview-info">
+          <strong>Preview QR anda</strong>
+          <p>Ini yang akan nampak kepada pelanggan semasa checkout.</p>
+        </div>
+      </div>
+
+      <div class="divider"></div>
+
+      <h3>Tukar PIN</h3>
+      <p class="form-sub">Kosongkan jika tidak mahu tukar PIN.</p>
+      <div class="form-row">
+        <div class="form-group">
+          <label>PIN Baru</label>
+          <input id="p-pin-new" type="password" placeholder="Min 4 digit" maxlength="6" inputmode="numeric" />
+        </div>
+        <div class="form-group">
+          <label>Sahkan PIN Baru</label>
+          <input id="p-pin-confirm" type="password" placeholder="Ulang PIN" maxlength="6" inputmode="numeric" />
+        </div>
+      </div>
+
+      <div class="save-msg" id="save-msg"></div>
+
+      <button class="btn-save" type="submit" id="btn-save">
+        <span id="save-btn-text">Simpan Perubahan</span>
+      </button>
+
+    </form>
+
+  </div>
+
+</div>
+
+
+<script>
+  const GAS_URL = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
+
+  // ── session (in-memory sahaja) ──
+  let session = { id: '', pin: '', data: null };
+
+  // ══════════════════════════════
+  // LOGIN
+  // ══════════════════════════════
+  const loginForm  = document.getElementById('login-form');
+  const loginError = document.getElementById('login-error');
+  const btnLogin   = document.getElementById('btn-login');
+  const loginBtnTxt = document.getElementById('login-btn-text');
+
+  loginForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    loginError.style.display = 'none';
+
+    const id  = document.getElementById('login-id').value.trim().toLowerCase();
+    const pin = document.getElementById('login-pin').value.trim();
+
+    if (!id || !pin) { showLoginError('Sila isi ID dan PIN.'); return; }
+
+    btnLogin.disabled = true;
+    loginBtnTxt.innerHTML = '<span class="spinner"></span>Mengesahkan...';
+
+    try {
+      const url  = `${GAS_URL}?action=login&id=${encodeURIComponent(id)}&pin=${encodeURIComponent(pin)}`;
+      const res  = await fetch(url);
+      const json = await res.json();
+
+      if (json.ok) {
+        session = { id, pin, data: json.data };
+        enterDashboard(json.data);
+      } else {
+        showLoginError(json.message || 'Login gagal. Cuba semula.');
+        btnLogin.disabled = false;
+        loginBtnTxt.textContent = 'Masuk';
+      }
+    } catch(err) {
+      showLoginError('Gagal sambung ke server. Semak internet dan cuba lagi.');
+      btnLogin.disabled = false;
+      loginBtnTxt.textContent = 'Masuk';
+    }
+  });
+
+  function showLoginError(msg) {
+    loginError.textContent = msg;
+    loginError.style.display = 'block';
+  }
+
+  // ══════════════════════════════
+  // ENTER DASHBOARD
+  // ══════════════════════════════
+  function enterDashboard(d) {
+    document.getElementById('login-page').style.display    = 'none';
+    document.getElementById('dashboard-page').style.display = 'block';
+
+    // header
+    document.getElementById('agent-badge').textContent = d.nama;
+    document.getElementById('agent-badge').style.display = 'block';
+    document.getElementById('btn-logout').style.display  = 'block';
+
+    // stats
+    document.getElementById('stat-total').textContent    = d.slot_taken || 0;
+    document.getElementById('stat-slot').textContent     = d.slot_taken || 0;
+    document.getElementById('stat-slot-sub').textContent = `${d.slot_taken||0} / ${d.max_slot||20} slot`;
+    document.getElementById('stat-status').textContent   = d.status === 'active' ? '✅ Aktif' : '⛔ Tidak Aktif';
+
+    // referral
+    document.getElementById('ref-url').textContent = d.referral || '—';
+
+    // QR
+    if (d.qr_uri) {
+      document.getElementById('qr-preview-img').src          = d.qr_uri;
+      document.getElementById('qr-preview-img').style.display = 'block';
+      document.getElementById('qr-placeholder').style.display = 'none';
+    }
+
+    // prefill profile form
+    document.getElementById('p-nama').value  = d.nama      || '';
+    document.getElementById('p-wa').value    = d.whatsapp  || '';
+    document.getElementById('p-email').value = d.email     || '';
+    document.getElementById('p-qr').value    = d.qr_uri    || '';
+
+    if (d.qr_uri) {
+      document.getElementById('qr-live-img').src          = d.qr_uri;
+      document.getElementById('qr-live-preview').style.display = 'flex';
+    }
+
+    // load submissions
+    loadSubmissions();
+  }
+
+  // ══════════════════════════════
+  // LOGOUT
+  // ══════════════════════════════
+  document.getElementById('btn-logout').addEventListener('click', () => {
+    session = { id: '', pin: '', data: null };
+    document.getElementById('dashboard-page').style.display = 'none';
+    document.getElementById('login-page').style.display     = 'flex';
+    document.getElementById('agent-badge').style.display    = 'none';
+    document.getElementById('btn-logout').style.display     = 'none';
+    document.getElementById('login-id').value  = '';
+    document.getElementById('login-pin').value = '';
+    btnLogin.disabled = false;
+    loginBtnTxt.textContent = 'Masuk';
+    loginError.style.display = 'none';
+  });
+
+  // ══════════════════════════════
+  // TABS
+  // ══════════════════════════════
+  document.querySelectorAll('.tab-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+      document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.getElementById('tab-' + btn.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ══════════════════════════════
+  // COPY REFERRAL LINK
+  // ══════════════════════════════
+  document.getElementById('btn-copy-ref').addEventListener('click', () => {
+    const url = document.getElementById('ref-url').textContent;
+    navigator.clipboard.writeText(url).then(() => {
+      const btn = document.getElementById('btn-copy-ref');
+      btn.textContent = '✓ Disalin!';
+      setTimeout(() => btn.textContent = 'Salin Link', 2000);
+    });
+  });
+
+  // ══════════════════════════════
+  // LOAD SUBMISSIONS
+  // ══════════════════════════════
+  async function loadSubmissions() {
+    try {
+      const url  = `${GAS_URL}?action=submissions&id=${encodeURIComponent(session.id)}&pin=${encodeURIComponent(session.pin)}`;
+      const res  = await fetch(url);
+      const json = await res.json();
+
+      if (!json.ok) return;
+
+      const tbody = document.getElementById('submissions-body');
+      const list  = json.data || [];
+
+      // update stat
+      document.getElementById('stat-total').textContent = list.length;
+
+      if (list.length === 0) {
+        tbody.innerHTML = `
+          <tr><td colspan="6">
+            <div class="empty-state">
+              <div class="empty-icon">📭</div>
+              <p>Tiada submission lagi. Share link referral anda untuk mula!</p>
+            </div>
+          </td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = list.map(r => `
+        <tr>
+          <td>${r.timestamp}</td>
+          <td><strong>${r.nama}</strong></td>
+          <td>
+            <a class="wa-link" href="https://wa.me/${r.whatsapp.replace(/\D/g,'')}" target="_blank">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="#25d366"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              ${r.whatsapp}
+            </a>
+          </td>
+          <td>${r.kawasan}</td>
+          <td><strong>${r.amaun}</strong></td>
+          <td><span class="status-badge status-${r.status}">${r.status}</span></td>
+        </tr>
+      `).join('');
+
+    } catch(err) {
+      console.error('Load submissions error:', err);
+    }
+  }
+
+  document.getElementById('btn-refresh').addEventListener('click', loadSubmissions);
+
+  // ══════════════════════════════
+  // QR LIVE PREVIEW
+  // ══════════════════════════════
+  document.getElementById('p-qr').addEventListener('input', e => {
+    const url = e.target.value.trim();
+    if (url.startsWith('http')) {
+      document.getElementById('qr-live-img').src = url;
+      document.getElementById('qr-live-preview').style.display = 'flex';
+    } else {
+      document.getElementById('qr-live-preview').style.display = 'none';
+    }
+  });
+
+  // ══════════════════════════════
+  // SAVE PROFILE
+  // ══════════════════════════════
+  const profileForm = document.getElementById('profile-form');
+  const saveMsg     = document.getElementById('save-msg');
+  const btnSave     = document.getElementById('btn-save');
+  const saveBtnTxt  = document.getElementById('save-btn-text');
+
+  profileForm.addEventListener('submit', async e => {
+    e.preventDefault();
+    saveMsg.style.display = 'none';
+
+    const pinNew     = document.getElementById('p-pin-new').value.trim();
+    const pinConfirm = document.getElementById('p-pin-confirm').value.trim();
+
+    if (pinNew && pinNew !== pinConfirm) {
+      showSaveMsg('PIN baru tidak sepadan. Sila semak semula.', false);
+      return;
+    }
+    if (pinNew && pinNew.length < 4) {
+      showSaveMsg('PIN mestilah sekurang-kurangnya 4 digit.', false);
+      return;
+    }
+
+    btnSave.disabled = true;
+    saveBtnTxt.innerHTML = '<span class="spinner"></span>Menyimpan...';
+
+    const payload = {
+      action    : 'update_profile',
+      agent_id  : session.id,
+      pin       : session.pin,
+      nama      : document.getElementById('p-nama').value.trim(),
+      whatsapp  : document.getElementById('p-wa').value.trim(),
+      email     : document.getElementById('p-email').value.trim(),
+      qr_uri    : document.getElementById('p-qr').value.trim(),
+    };
+
+    if (pinNew) {
+      payload.new_pin = pinNew;
+    }
+
+    try {
+      const res  = await fetch(GAS_URL, { method: 'POST', body: JSON.stringify(payload) });
+      const json = await res.json();
+
+      if (json.ok) {
+        // update session PIN jika tukar
+        if (pinNew) session.pin = pinNew;
+        // update QR preview kat overview
+        if (payload.qr_uri) {
+          document.getElementById('qr-preview-img').src = payload.qr_uri;
+          document.getElementById('qr-preview-img').style.display = 'block';
+          document.getElementById('qr-placeholder').style.display  = 'none';
+        }
+        // update nama di header
+        if (payload.nama) document.getElementById('agent-badge').textContent = payload.nama;
+        // clear PIN fields
+        document.getElementById('p-pin-new').value     = '';
+        document.getElementById('p-pin-confirm').value = '';
+
+        showSaveMsg('✓ Profil berjaya dikemaskini!', true);
+      } else {
+        showSaveMsg(json.message || 'Gagal simpan. Cuba lagi.', false);
+      }
+    } catch(err) {
+      showSaveMsg('Gagal sambung ke server.', false);
+    }
+
+    btnSave.disabled = false;
+    saveBtnTxt.textContent = 'Simpan Perubahan';
+  });
+
+  function showSaveMsg(msg, ok) {
+    saveMsg.textContent  = msg;
+    saveMsg.className    = 'save-msg ' + (ok ? 'ok' : 'err');
+    saveMsg.style.display = 'block';
+    if (ok) setTimeout(() => saveMsg.style.display = 'none', 4000);
+  }
+</script>
+
+</body>
+</html>
