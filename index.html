@@ -521,12 +521,21 @@
       max-width: var(--max); margin: 0 auto;
       display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center;
     }
-    .system h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 14px; }
-    .system p { font-size: 15px; color: var(--muted); }
+    .system h2 { font-size: clamp(1.5rem, 2.5vw, 2rem); margin-bottom: 14px; color: var(--accent); }
+    .system p { font-size: 15px; color: rgba(255,255,255,0.6); }
+    .system .kicker { color: rgba(255,255,255,0.45); }
     .chips { display: flex; flex-wrap: wrap; gap: 10px; }
     .chips span {
-      background: white; border: 1px solid var(--line);
+      background: var(--accent);
+      border: 1px solid var(--accent);
+      color: white;
       border-radius: 20px; padding: 8px 16px; font-size: 13px; font-weight: 600;
+      transition: all 0.2s;
+    }
+    .chips span:hover {
+      background: var(--accent-dark);
+      border-color: var(--accent-dark);
+      transform: translateY(-1px);
     }
     @media(max-width:768px){ .system-inner { grid-template-columns: 1fr; gap: 28px; } }
 
@@ -1504,7 +1513,7 @@
   <div class="system-inner wrap">
     <div>
       <p class="kicker">Mudah nak mula</p>
-      <h2>Kalau anda boleh WhatsApp, In shaa Allah anda boleh buat!</h2>
+      <h2 style="background:linear-gradient(90deg,#7c3aed 0%,#d946ef 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;">Kalau anda boleh WhatsApp, In shaa Allah anda boleh buat!</h2>
       <p>Tak perlu ada background sales. Tak perlu buka kedai. Semua boleh buat dari phone je. Oh ye, kami juga berikan anda website percuma!</p>
     </div>
     <div class="chips">
