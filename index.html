@@ -282,16 +282,17 @@
     .fup-what-label { font-size:11px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:#ea580c;margin-bottom:10px; }
     .fup-what p { font-size:15px;color:var(--ink);line-height:1.75;margin-bottom:10px; }
     .fup-what p:last-child { margin-bottom:0;color:var(--muted);font-size:14px; }
-    .fup-vs { display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto;width:100%; }
-    .fup-col { border-radius:14px;padding:24px 24px 28px;border:2px solid var(--line); }
+    .fup-vs { display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:800px;margin:0 auto 28px;width:100%; }
+    .fup-col { border-radius:14px;padding:24px;border:2px solid var(--line); }
     .fup-col.bad { background:#fafafa;border-color:var(--line); }
     .fup-col.good { background:var(--accent-soft);border-color:var(--accent); }
     .fup-col-header { display:flex;align-items:center;gap:10px;margin-bottom:18px; }
     .fup-col-icon { font-size:1.4rem; }
     .fup-col-header strong { font-size:1rem;font-weight:800; }
     .fup-col.good .fup-col-header strong { color:var(--accent-dark); }
-    .fup-list { display:flex;flex-direction:column;gap:12px;list-style:none; }
-    .fup-list li { font-size:14px;color:var(--ink);display:flex;flex-direction:column;gap:4px;line-height:1.5; }
+    .fup-list { display:flex;flex-direction:column;gap:0;list-style:none; }
+    .fup-list li { font-size:14px;color:var(--ink);display:flex;flex-direction:column;gap:6px;line-height:1.6;padding:10px 0;border-bottom:1px solid rgba(0,0,0,0.06); }
+    .fup-list li:last-child { border-bottom:none;padding-bottom:0; }
     .fup-col.bad .fup-list li { color:var(--muted); }
     .fup-tag { display:inline-block;font-size:10px;font-weight:800;padding:2px 8px;border-radius:4px;letter-spacing:0.05em;align-self:flex-start; }
     .bad-tag { background:#fee2e2;color:#dc2626; }
@@ -1026,7 +1027,7 @@
               <span class="fup-tag bad-tag">Terhad</span>
               Uncapped speed hanya pada waktu tertentu sahaja
             </li>
-            <li>
+            <li style="padding-bottom:16px;">
               <span class="fup-tag bad-tag">Confusing</span>
               Terma FUP dalam tulisan kecil, susah nak faham
             </li>
@@ -1051,7 +1052,7 @@
               <span class="fup-tag good-tag">24/7</span>
               Laju sama siang atau malam, weekday atau weekend
             </li>
-            <li>
+            <li style="padding-bottom:16px;">
               <span class="fup-tag good-tag">Jelas</span>
               500GB adalah 500GB. Tiada helah, tiada had tersembunyi
             </li>
