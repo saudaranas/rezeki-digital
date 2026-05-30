@@ -403,6 +403,9 @@
     .solution { padding: 80px 24px; background: #ffffff; }
     .solution-inner {
       max-width: var(--max); margin: 0 auto;
+      display: flex; flex-direction: column; gap: 40px;
+    }
+    .solution-top {
       display: grid; grid-template-columns: 1fr 1fr;
       gap: 56px; align-items: center;
     }
@@ -414,6 +417,23 @@
       width: 100%; border-radius: 16px;
       object-fit: cover; aspect-ratio: 3/4;
       box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    /* proof card — full width horizontal */
+    .solution-proof {
+      background: linear-gradient(160deg, #f9f8ff 0%, #f0ebff 100%);
+      border-radius: 16px; padding: 32px;
+      border: 1px solid #ddd6fe;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 32px; align-items: start;
+    }
+    .proof-divider-v {
+      width: 1px; background: #ddd6fe;
+      align-self: stretch; display: none;
+    }
+    @media(max-width:768px){
+      .solution-top { grid-template-columns: 1fr; gap: 32px; }
+      .solution-proof { grid-template-columns: 1fr; }
     }
 
     .solution-proof {
@@ -1243,42 +1263,55 @@
 ══════════════════════════════ -->
 <section class="solution">
   <div class="solution-inner wrap">
-    <div class="solution-copy">
-      <p class="kicker">Penyelesaian</p>
-      <h2>Tukar je telco kepada satu yang <em>bagi anda balik</em> setiap bulan.</h2>
-      <p>Eastel bukan sekadar telco biasa. Dia MVNO berlesen di bawah U Mobile — so coverage sama, kualiti sama. Tapi ada satu beza besar: dia ada sistem komisyen untuk Eastelpreneur.</p>
-      <p>Anda guna plan sendiri macam biasa. Tapi setiap kali orang dalam network anda reload, anda dapat komisyen. Masuk ke wallet anda. Boleh withdraw.</p>
-      <p>Tak perlu stok SIM card dalam beg. Tak perlu collect duit dari pelanggan. Semua online, semua auto.</p>
-    </div>
-    <div class="solution-right">
-      <img
-        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/solution-happy.jpg"
-        alt="Eastelpreneur gembira terima komisyen"
-        class="solution-img"
-        loading="lazy"
-      />
-      <div class="solution-proof">
-      <span class="proof-label">Kenapa Eastel lain dari yang lain</span>
-      <div class="proof-stat">
-        <div class="num" style="color:var(--accent);">500GB</div>
-        <div class="desc">NO FUP 5G — Plan EZ50 RM50/bulan. Data tak slow sampai habis.</div>
+
+    <!-- TOP: copywriting + gambar -->
+    <div class="solution-top">
+      <div class="solution-copy">
+        <p class="kicker">Penyelesaian</p>
+        <h2>Tukar je telco kepada satu yang <em>bagi anda balik</em> setiap bulan.</h2>
+        <p>Eastel bukan sekadar telco biasa. Dia MVNO berlesen di bawah U Mobile — so coverage sama, kualiti sama. Tapi ada satu beza besar: dia ada sistem komisyen untuk Eastelpreneur.</p>
+        <p>Anda guna plan sendiri macam biasa. Tapi setiap kali orang dalam network anda reload, anda dapat komisyen. Masuk ke wallet anda. Boleh withdraw.</p>
+        <p>Tak perlu stok SIM card dalam beg. Tak perlu collect duit dari pelanggan. Semua online, semua auto.</p>
       </div>
-      <div class="proof-divider"></div>
-      <div class="proof-stat">
-        <div class="num" style="color:var(--accent);">Sehingga 24%+50%</div>
-        <div class="desc">Komisyen tertinggi dalam industri MVNO Malaysia.</div>
+      <div class="solution-right">
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/solution-happy.jpg"
+          alt="Eastelpreneur gembira terima komisyen"
+          class="solution-img"
+          loading="lazy"
+        />
       </div>
-      <div class="proof-divider"></div>
-      <ul class="proof-list">
-        <li>Berlesen MCMC — bukan MLM haram</li>
-        <li>Shariah-compliant (sijil Masyref)</li>
-        <li>Data carry forward — tak bazir</li>
-        <li>Free roaming SG, Indon, Thailand</li>
-        <li>MNP — boleh kekal nombor lama</li>
-        <li>CTOS/CCRIS tak jadi halangan</li>
-      </ul>
     </div>
+
+    <!-- BOTTOM: proof card full width 3 column -->
+    <div class="solution-proof">
+      <div>
+        <span class="proof-label">500GB NO FUP 5G</span>
+        <div class="proof-stat">
+          <div class="num" style="color:var(--accent);">500GB</div>
+          <div class="desc">Plan EZ50 RM50/bulan. Data tak slow sampai habis. Carry forward bulan depan.</div>
+        </div>
+      </div>
+      <div>
+        <span class="proof-label">Komisyen Tertinggi</span>
+        <div class="proof-stat">
+          <div class="num" style="color:var(--accent);">Sehingga 24%+50%</div>
+          <div class="desc">Komisyen tertinggi dalam industri MVNO Malaysia. Recurring setiap bulan.</div>
+        </div>
+      </div>
+      <div>
+        <span class="proof-label">Kenapa Eastel</span>
+        <ul class="proof-list">
+          <li>Berlesen MCMC — bukan MLM haram</li>
+          <li>Shariah-compliant (sijil Masyref)</li>
+          <li>Data carry forward — tak bazir</li>
+          <li>Free roaming SG, Indon, Thailand</li>
+          <li>MNP — boleh kekal nombor lama</li>
+          <li>CTOS/CCRIS tak jadi halangan</li>
+        </ul>
+      </div>
     </div>
+
   </div>
 </section>
 
