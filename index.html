@@ -932,16 +932,27 @@
       .rm10-vs { align-self: center; }
       .rm10-dream-grid { grid-template-columns: repeat(2, 1fr); }
     }
-    .faq { padding: 80px 24px; background: #ffffff; }
+    .faq { padding: 80px 24px; background: #f8fafc; }
     .faq-inner { max-width: var(--max); margin: 0 auto; }
-    .faq details { border-bottom: 1px solid var(--line); padding: 18px 0; }
+    .faq details {
+      background: white;
+      border: 1px solid var(--line);
+      border-radius: var(--r);
+      padding: 0;
+      margin-bottom: 10px;
+    }
     .faq summary {
       font-weight: 700; font-size: 15px; cursor: pointer;
-      list-style: none; display: flex; justify-content: space-between; align-items: center;
+      list-style: none; display: flex; justify-content: space-between;
+      align-items: center; padding: 18px 22px;
     }
     .faq summary::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--muted); }
-    .faq details[open] summary::after { content: '−'; }
-    .faq details p { font-size: 14px; color: var(--muted); margin-top: 10px; line-height: 1.75; }
+    .faq details[open] {
+      border-color: var(--accent);
+    }
+    .faq details[open] summary { color: var(--accent); }
+    .faq details[open] summary::after { content: '−'; color: var(--accent); }
+    .faq details p { font-size: 14px; color: var(--muted); padding: 0 22px 18px; margin-top: 0; line-height: 1.75; }
 
     /* ══════════════════════════════
        FINAL CTA
