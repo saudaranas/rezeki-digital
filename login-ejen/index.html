@@ -10,18 +10,18 @@
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --brand:       #0f2027;
-      --brand-mid:   #203a43;
-      --accent:      #00c9a7;
-      --accent-dark: #00a88b;
-      --accent-soft: #e6faf6;
-      --paper:       #f8f9fa;
-      --warm:        #f0f4f3;
-      --ink:         #111827;
-      --muted:       #6b7280;
-      --line:        #e5e7eb;
+      --brand:       #0f172a;
+      --brand-mid:   #1e293b;
+      --accent:      #7c3aed;
+      --accent-dark: #6d28d9;
+      --accent-soft: #f5f3ff;
+      --paper:       #f8fafc;
+      --warm:        #f1f5f9;
+      --ink:         #0f172a;
+      --muted:       #64748b;
+      --line:        #e2e8f0;
       --card:        #ffffff;
-      --green:       #10b981;
+      --green:       #059669;
       --red:         #ef4444;
       --yellow:      #f59e0b;
     }
@@ -55,7 +55,7 @@
       width: 30px; height: 30px; background: var(--accent);
       border-radius: 7px; display: flex; align-items: center;
       justify-content: center; font-size: 14px; font-weight: 900;
-      color: var(--brand);
+      color: white;
     }
     .header-right {
       margin-left: auto; display: flex; align-items: center; gap: 12px;
@@ -117,7 +117,7 @@
       font-size: 13px; color: var(--red); display: none;
     }
     .btn-login {
-      background: var(--accent); color: var(--brand);
+      background: var(--accent); color: white;
       border: none; border-radius: 8px; padding: 13px;
       font-family: inherit; font-size: 15px; font-weight: 700;
       cursor: pointer; transition: background 0.2s;
@@ -162,7 +162,7 @@
     }
     .stat-label { font-size: 12px; font-weight: 700; color: var(--muted);
       text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 6px; }
-    .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent-dark); line-height: 1; }
+    .stat-value { font-size: 2rem; font-weight: 800; color: var(--accent); line-height: 1; }
     .stat-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
 
     /* referral box */
@@ -173,10 +173,10 @@
     }
     .referral-box .ref-label { font-size: 12px; color: rgba(255,255,255,0.45);
       font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
-    .referral-box .ref-url { font-size: 14px; color: var(--accent); font-weight: 600; word-break: break-all; }
+    .referral-box .ref-url { font-size: 14px; color: #a78bfa; font-weight: 600; word-break: break-all; }
     .btn-copy {
       margin-left: auto; flex-shrink: 0;
-      background: var(--accent); color: var(--brand);
+      background: var(--accent); color: white;
       border: none; border-radius: 7px; padding: 8px 18px;
       font-family: inherit; font-size: 13px; font-weight: 700;
       cursor: pointer; transition: background 0.2s;
@@ -200,7 +200,7 @@
       border-radius: 20px; font-size: 11px; font-weight: 700;
     }
     .status-Baru { background: #fef3c7; color: #92400e; }
-    .status-Proses { background: var(--accent-soft); color: var(--accent-dark); }
+    .status-Proses { background: var(--accent-soft); color: var(--accent); }
     .status-Selesai { background: #d1fae5; color: #065f46; }
 
     .empty-state {
@@ -249,7 +249,7 @@
     .divider { height: 1px; background: var(--line); }
 
     .btn-save {
-      background: var(--accent); color: var(--brand);
+      background: var(--accent); color: white;
       border: none; border-radius: 8px; padding: 12px 28px;
       font-family: inherit; font-size: 14px; font-weight: 700;
       cursor: pointer; transition: background 0.2s; align-self: flex-start;
@@ -267,8 +267,8 @@
     /* spinner */
     .spinner {
       display: inline-block; width: 14px; height: 14px;
-      border: 2px solid rgba(15,32,39,0.3);
-      border-top-color: var(--brand); border-radius: 50%;
+      border: 2px solid rgba(124,58,237,0.3);
+      border-top-color: var(--accent); border-radius: 50%;
       animation: spin 0.7s linear infinite; margin-right: 6px;
     }
     @keyframes spin { to { transform: rotate(360deg); } }
