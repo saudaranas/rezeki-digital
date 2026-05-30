@@ -407,8 +407,14 @@
       gap: 56px; align-items: center;
     }
     .solution h2 { font-size: clamp(1.7rem, 3vw, 2.4rem); margin-bottom: 20px; }
-    .solution h2 em { color: var(--accent-dark); font-style: normal; }
+    .solution h2 em { color: var(--accent); font-style: normal; }
     .solution-copy p { color: var(--muted); font-size: 16px; margin-bottom: 16px; line-height: 1.8; }
+    .solution-right { display: flex; flex-direction: column; gap: 24px; }
+    .solution-img {
+      width: 100%; border-radius: 16px;
+      object-fit: cover; aspect-ratio: 3/4;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
 
     .solution-proof {
       background: linear-gradient(160deg, #f9f8ff 0%, #f0ebff 100%);
@@ -1244,7 +1250,14 @@
       <p>Anda guna plan sendiri macam biasa. Tapi setiap kali orang dalam network anda reload, anda dapat komisyen. Masuk ke wallet anda. Boleh withdraw.</p>
       <p>Tak perlu stok SIM card dalam beg. Tak perlu collect duit dari pelanggan. Semua online, semua auto.</p>
     </div>
-    <div class="solution-proof">
+    <div class="solution-right">
+      <img
+        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/solution-happy.jpg"
+        alt="Eastelpreneur gembira terima komisyen"
+        class="solution-img"
+        loading="lazy"
+      />
+      <div class="solution-proof">
       <span class="proof-label">Kenapa Eastel lain dari yang lain</span>
       <div class="proof-stat">
         <div class="num" style="color:var(--accent);">500GB</div>
@@ -1264,6 +1277,7 @@
         <li>MNP — boleh kekal nombor lama</li>
         <li>CTOS/CCRIS tak jadi halangan</li>
       </ul>
+    </div>
     </div>
   </div>
 </section>
