@@ -737,6 +737,10 @@
     ══════════════════════════════ */
     .testi { padding: 80px 24px; background: var(--warm); }
     .testi-inner { max-width: var(--max); margin: 0 auto; }
+    .quote-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px; }
+    .quote-card { background:linear-gradient(160deg,#f9f8ff 0%,#f0ebff 100%);border-radius:var(--r);padding:20px;border:1px solid #e8e4f0; }
+    .quote-card strong { display:block;font-size:15px;margin-bottom:8px;line-height:1.5; }
+    .quote-card span { font-size:11px;font-weight:700;color:var(--accent);text-transform:uppercase;letter-spacing:0.08em; }
 
     /* carousel */
     .testi-carousel-wrap { position:relative;display:flex;align-items:center;gap:12px;margin-bottom:16px; }
@@ -1877,6 +1881,26 @@
       <p class="kicker">Apa Feedback pengguna?</p>
       <h2>Alhamdulillah, masing-masing dah nampak hasil.</h2>
       <p>Ini screenshot real dari pengguna Eastel — pasal data, komisyen dan pengalaman mereka.</p>
+    </div>
+
+    <!-- QUOTE CARDS -->
+    <div class="quote-grid" style="margin-bottom:48px;">
+      <div class="quote-card">
+        <strong>"Data dia memang laju. Dah 2 minggu guna, takde slow langsung walaupun streaming."</strong>
+        <span>Kualiti Data</span>
+      </div>
+      <div class="quote-card">
+        <strong>"Bulan pertama dah dapat komisyen RM47 dari 7 orang kawan yang daftar."</strong>
+        <span>Komisyen Pertama</span>
+      </div>
+      <div class="quote-card">
+        <strong>"Plan RM50 dengan 500GB — telco lain takde bagi macam ni."</strong>
+        <span>Nilai Untuk Duit</span>
+      </div>
+      <div class="quote-card">
+        <strong>"Suka sebab Shariah-compliant. Tak rasa bersalah recommend kepada orang."</strong>
+        <span>Ketenangan Hati</span>
+      </div>
     </div>
 
     <!-- CAROUSEL -->
