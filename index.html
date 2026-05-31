@@ -2073,16 +2073,19 @@
           src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-dashboard.jpg"
           alt="Dashboard komisyen Eastelpreneur"
           loading="lazy"
+          onclick="openLightbox(this.src)"
         />
         <img
           src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-history1.jpg"
           alt="History komisyen Eastelpreneur"
           loading="lazy"
+          onclick="openLightbox(this.src)"
         />
         <img
           src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-history2.jpg"
           alt="History komisyen Eastelpreneur 2"
           loading="lazy"
+          onclick="openLightbox(this.src)"
         />
       </div>
     </div>
@@ -2536,6 +2539,36 @@
 
   // ── 6. INIT ──
   loadAgent();
+</script>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;">
+  <button onclick="closeLightbox()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:white;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
+  <img id="lightbox-img" src="" alt="" style="max-width:90vw;max-height:90vh;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,0.5);" onclick="event.stopPropagation()" />
+</div>
+
+<style>
+  .proof-gallery img { cursor: zoom-in; transition: transform 0.2s, box-shadow 0.2s; }
+  .proof-gallery img:hover { transform: scale(1.03); box-shadow: 0 8px 24px rgba(0,0,0,0.4); }
+  #lightbox { display: none; }
+  #lightbox.active { display: flex !important; }
+</style>
+
+<script>
+  function openLightbox(src) {
+    const lb = document.getElementById('lightbox');
+    const img = document.getElementById('lightbox-img');
+    img.src = src;
+    lb.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeLightbox() {
+    document.getElementById('lightbox').classList.remove('active');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 </script>
 
 </body>
