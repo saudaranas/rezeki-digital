@@ -760,7 +760,7 @@
        KALKULATOR KOMISYEN
     ══════════════════════════════ */
     .calc-sec { background: var(--brand); }
-    .calc-inner { overflow-x: hidden; }
+    .calc-inner { overflow-x: hidden; width:100%; }
     .calc-sec .kicker {
       display: inline-block;
       font-size: 12px; font-weight: 700;
@@ -1146,6 +1146,25 @@
       .calc-inner { gap: 24px; }
       .slider-row { gap: 8px; }
     }
+
+
+    .plan-select-btns { display:grid;grid-template-columns:repeat(4,1fr);gap:8px; }
+    .plan-btn { background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:8px 4px;color:rgba(255,255,255,0.6);font-family:inherit;font-size:12px;font-weight:700;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:2px;transition:all 0.2s; }
+    .plan-btn span { font-size:11px;font-weight:400;color:rgba(255,255,255,0.4); }
+    .plan-btn.active { background:rgba(192,132,252,0.2);border-color:#c084fc;color:#c084fc; }
+    .plan-btn.active span { color:rgba(192,132,252,0.7); }
+    .plan-btn:hover { border-color:rgba(192,132,252,0.5); }
+
+
+    /* komisyen level % */
+    .komisyen-box .level-pct,
+    .level-card .pct { color: #c084fc !important; }
+
+    /* math box result */
+    .math-box .math-row.total strong { color: #c084fc; }
+    .agitate .math-row strong { color: #c084fc; }
+    .agitate-copy p em, .agitate-copy em { color: #c084fc; }
+    .math-accent { color: #c084fc !important; }
 
   </style>
 </head>
@@ -1654,12 +1673,14 @@
 
         <div class="slider-group">
           <div class="slider-label">
-            <span>Purata plan downline</span>
+            <span>Pilih pakej downline</span>
             <strong id="plan-val">RM50</strong>
           </div>
-          <input type="range" id="sl-plan" min="35" max="98" value="50" step="1" class="slider" />
-          <div class="slider-hint">
-            <span>RM35</span><span>RM98</span>
+          <div class="plan-select-btns">
+            <button class="plan-btn" data-plan="35">EZ35<span>RM35</span></button>
+            <button class="plan-btn active" data-plan="50">EZ50<span>RM50</span></button>
+            <button class="plan-btn" data-plan="68">EZ68<span>RM68</span></button>
+            <button class="plan-btn" data-plan="98">EZ98<span>RM98</span></button>
           </div>
         </div>
 
@@ -2652,7 +2673,8 @@
     const l1    = parseInt(document.getElementById('sl1')?.value || 0);
     const l2    = parseInt(document.getElementById('sl2')?.value || 0);
     const l3    = parseInt(document.getElementById('sl3')?.value || 0);
-    const plan  = parseInt(document.getElementById('sl-plan')?.value || 50);
+    const planBtn = document.querySelector('.plan-btn.active');
+    const plan  = planBtn ? parseInt(planBtn.dataset.plan) : 50;
     const ecomm = document.getElementById('ecomm-toggle')?.checked;
 
     const r1 = l1 * plan * 0.13;
@@ -2670,6 +2692,7 @@
       if(el) el.textContent = [l1,l2,l3][i]+' orang';
     });
     const planEl = document.getElementById('plan-val');
+    if(planEl) planEl.textContent = 'RM' + plan;
     if(planEl) planEl.textContent = 'RM'+plan;
 
     // result rows
@@ -2686,12 +2709,22 @@
     if(ecommNote) ecommNote.style.display = ecomm ? 'block' : 'none';
   }
 
-  ['sl1','sl2','sl3','sl-plan'].forEach(id => {
+  ['sl1','sl2','sl3'].forEach(id => {
     const el = document.getElementById(id);
     if(el) el.addEventListener('input', calcUpdate);
   });
   const ecommToggle = document.getElementById('ecomm-toggle');
   if(ecommToggle) ecommToggle.addEventListener('change', calcUpdate);
+
+  // plan buttons
+  document.querySelectorAll('.plan-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.plan-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      calcUpdate();
+    });
+  });
+
   calcUpdate(); // init
 
   // ── 6. INIT ──
