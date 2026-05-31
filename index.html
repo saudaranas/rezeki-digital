@@ -760,7 +760,7 @@
        KALKULATOR KOMISYEN
     ══════════════════════════════ */
     .calc-sec { background: var(--brand); }
-    .calc-inner { overflow-x: hidden; width:100%; }
+    .calc-inner { overflow-x: hidden; width:100%; max-width:100%; }
     .calc-sec .kicker {
       display: inline-block;
       font-size: 12px; font-weight: 700;
@@ -801,7 +801,18 @@
     .result-big { font-size:2.4rem;font-weight:800;color:#ffffff;line-height:1; }
     .result-note { font-size:11px;color:rgba(255,255,255,0.6);margin-top:6px; }
     .calc-disclaimer { font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6; }
-    @media(max-width:768px){ .calc-card { grid-template-columns:1fr; } }
+    @media(max-width:768px){
+      .calc-card { grid-template-columns:1fr; padding:20px 16px; width:100%; box-sizing:border-box; }
+    }
+    @media(max-width:480px){
+      .calc-sec .wrap { padding: 0 16px; }
+      .calc-card { padding:20px 14px; border-radius:14px; }
+      .slider-label { flex-wrap:wrap; gap:2px; }
+      .slider-label strong { margin-left:auto; }
+      .plan-select-btns { grid-template-columns:repeat(4,1fr); gap:6px; }
+      .plan-btn { padding:8px 2px; font-size:11px; }
+      .plan-btn span { font-size:9px; }
+    }
 
     /* ══════════════════════════════
        BONUS EASTEL
