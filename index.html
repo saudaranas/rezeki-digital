@@ -855,7 +855,20 @@
     .proof-hl span { font-size:13px;color:rgba(255,255,255,0.55); }
     .proof-disclaimer { font-size:11px;color:rgba(255,255,255,0.3);line-height:1.6;margin-bottom:20px; }
     .proof-img-wrap { display:flex;flex-direction:column;gap:16px; }
-    .proof-img-wrap img { width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1); }
+    .proof-img-wrap > img { width:100%;border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,0.4);border:1px solid rgba(255,255,255,0.1); }
+    .proof-gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+    .proof-gallery img {
+      width: 100%;
+      border-radius: 10px;
+      object-fit: cover;
+      aspect-ratio: 9/16;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
     .proof-caption { display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.08);border-radius:10px;padding:14px 16px; }
     .proof-caption span { font-size:1.2rem;flex-shrink:0; }
     .proof-caption p { font-size:13px;color:rgba(255,255,255,0.55);line-height:1.6;font-style:italic; }
@@ -1326,6 +1339,14 @@
       <h2>Data besar, harga wajar, NO FUP 5G!</h2>
       <p>Semua pelan carry forward — data tak habis bulan ni, bawa ke bulan depan. Semua ada hotspot.</p>
     </div>
+    <div style="text-align:center; margin-bottom:32px;">
+      <img
+        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-phones.png"
+        alt="Eastel SIM — plan data NO FUP 5G"
+        style="max-width:480px; width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.1);"
+        loading="lazy"
+      />
+    </div>
     <div class="plan-grid">
       <div class="plan-card">
         <div class="plan-name">EZ35</div>
@@ -1619,6 +1640,12 @@
       </div>
       <div class="step-card">
         <div class="step-num-big">02</div>
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-parcel.jpg"
+          alt="SIM Eastel dihantar ke rumah"
+          style="width:100%;border-radius:10px;margin-bottom:12px;object-fit:cover;aspect-ratio:16/9;"
+          loading="lazy"
+        />
         <h3>SIM sampai — insert & aktif</h3>
         <p>Insert SIM, download app Eastel. Setup MyDigital ID untuk verifikasi identiti anda.</p>
       </div>
@@ -1972,6 +1999,25 @@
       <div class="proof-caption">
         <span>📱</span>
         <p>"Baru sebulan tukar celcom kepada Eastel. Internet laju, padu dan murah. Opssss tak pernah terfikir dapat sampai empat ribu dalam masa satu bulan." — faizal_mohamaad</p>
+      </div>
+
+      <!-- Proof gallery tambahan -->
+      <div class="proof-gallery">
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-dashboard.jpg"
+          alt="Dashboard komisyen Eastelpreneur"
+          loading="lazy"
+        />
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-history1.jpg"
+          alt="History komisyen Eastelpreneur"
+          loading="lazy"
+        />
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-proof-history2.jpg"
+          alt="History komisyen Eastelpreneur 2"
+          loading="lazy"
+        />
       </div>
     </div>
 
