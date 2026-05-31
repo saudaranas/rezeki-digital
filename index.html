@@ -952,6 +952,7 @@
     .rm10-card {
       flex: 1; border-radius: 16px; padding: 28px;
       display: flex; flex-direction: column; gap: 16px;
+      min-width: 0;
     }
     .rm10-card.left {
       background: white; border: 2px solid var(--line);
@@ -1030,7 +1031,8 @@
     .rm10-bottom .btn { width: auto; display: inline-flex; padding: 14px 32px; }
 
     @media(max-width: 640px) {
-      .rm10-compare { flex-direction: column; }
+      .rm10-compare { flex-direction: column; align-items: stretch; width: 100%; max-width: 100%; }
+      .rm10-card { width: 100%; flex: none; box-sizing: border-box; }
       .rm10-vs { align-self: center; }
       .rm10-dream-grid { grid-template-columns: repeat(2, 1fr); }
     }
