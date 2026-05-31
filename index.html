@@ -1031,6 +1031,40 @@
       background-clip: text;
       filter: drop-shadow(0 0 8px rgba(168,85,247,0.4));
     }
+
+    /* ── PLANS TOP LAYOUT ── */
+    .plans-top {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 48px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .plans-copy h2 { font-size: clamp(1.6rem, 3vw, 2.2rem); margin-bottom: 14px; }
+    .plans-copy p { color: var(--muted); font-size: 16px; line-height: 1.7; }
+    .plans-mockup {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .phones-float {
+      width: 100%;
+      max-width: 420px;
+      border-radius: 0;
+      background: transparent;
+      animation: floatPhone 4s ease-in-out infinite;
+      filter: drop-shadow(0 24px 48px rgba(124,58,237,0.25));
+    }
+    @keyframes floatPhone {
+      0%   { transform: translateY(0px); }
+      50%  { transform: translateY(-16px); }
+      100% { transform: translateY(0px); }
+    }
+    @media(max-width:768px){
+      .plans-top { grid-template-columns: 1fr; }
+      .plans-mockup { order: -1; }
+      .phones-float { max-width: 280px; }
+    }
   </style>
 </head>
 
@@ -1334,19 +1368,25 @@
 ══════════════════════════════ -->
 <section class="sec plans" id="pelan">
   <div class="plans-inner">
-    <div class="sec-head">
-      <p class="kicker">Pelan data</p>
-      <h2>Data besar, harga wajar, NO FUP 5G!</h2>
-      <p>Semua pelan carry forward — data tak habis bulan ni, bawa ke bulan depan. Semua ada hotspot.</p>
+
+    <!-- TOP: tajuk kiri, gambar kanan -->
+    <div class="plans-top">
+      <div class="plans-copy">
+        <p class="kicker">Pelan data</p>
+        <h2>Data besar, harga wajar, NO FUP 5G!</h2>
+        <p>Semua pelan carry forward — data tak habis bulan ni, bawa ke bulan depan. Semua ada hotspot.</p>
+      </div>
+      <div class="plans-mockup">
+        <img
+          src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-phones.png"
+          alt="Eastel app — plan data NO FUP 5G"
+          class="phones-float"
+          loading="lazy"
+        />
+      </div>
     </div>
-    <div style="text-align:center; margin-bottom:32px;">
-      <img
-        src="https://raw.githubusercontent.com/saudaranas/rezeki-digital/main/eastel-phones.png"
-        alt="Eastel SIM — plan data NO FUP 5G"
-        style="max-width:480px; width:100%; border-radius:16px; box-shadow:0 8px 32px rgba(0,0,0,0.1);"
-        loading="lazy"
-      />
-    </div>
+
+    <!-- BOTTOM: plan cards full width -->
     <div class="plan-grid">
       <div class="plan-card">
         <div class="plan-name">EZ35</div>
