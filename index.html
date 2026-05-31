@@ -828,14 +828,47 @@
     .bonus-rezeki .sec-head h2 { color:white; }
     .bonus-rezeki .sec-head p { color:rgba(255,255,255,0.5); }
     .rezeki-bonus-grid { display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px;margin-bottom:32px; }
-    .rezeki-card { background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:28px;transition:border-color 0.2s; }
+    .rezeki-card { background:rgba(255,255,255,0.07);border:1px solid rgba(255,255,255,0.15);border-radius:14px;padding:24px;transition:border-color 0.2s; }
     .rezeki-card:hover { border-color:var(--accent); }
-    .rezeki-num { font-size:3rem;font-weight:800;color:var(--accent);opacity:0.15;line-height:1;margin-bottom:8px; }
-    .rezeki-icon { font-size:1.8rem;margin-bottom:12px; }
+    .rezeki-num { font-size:3rem;font-weight:800;color:var(--accent);opacity:0.15;line-height:1;margin-bottom:4px; }
     .rezeki-card h3 { font-size:1.05rem;color:white;margin-bottom:8px; }
     .rezeki-card p { font-size:14px;color:rgba(255,255,255,0.6);line-height:1.7; }
     .rezeki-card strong { color:var(--accent); }
-    .rezeki-tag { display:inline-block;margin-top:14px;background:rgba(155,89,245,0.15);border:1px solid rgba(155,89,245,0.3);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px; }
+    .rezeki-tag { display:inline-block;margin-top:14px;background:rgba(124,58,237,0.2);border:1px solid rgba(124,58,237,0.4);color:var(--accent);font-size:11px;font-weight:700;padding:4px 12px;border-radius:20px; }
+
+    /* ── MOCKUP ILLUSTRATIONS ── */
+    .rezeki-mockup { border-radius:10px;overflow:hidden;margin-bottom:16px;height:170px;display:flex;align-items:stretch;justify-content:center; }
+    .website-mockup { background:linear-gradient(135deg,#1e1b4b,#312e81);padding:14px;align-items:center; }
+    .mock-browser { background:#1e293b;border-radius:7px;width:100%;overflow:hidden; }
+    .mock-bar { background:#0f172a;padding:6px 10px;display:flex;align-items:center;gap:4px; }
+    .mock-dot { width:6px;height:6px;border-radius:50%; }
+    .mock-dot:nth-child(1){background:#ef4444;} .mock-dot:nth-child(2){background:#f59e0b;} .mock-dot:nth-child(3){background:#22c55e;}
+    .mock-url { flex:1;background:#1e293b;border-radius:3px;padding:2px 8px;font-size:8px;color:rgba(255,255,255,0.35);margin-left:6px; }
+    .mock-screen { padding:8px;display:flex;flex-direction:column;gap:5px; }
+    .mock-hero-bar { height:22px;background:linear-gradient(90deg,#7c3aed,#a855f7);border-radius:3px; }
+    .mock-line { height:5px;background:rgba(255,255,255,0.12);border-radius:2px; }
+    .mock-line.long{width:100%;} .mock-line.medium{width:65%;} .mock-line.short{width:40%;}
+    .mock-btn-bar { height:11px;background:#7c3aed;border-radius:3px;width:45%;align-self:flex-start; }
+    .mock-cards-row { display:flex;gap:4px; }
+    .mock-card-sm { flex:1;height:16px;background:rgba(255,255,255,0.07);border-radius:3px; }
+    .calendar-mockup { background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:14px;align-items:center; }
+    .mock-calendar { background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;width:100%;padding:8px; }
+    .mock-cal-header { display:flex;align-items:center;gap:5px;font-size:9px;color:rgba(255,255,255,0.65);font-weight:700;margin-bottom:6px; }
+    .mock-cal-grid { display:grid;grid-template-columns:repeat(7,1fr);gap:3px;margin-bottom:6px; }
+    .mock-cal-day { display:flex;flex-direction:column;align-items:center;gap:2px; }
+    .mock-cal-day span { font-size:6px;color:rgba(255,255,255,0.25); }
+    .mock-cal-day.active span { color:rgba(255,255,255,0.7); }
+    .mock-post-dot { width:7px;height:7px;border-radius:50%;background:var(--accent); }
+    .mock-post-dot.muted { background:rgba(255,255,255,0.08); }
+    .mock-cal-preview { background:rgba(255,255,255,0.04);border-radius:3px;padding:5px;display:flex;flex-direction:column;gap:3px; }
+    .wa-mockup { background:linear-gradient(135deg,#075e54,#128c7e);flex-direction:column; }
+    .mock-wa { width:100%;display:flex;flex-direction:column;height:100%; }
+    .mock-wa-header { background:#075e54;padding:8px 12px;display:flex;align-items:center;gap:8px; }
+    .mock-wa-avatar { width:26px;height:26px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:800;color:white;flex-shrink:0; }
+    .mock-wa-body { background:#0b1f1e;padding:8px 10px;display:flex;flex-direction:column;gap:5px;flex:1; }
+    .mock-bubble { max-width:82%;padding:5px 9px;border-radius:7px;font-size:9px;line-height:1.4; }
+    .mock-bubble.them { background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.75);align-self:flex-start;border-radius:0 7px 7px 7px; }
+    .mock-bubble.me { background:#7c3aed;color:white;align-self:flex-end;border-radius:7px 7px 0 7px; }
     .rezeki-cta-box { text-align:center;background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:14px;padding:28px; }
     .rezeki-cta-box p { color:rgba(255,255,255,0.55);font-size:15px;margin-bottom:16px; }
 
@@ -1986,29 +2019,89 @@
     </div>
 
     <div class="rezeki-bonus-grid">
+
+      <!-- BONUS 01 — Website Referral -->
       <div class="rezeki-card">
         <div class="rezeki-num">01</div>
-        <div class="rezeki-icon">🌐</div>
+        <div class="rezeki-mockup website-mockup">
+          <div class="mock-browser">
+            <div class="mock-bar">
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <span class="mock-dot"></span>
+              <div class="mock-url">rezeki.digital/?id=namakau</div>
+            </div>
+            <div class="mock-screen">
+              <div class="mock-hero-bar"></div>
+              <div class="mock-line long"></div>
+              <div class="mock-line medium"></div>
+              <div class="mock-btn-bar"></div>
+              <div class="mock-cards-row">
+                <div class="mock-card-sm"></div>
+                <div class="mock-card-sm"></div>
+                <div class="mock-card-sm"></div>
+              </div>
+            </div>
+          </div>
+        </div>
         <h3>Website Referral Peribadi</h3>
         <p>Anda dapat link unik anda sendiri — <strong>rezeki.digital/?id=namakau</strong>. Share kepada sesiapa sahaja. Bila orang daftar dari link anda, submission terus masuk ke anda.</p>
         <div class="rezeki-tag">Siap setup oleh kami</div>
       </div>
 
+      <!-- BONUS 02 — Content Calendar -->
       <div class="rezeki-card">
         <div class="rezeki-num">02</div>
-        <div class="rezeki-icon">📅</div>
+        <div class="rezeki-mockup calendar-mockup">
+          <div class="mock-calendar">
+            <div class="mock-cal-header">
+              <span>📅</span>
+              <span>Content Calendar — Threads</span>
+            </div>
+            <div class="mock-cal-grid">
+              <div class="mock-cal-day active"><span>Isnin</span><div class="mock-post-dot"></div></div>
+              <div class="mock-cal-day"><span>Selasa</span><div class="mock-post-dot muted"></div></div>
+              <div class="mock-cal-day active"><span>Rabu</span><div class="mock-post-dot"></div></div>
+              <div class="mock-cal-day"><span>Khamis</span><div class="mock-post-dot muted"></div></div>
+              <div class="mock-cal-day active"><span>Jumaat</span><div class="mock-post-dot"></div></div>
+              <div class="mock-cal-day active"><span>Sabtu</span><div class="mock-post-dot"></div></div>
+              <div class="mock-cal-day"><span>Ahad</span><div class="mock-post-dot muted"></div></div>
+            </div>
+            <div class="mock-cal-preview">
+              <div class="mock-line short" style="background:rgba(255,255,255,0.4);margin-bottom:4px;"></div>
+              <div class="mock-line long" style="background:rgba(255,255,255,0.2);"></div>
+            </div>
+          </div>
+        </div>
         <h3>Content Calendar Threads</h3>
         <p>Tak tahu nak post apa? Kami sediakan content calendar khusus untuk platform Threads — supaya anda boleh mula bina audience dan promote Eastel dengan lebih konsisten.</p>
         <div class="rezeki-tag">Template siap guna</div>
       </div>
 
+      <!-- BONUS 03 — WhatsApp Support -->
       <div class="rezeki-card">
         <div class="rezeki-num">03</div>
-        <div class="rezeki-icon">💬</div>
+        <div class="rezeki-mockup wa-mockup">
+          <div class="mock-wa">
+            <div class="mock-wa-header">
+              <div class="mock-wa-avatar">R</div>
+              <div>
+                <div style="font-size:11px;font-weight:700;color:white;">Rezeki Digital</div>
+                <div style="font-size:10px;color:rgba(255,255,255,0.5);">Upline anda • Online</div>
+              </div>
+            </div>
+            <div class="mock-wa-body">
+              <div class="mock-bubble them">Salam! Ada soalan ke? 😊</div>
+              <div class="mock-bubble me">Macam mana nak setup akaun?</div>
+              <div class="mock-bubble them">No problem, saya guide step by step!</div>
+            </div>
+          </div>
+        </div>
         <h3>WhatsApp Support Upline</h3>
         <p>Ada soalan? Ada masalah setup? Anda ada akses terus ke kami sebagai upline melalui WhatsApp. Tak perlu tercari-cari sendiri.</p>
         <div class="rezeki-tag">Support berterusan</div>
       </div>
+
     </div>
 
     <div class="rezeki-cta-box">
