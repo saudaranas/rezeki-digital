@@ -2779,6 +2779,207 @@
   }
 </script>
 
+<!-- SOCIAL PROOF POPUP -->
+<div id="social-proof" style="display:none;">
+  <div class="sp-avatar">🟢</div>
+  <div class="sp-content">
+    <div class="sp-name" id="sp-name">Ahmad</div>
+    <div class="sp-text">baru je daftar Eastelpreneur!</div>
+    <div class="sp-time" id="sp-time">2 minit lalu</div>
+  </div>
+  <button class="sp-close" onclick="document.getElementById('social-proof').style.display='none'">✕</button>
+</div>
+
+<style>
+  #social-proof {
+    position: fixed;
+    bottom: 24px; left: 24px;
+    background: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border: 1px solid var(--line);
+    z-index: 500;
+    max-width: 280px;
+    animation: spSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  @keyframes spSlideIn {
+    from { transform: translateX(-120%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+  .sp-avatar { font-size: 1.4rem; flex-shrink: 0; }
+  .sp-content { flex: 1; }
+  .sp-name { font-size: 13px; font-weight: 800; color: var(--ink); }
+  .sp-text { font-size: 12px; color: var(--muted); }
+  .sp-time { font-size: 11px; color: var(--accent); font-weight: 600; margin-top: 2px; }
+  .sp-close {
+    background: none; border: none; cursor: pointer;
+    color: var(--muted); font-size: 14px; padding: 2px;
+    flex-shrink: 0; line-height: 1;
+  }
+  .sp-close:hover { color: var(--ink); }
+  @media(max-width:480px){
+    #social-proof { bottom: 16px; left: 16px; max-width: calc(100vw - 32px); }
+  }
+</style>
+
+<script>
+(function(){
+  const GAS = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
+  let spData = [];
+  let spIndex = 0;
+
+  async function loadSocialProof() {
+    try {
+      const res  = await fetch(GAS + '?action=recent_submissions');
+      const json = await res.json();
+      if (json.ok && json.data.length > 0) {
+        spData = json.data;
+        // delay 3 saat sebelum tunjuk pertama
+        setTimeout(showNextProof, 3000);
+      }
+    } catch(e) { console.log('Social proof unavailable'); }
+  }
+
+  function showNextProof() {
+    if (spData.length === 0) return;
+    const item = spData[spIndex % spData.length];
+    spIndex++;
+
+    document.getElementById('sp-name').textContent = item.nama + ' dari ' + item.kawasan;
+    document.getElementById('sp-time').textContent = item.timeAgo;
+
+    const popup = document.getElementById('social-proof');
+    popup.style.display = 'flex';
+    popup.style.animation = 'none';
+    popup.offsetHeight; // reflow
+    popup.style.animation = 'spSlideIn 0.4s cubic-bezier(0.34, 1.56, 0.64, 1)';
+
+    // auto-hide selepas 5 saat
+    setTimeout(() => {
+      popup.style.display = 'none';
+      // tunjuk seterusnya selepas 12 saat
+      setTimeout(showNextProof, 12000);
+    }, 5000);
+  }
+
+  // load bila page ready
+  window.addEventListener('load', loadSocialProof);
+})();
+</script>
+
+<!-- ══════════════════════════════
+     SOCIAL PROOF NOTIFICATION
+══════════════════════════════ -->
+<div id="social-proof" style="display:none;" aria-live="polite">
+  <div class="sp-icon">🟢</div>
+  <div class="sp-content">
+    <div class="sp-name" id="sp-name">Ahmad dari Melaka</div>
+    <div class="sp-text">baru je daftar Eastelpreneur!</div>
+    <div class="sp-time" id="sp-time">2 minit yang lalu</div>
+  </div>
+  <button class="sp-close" onclick="closeSP()" aria-label="Tutup">✕</button>
+</div>
+
+<style>
+  #social-proof {
+    position: fixed;
+    bottom: 24px; left: 24px;
+    background: white;
+    border-radius: 14px;
+    padding: 14px 16px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.15);
+    border: 1px solid #e2e8f0;
+    z-index: 900;
+    max-width: 280px;
+    animation: spSlideIn 0.4s cubic-bezier(0.34,1.56,0.64,1);
+  }
+  @keyframes spSlideIn {
+    from { transform: translateX(-120%); opacity: 0; }
+    to   { transform: translateX(0); opacity: 1; }
+  }
+  @keyframes spSlideOut {
+    from { transform: translateX(0); opacity: 1; }
+    to   { transform: translateX(-120%); opacity: 0; }
+  }
+  .sp-icon { font-size: 1.4rem; flex-shrink: 0; }
+  .sp-content { flex: 1; min-width: 0; }
+  .sp-name { font-size: 13px; font-weight: 800; color: #0f172a; margin-bottom: 1px; }
+  .sp-text { font-size: 12px; color: #64748b; }
+  .sp-time { font-size: 11px; color: #94a3b8; margin-top: 2px; }
+  .sp-close {
+    background: none; border: none; cursor: pointer;
+    color: #94a3b8; font-size: 14px; padding: 2px;
+    flex-shrink: 0; line-height: 1;
+  }
+  .sp-close:hover { color: #64748b; }
+  @media(max-width: 480px) {
+    #social-proof { left: 12px; bottom: 12px; max-width: calc(100vw - 24px); }
+  }
+</style>
+
+<script>
+  const GAS_SP = 'https://script.google.com/macros/s/AKfycbylEJymrRi0iiINTKVnfhqIrPclHMBPh5z0kEcgkcdwtawhPOSZM-wF9wfKRj6_u8yk/exec';
+  let spList = [];
+  let spIndex = 0;
+  let spTimer = null;
+
+  async function loadSocialProof() {
+    try {
+      const res  = await fetch(GAS_SP + '?action=recent');
+      const json = await res.json();
+      if (json.ok && json.data && json.data.length > 0) {
+        spList = json.data;
+        showSP();
+      }
+    } catch(e) {
+      console.log('SP load error:', e);
+    }
+  }
+
+  function showSP() {
+    if (!spList.length) return;
+    const item = spList[spIndex % spList.length];
+    spIndex++;
+
+    document.getElementById('sp-name').textContent =
+      item.nama + ' dari ' + item.kawasan;
+    document.getElementById('sp-time').textContent = item.masa;
+
+    const el = document.getElementById('social-proof');
+    el.style.display = 'flex';
+    el.style.animation = 'spSlideIn 0.4s cubic-bezier(0.34,1.56,0.64,1)';
+
+    // Auto hide selepas 5 saat
+    clearTimeout(spTimer);
+    spTimer = setTimeout(() => {
+      hideSP();
+      // Tunjuk seterusnya selepas 15 saat
+      setTimeout(showSP, 15000);
+    }, 5000);
+  }
+
+  function hideSP() {
+    const el = document.getElementById('social-proof');
+    el.style.animation = 'spSlideOut 0.3s ease forwards';
+    setTimeout(() => { el.style.display = 'none'; }, 300);
+  }
+
+  function closeSP() {
+    clearTimeout(spTimer);
+    hideSP();
+    // Tunjuk seterusnya selepas 20 saat
+    setTimeout(showSP, 20000);
+  }
+
+  // Load selepas page ready — delay 3 saat supaya tak ganggu loading
+  setTimeout(loadSocialProof, 3000);
+</script>
+
 <!-- LIGHTBOX -->
 <div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.92);z-index:999;display:none;align-items:center;justify-content:center;padding:16px;cursor:zoom-out;">
   <button onclick="closeLightbox()" style="position:absolute;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:white;width:40px;height:40px;border-radius:50%;font-size:20px;cursor:pointer;display:flex;align-items:center;justify-content:center;">✕</button>
