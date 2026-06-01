@@ -850,19 +850,37 @@
 
     /* ── MOCKUP ILLUSTRATIONS ── */
     .rezeki-mockup { border-radius:10px;overflow:hidden;margin-bottom:16px;height:170px;display:flex;align-items:stretch;justify-content:center; }
-    .website-mockup { background:linear-gradient(135deg,#1e1b4b,#312e81);padding:14px;align-items:center; }
-    .mock-browser { background:#1e293b;border-radius:7px;width:100%;overflow:hidden; }
-    .mock-bar { background:#0f172a;padding:6px 10px;display:flex;align-items:center;gap:4px; }
-    .mock-dot { width:6px;height:6px;border-radius:50%; }
-    .mock-dot:nth-child(1){background:#ef4444;} .mock-dot:nth-child(2){background:#f59e0b;} .mock-dot:nth-child(3){background:#22c55e;}
-    .mock-url { flex:1;background:#1e293b;border-radius:3px;padding:2px 8px;font-size:8px;color:rgba(255,255,255,0.35);margin-left:6px; }
-    .mock-screen { padding:8px;display:flex;flex-direction:column;gap:5px; }
-    .mock-hero-bar { height:22px;background:linear-gradient(90deg,#7c3aed,#a855f7);border-radius:3px; }
-    .mock-line { height:5px;background:rgba(255,255,255,0.12);border-radius:2px; }
-    .mock-line.long{width:100%;} .mock-line.medium{width:65%;} .mock-line.short{width:40%;}
-    .mock-btn-bar { height:11px;background:#7c3aed;border-radius:3px;width:45%;align-self:flex-start; }
-    .mock-cards-row { display:flex;gap:4px; }
-    .mock-card-sm { flex:1;height:16px;background:rgba(255,255,255,0.07);border-radius:3px; }
+    .website-mockup { background:#0f172a;padding:10px;align-items:flex-start; }
+    .mock-screen-real { width:100%;display:flex;flex-direction:column;gap:0; }
+
+    /* navbar */
+    .msr-nav { background:#0f172a;padding:4px 8px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(255,255,255,0.06); }
+    .msr-logo { display:flex;align-items:center;gap:3px; }
+    .msr-logo-mark { width:10px;height:10px;background:#7c3aed;border-radius:2px;font-size:6px;font-weight:900;color:white;display:flex;align-items:center;justify-content:center; }
+    .msr-logo span:last-child { font-size:7px;font-weight:800;color:white; }
+    .msr-cta { background:#7c3aed;color:white;font-size:6px;font-weight:700;padding:2px 5px;border-radius:3px; }
+
+    /* hero */
+    .msr-hero { background:linear-gradient(135deg,#0f172a 0%,#1e293b 50%,#312e81 100%);padding:8px;display:flex;gap:6px;align-items:center; }
+    .msr-hero-left { flex:1;display:flex;flex-direction:column;gap:3px; }
+    .msr-eyebrow { font-size:5px;color:rgba(255,255,255,0.4);letter-spacing:0.05em;background:rgba(255,255,255,0.08);padding:1px 4px;border-radius:8px;align-self:flex-start; }
+    .msr-h1 { font-size:7px;font-weight:900;color:white;line-height:1.2; }
+    .msr-h1.purple { color:#a855f7; }
+    .msr-btn { background:#7c3aed;color:white;font-size:5px;font-weight:700;padding:3px 6px;border-radius:3px;align-self:flex-start;margin-top:2px; }
+
+    /* phone mockup dalam hero */
+    .msr-hero-right { width:32px;flex-shrink:0; }
+    .msr-phone { background:#1a1a2e;border-radius:4px;padding:2px;border:1px solid rgba(255,255,255,0.1); }
+    .msr-phone-screen { background:#0f172a;border-radius:3px;padding:3px;display:flex;flex-direction:column;gap:2px; }
+    .msr-app-bar { height:6px;background:linear-gradient(90deg,#7c3aed,#a855f7);border-radius:2px; }
+    .msr-app-line { height:2px;background:rgba(255,255,255,0.15);border-radius:1px; }
+    .msr-app-line.short { width:60%; }
+    .msr-app-row { display:flex;gap:2px; }
+    .msr-app-card { flex:1;height:8px;background:rgba(255,255,255,0.07);border-radius:2px; }
+
+    /* pain cards */
+    .msr-pain { background:white;padding:6px;display:flex;gap:3px; }
+    .msr-pain-card { flex:1;height:16px;background:#f8f4ff;border-radius:3px;border:1px solid #e8e4f0; }
     .calendar-mockup { background:linear-gradient(135deg,#0f172a,#1e1b4b);padding:14px;align-items:center; }
     .mock-calendar { background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.1);border-radius:7px;width:100%;padding:8px; }
     .mock-cal-header { display:flex;align-items:center;gap:5px;font-size:9px;color:rgba(255,255,255,0.65);font-weight:700;margin-bottom:6px; }
@@ -2096,16 +2114,47 @@
               <span class="mock-dot"></span>
               <div class="mock-url">rezeki.digital/?id=namakau</div>
             </div>
-            <div class="mock-screen">
-              <div class="mock-hero-bar"></div>
-              <div class="mock-line long"></div>
-              <div class="mock-line medium"></div>
-              <div class="mock-btn-bar"></div>
-              <div class="mock-cards-row">
-                <div class="mock-card-sm"></div>
-                <div class="mock-card-sm"></div>
-                <div class="mock-card-sm"></div>
+            <div class="mock-screen-real">
+
+              <!-- Navbar -->
+              <div class="msr-nav">
+                <div class="msr-logo">
+                  <span class="msr-logo-mark">R</span>
+                  <span>Rezeki Digital</span>
+                </div>
+                <div class="msr-cta">Daftar</div>
               </div>
+
+              <!-- Hero -->
+              <div class="msr-hero">
+                <div class="msr-hero-left">
+                  <div class="msr-eyebrow">Eastelpreneur</div>
+                  <div class="msr-h1">Dah Bayar Telco<br/>Tiap Bulan.</div>
+                  <div class="msr-h1 purple">Kenapa Tak<br/>Dapat Balik?</div>
+                  <div class="msr-btn">Saya Nak Mulakan</div>
+                </div>
+                <div class="msr-hero-right">
+                  <div class="msr-phone">
+                    <div class="msr-phone-screen">
+                      <div class="msr-app-bar"></div>
+                      <div class="msr-app-line"></div>
+                      <div class="msr-app-line short"></div>
+                      <div class="msr-app-row">
+                        <div class="msr-app-card"></div>
+                        <div class="msr-app-card"></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pain cards -->
+              <div class="msr-pain">
+                <div class="msr-pain-card"></div>
+                <div class="msr-pain-card"></div>
+                <div class="msr-pain-card"></div>
+              </div>
+
             </div>
           </div>
         </div>
